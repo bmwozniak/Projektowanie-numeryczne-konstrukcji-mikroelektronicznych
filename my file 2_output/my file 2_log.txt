@@ -1,0 +1,5 @@
+FlexPDE Version 7.22/W64  16:05:58 Nov 24 2023
+(Times listed are wall-clock times, not charged CPU).
+
+START C:\Users\student\Documents\254883\my file 2.pde  11:46:55 3/6/24
+ +00:00:00| ***** Memory Protection Fault

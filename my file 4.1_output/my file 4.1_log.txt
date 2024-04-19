@@ -1,0 +1,14 @@
+FlexPDE Version 7.22/W64  16:05:58 Nov 24 2023
+(Times listed are wall-clock times, not charged CPU).
+
+START C:\Users\student\Documents\254883\my file 4.1.pde  10:38:33 3/20/24
+ +00:00:00| Mesh Generation Complete
+ +00:00:00| Mesh dump written to C:\Users\student\Documents\254883\my file 4.1_output/my file 4.1_initialmesh.xfr
+Using 1 Threads  Cubic Curvature 
+ +00:00:00| (1)Linear Step 1 Error= 3.86e+15 Orthomin/ILU(37)
+ +00:00:00| (1)Linear Step 2 Error= 1.04e+14 Orthomin/ILU(42)
+ +00:00:00| (1)Linear Step 3 Error= 3.80e+13 Orthomin/ILU(39)
+ +00:00:00| (1)Linear Step 4 Error= 3.33e+11 Orthomin/ILU(42)
+ +00:00:00| (1)Linear Step 5 Error= 1.11e+11 Orthomin/ILU(39)
+ +00:00:00| GRID 1 Nodes=139 Cells=236 DOF=1123 RMS ERR= 1.12e-17 MAX ERR= 1.79e-17 MEM=4902 KiB
+ +00:00:00| --DONE-- 10:38:33 3/20/24

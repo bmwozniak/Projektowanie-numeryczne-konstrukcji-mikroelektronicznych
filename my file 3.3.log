@@ -1,0 +1,7 @@
+FlexPDE Version 6.51/W64  16:23:07 Jul 24 2019
+(Times listed are wall-clock times, not charged CPU).
+
+START C:\Users\student\Documents\254883\my file 3.3.pde  11:39:28 3/13/24
+Using 1 Thread(s)
+ +00:00:00| GRID 1 Nodes=324 Cells=129 RMS ERR= 1.65e-16 MAX ERR= 2.17e-16 MEM=968
+ +00:00:00| --DONE-- 11:39:28 3/13/24

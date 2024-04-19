@@ -1,0 +1,93 @@
+
+================================================================
+===  FlexPDE Version 7.22/W64  16:05:58 Nov 24 2023  Copyright © 1996-2020 PDE Solutions Inc.
+===  C:\Users\student\Documents\254883\my file 2.pde 11:46:55 3/6/24
+================================================================
+    1| TITLE 'Dyfuzja'
+    2| 	COORDINATES cartesian2
+    3| 	VARIABLES
+    4| 		C
+    5| 	DEFINITIONS
+    6| 		D=3
+    7|         C0=1.0
+    8|         L=-1
+    9|     INITIAL VALUES
+   10|     	C=0
+   11| 	EQUATIONS
+   12| 		C: D*(dxx(C)+dyy(C) )= dt(C)
+   13| 	BOUNDARIES
+   14| 	REGION 1
+   15| 		START(0,0)  natural(C)=0
+   16|         line to (0.49, 0) value(C)=C0
+   17|         line to(0.51, 0) natural(C)=0
+   18|         line to(1, 0) natural(C)=0
+   19|         line to(1, 1) natural(C)=0
+   20|         line to(0, 1) natural(C)=0
+   21|         line to (0,0)
+   22| 
+   23| 	REGION 2
+   24| 		START(0.49, 0.49)  value(C)=L
+   25|         line to (0.49, 0.51)  value(C)=L
+   26|         line to(0.51, 0.51)  value(C)=L
+   27|         line to(0.51, 0.49)  value(C)=L
+   28|         line to close
+   29|         
+   30|         
+   31|     TIME 0.0 TO 1.0
+   32|         
+   33| 	PLOTS        
+   34|     FOR t=0.0
+   35| 		contour(C)
+   36|         surface(C)
+   37| 
+   38|     FOR t=1.0
+   39|         contour(C)
+   40|         surface(C)
+   41| 
+   42| 	END
+Uorder=3
+ C order=3
+FlexPDE Lite Version 7.22/W64 3D
+Copyright © 1996-2020 PDE Solutions Inc.
+FlexPDE Lite Version 7.22/W64 3D
+Copyright © 1996-2020 PDE Solutions Inc.
+FlexPDE Lite Version 7.22/W64 3D
+Copyright © 1996-2020 PDE Solutions Inc.
+STUDENT VERSION SETS GROW2=0.35 GRIDARC=30
+IMPORTMESH(0) NDIM=2 NB=10 NAB=3 NODES=0 CELLS=0 SIDES=0 LEGS=0 imaging=0 time(0)=0
+SEHmapper(c0000005) in thread 1
+RTException (1)Memory Protection Fault
+-----Called from CoreMesh::check_mesh
+-----Called from CompMesh::check_mesh
+-----Called from compmesh2d::newmesh2
+-----Called from mesher2d::grid2d
+-----Called from control::do_gridgen
+-----Called from PDEThread::run
+-----Called from PageStack::GUIcreatejob
+-----Called from OnInit
+-----Called from fpdemain
+
+PDEThread Catches RTException (1,0000000003DBB2B0,00000000032D93F0)
+errmsg: Memory Protection Fault
+Trace:
+-----Called from CoreMesh::check_mesh
+-----Called from CompMesh::check_mesh
+-----Called from compmesh2d::newmesh2
+-----Called from mesher2d::grid2d
+-----Called from control::do_gridgen
+-----Called from PDEThread::run
+-----Called from PageStack::GUIcreatejob
+-----Called from OnInit
+-----Called from fpdemain
+
+***** Memory Protection Fault
+-----Called from CoreMesh::check_mesh
+-----Called from CompMesh::check_mesh
+-----Called from compmesh2d::newmesh2
+-----Called from mesher2d::grid2d
+-----Called from control::do_gridgen
+-----Called from PDEThread::run
+-----Called from PageStack::GUIcreatejob
+-----Called from OnInit
+-----Called from fpdemain
+

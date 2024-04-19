@@ -1,0 +1,25 @@
+FlexPDE Version 6.51/W64  16:23:07 Jul 24 2019
+(Times listed are wall-clock times, not charged CPU).
+
+START C:\Users\student\Documents\254883\my file 5.1.pde  11:54:56 3/27/24
+Using 1 Thread(s)
+ +00:00:00| Newton Step 1 Error= 1.168e+9
+ +00:00:00| Newton Step 2 Error= 1.148e+9
+ +00:00:00| Newton Step 3 Error= 1.039e+9
+ +00:00:00| Newton Step 4 Error= 9.199e+8
+ +00:00:00| Newton Step 5 Error= 7.502e+8
+ +00:00:00| Newton Step 6 Error= 6.606e+7
+ +00:00:00| Newton Step 7 Error= 1388502.
+ +00:00:00| Newton Step 8 Error= 615.1913
+ +00:00:00| Newton Step 9 Error= 2.740384
+ +00:00:00| Newton Step 10 Error= 0.001028
+ +00:00:00| Newton Step 11 Error= 2.509e-7
+ +00:00:00| GRID 1 Nodes=530 Cells=245 RMS ERR= 0.011910 MAX ERR= 0.016665 MEM=932
+ +00:00:00| Newton Step 1 Error= 0.310132
+ +00:00:00| Newton Step 2 Error= 1.862e-6
+ +00:00:00| Newton Step 3 Error= 8.482e-7
+ +00:00:00| GRID 2 Nodes=716 Cells=337 RMS ERR= 0.004375 MAX ERR= 0.006091 MEM=1024
+ +00:00:00| Newton Step 1 Error= 0.027259
+ +00:00:00| Newton Step 2 Error= 3.036e-7
+ +00:00:00| GRID 3 Nodes=814 Cells=385 RMS ERR= 0.002425 MAX ERR= 0.003423 MEM=1072
+ +00:00:00| --DONE-- 11:54:56 3/27/24

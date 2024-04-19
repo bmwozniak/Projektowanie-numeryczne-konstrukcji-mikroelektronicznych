@@ -1,0 +1,894 @@
+
+================================================================
+===  FlexPDE Version 7.22/W64  16:05:58 Nov 24 2023  Copyright � 1996-2020 PDE Solutions Inc.
+===  C:\Users\student\Documents\254883\my file 6.1.pde 10:49:09 4/3/24
+================================================================
+    1| title 'OdksztaĹ‚cenie-naprezenie'
+    2| VARIABLES 
+    3| ux, uy, C11, C12, C22, C33
+    4| DEFINITIONS
+    5| v = 0.3
+    6| E =210
+    7| F0=0
+    8| G = E/((1+v)*(1-2*v)
+    9| C11 = G*(1-v)
+ERROR in state 207: GOT: 2(<identifier>) WANTED: 13(<)>)
+Parse_Error at Line 9 Cols 1-3
+ in file C:\Users\student\Documents\254883\my file 6.1.pde
+FlexPDE grammar does not allow '<identifier>' in this location.
+Allowable symbols are:
+<)>
+<plus>
+<minus>
+
+-----Called from ReadPDE::rpterror
+-----Called from Parser::parse
+-----Called from control::parse_file
+-----Called from control::do_parse
+-----Called from PDEThread::run
+-----Called from PageStack::GUIcreatejob
+-----Called from PageStack::saveasfile
+-----Called from MainWindow::saveasfile
+-----Called from flexpde::OnRun
+-----Called from fpdemain
+
+Parse_Error Catches RTException stop_parse(100,0000000003705300,0000000003745C20)
+errmsg: FlexPDE grammar does not allow '<identifier>' in this location.
+Allowable symbols are:
+<)>
+<plus>
+<minus>
+
+Trace:
+-----Called from ReadPDE::rpterror
+-----Called from Parser::parse
+-----Called from control::parse_file
+-----Called from control::do_parse
+-----Called from PDEThread::run
+-----Called from PageStack::GUIcreatejob
+-----Called from PageStack::saveasfile
+-----Called from MainWindow::saveasfile
+-----Called from flexpde::OnRun
+-----Called from fpdemain
+
+PDEThread Catches RTException stop_parse(100,0000000003705300,0000000003745C20)
+errmsg: FlexPDE grammar does not allow '<identifier>' in this location.
+Allowable symbols are:
+<)>
+<plus>
+<minus>
+
+Trace:
+-----Called from ReadPDE::rpterror
+-----Called from Parser::parse
+-----Called from control::parse_file
+-----Called from control::do_parse
+-----Called from PDEThread::run
+-----Called from PageStack::GUIcreatejob
+-----Called from PageStack::saveasfile
+-----Called from MainWindow::saveasfile
+-----Called from flexpde::OnRun
+-----Called from fpdemain
+
+
+================================================================
+===  FlexPDE Version 7.22/W64  16:05:58 Nov 24 2023  Copyright � 1996-2020 PDE Solutions Inc.
+===  C:\Users\student\Documents\254883\my file 6.1.pde 10:49:32 4/3/24
+================================================================
+    1| title 'OdksztaĹ‚cenie-naprezenie'
+    2| VARIABLES 
+    3| ux, uy, C11, C12, C22, C33
+    4| DEFINITIONS
+    5| v = 0.3
+    6| E =210
+    7| F0=0
+    8| G = E/((1+v)*(1-2*v))
+    9| C11 = G*(1-v)
+   10| C12 = G*v
+Parse_Error at Line 9 Cols 1-3
+ in file C:\Users\student\Documents\254883\my file 6.1.pde
+Name has already been defined
+-----Called from ReadExpression::define
+-----Called from Parser::parse
+-----Called from control::parse_file
+-----Called from control::do_parse
+-----Called from PDEThread::run
+-----Called from PageStack::GUIcreatejob
+-----Called from PageStack::saveasfile
+-----Called from MainWindow::saveasfile
+-----Called from flexpde::OnRun
+-----Called from fpdemain
+
+Parse_Error Catches RTException stop_parse(100,0000000009C3D1A0,0000000003705C50)
+errmsg: Name has already been defined
+Trace:
+-----Called from ReadExpression::define
+-----Called from Parser::parse
+-----Called from control::parse_file
+-----Called from control::do_parse
+-----Called from PDEThread::run
+-----Called from PageStack::GUIcreatejob
+-----Called from PageStack::saveasfile
+-----Called from MainWindow::saveasfile
+-----Called from flexpde::OnRun
+-----Called from fpdemain
+
+PDEThread Catches RTException stop_parse(100,0000000009C3D1A0,0000000003705C50)
+errmsg: Name has already been defined
+Trace:
+-----Called from ReadExpression::define
+-----Called from Parser::parse
+-----Called from control::parse_file
+-----Called from control::do_parse
+-----Called from PDEThread::run
+-----Called from PageStack::GUIcreatejob
+-----Called from PageStack::saveasfile
+-----Called from MainWindow::saveasfile
+-----Called from flexpde::OnRun
+-----Called from fpdemain
+
+
+================================================================
+===  FlexPDE Version 7.22/W64  16:05:58 Nov 24 2023  Copyright � 1996-2020 PDE Solutions Inc.
+===  C:\Users\student\Documents\254883\my file 6.1.pde 10:49:39 4/3/24
+================================================================
+    1| title 'OdksztaĹ‚cenie-naprezenie'
+    2| VARIABLES 
+    3| ux, uy
+    4| DEFINITIONS
+    5| v = 0.3
+    6| E =210
+    7| F0=0
+    8| G = E/((1+v)*(1-2*v))
+    9| C11 = G*(1-v)
+   10| C12 = G*v
+   11| C22 = G*(1-v)
+   12| C33 = G*(1-2*v)/2
+   13| EQUATIONS
+   14| ux: dx(C11*dx(ux)+C12*dy(uy))+dy(C33*(dy(ux)+dx(uy))) =0
+   15| uy: dx(C33*(dy(ux)+dx(uy))) + dy(C21(ux)+C22*dy(uy)) = 0
+Parse_Error at Line 15 Cols 34-36
+ in file C:\Users\student\Documents\254883\my file 6.1.pde
+Undefined Name: C21
+
+-----Called from ReadExpression::default_names
+-----Called from ReadExpression::identifier
+-----Called from Parser::parse
+-----Called from control::parse_file
+-----Called from control::do_parse
+-----Called from PDEThread::run
+-----Called from PageStack::GUIcreatejob
+-----Called from PageStack::saveasfile
+-----Called from MainWindow::saveasfile
+-----Called from flexpde::OnRun
+-----Called from fpdemain
+
+Parse_Error Catches RTException stop_parse(100,0000000001A1F8F0,000000000373AEC0)
+errmsg: Undefined Name: C21
+
+Trace:
+-----Called from ReadExpression::default_names
+-----Called from ReadExpression::identifier
+-----Called from Parser::parse
+-----Called from control::parse_file
+-----Called from control::do_parse
+-----Called from PDEThread::run
+-----Called from PageStack::GUIcreatejob
+-----Called from PageStack::saveasfile
+-----Called from MainWindow::saveasfile
+-----Called from flexpde::OnRun
+-----Called from fpdemain
+
+PDEThread Catches RTException stop_parse(100,0000000001A1F8F0,000000000373AEC0)
+errmsg: Undefined Name: C21
+
+Trace:
+-----Called from ReadExpression::default_names
+-----Called from ReadExpression::identifier
+-----Called from Parser::parse
+-----Called from control::parse_file
+-----Called from control::do_parse
+-----Called from PDEThread::run
+-----Called from PageStack::GUIcreatejob
+-----Called from PageStack::saveasfile
+-----Called from MainWindow::saveasfile
+-----Called from flexpde::OnRun
+-----Called from fpdemain
+
+
+================================================================
+===  FlexPDE Version 7.22/W64  16:05:58 Nov 24 2023  Copyright � 1996-2020 PDE Solutions Inc.
+===  C:\Users\student\Documents\254883\my file 6.1.pde 10:49:56 4/3/24
+================================================================
+    1| title 'OdksztaĹ‚cenie-naprezenie'
+    2| VARIABLES 
+    3| ux, uy
+    4| DEFINITIONS
+    5| v = 0.3
+    6| E =210
+    7| F0=0
+    8| G = E/((1+v)*(1-2*v))
+    9| C11 = G*(1-v)
+   10| C12 = G*v
+   11| C21 = G*v
+   12| C22 = G*(1-v)
+   13| C33 = G*(1-2*v)/2
+   14| EQUATIONS
+   15| ux: dx(C11*dx(ux)+C12*dy(uy))+dy(C33*(dy(ux)+dx(uy))) =0
+   16| uy: dx(C33*(dy(ux)+dx(uy))) + dy(C21(ux)+C22*dy(uy)) = 0
+ERROR in state 238: GOT: 12(<(>) WANTED: 15(<plus>)
+Parse_Error at Line 16 Cols 37-37
+ in file C:\Users\student\Documents\254883\my file 6.1.pde
+FlexPDE grammar does not allow '<(>' in this location.
+Allowable symbols are:
+<plus>
+<minus>
+
+-----Called from ReadPDE::rpterror
+-----Called from Parser::parse
+-----Called from control::parse_file
+-----Called from control::do_parse
+-----Called from PDEThread::run
+-----Called from PageStack::GUIcreatejob
+-----Called from PageStack::saveasfile
+-----Called from MainWindow::saveasfile
+-----Called from flexpde::OnRun
+-----Called from fpdemain
+
+Parse_Error Catches RTException stop_parse(100,000000000371BF90,0000000001C0EE50)
+errmsg: FlexPDE grammar does not allow '<(>' in this location.
+Allowable symbols are:
+<plus>
+<minus>
+
+Trace:
+-----Called from ReadPDE::rpterror
+-----Called from Parser::parse
+-----Called from control::parse_file
+-----Called from control::do_parse
+-----Called from PDEThread::run
+-----Called from PageStack::GUIcreatejob
+-----Called from PageStack::saveasfile
+-----Called from MainWindow::saveasfile
+-----Called from flexpde::OnRun
+-----Called from fpdemain
+
+PDEThread Catches RTException stop_parse(100,000000000371BF90,0000000001C0EE50)
+errmsg: FlexPDE grammar does not allow '<(>' in this location.
+Allowable symbols are:
+<plus>
+<minus>
+
+Trace:
+-----Called from ReadPDE::rpterror
+-----Called from Parser::parse
+-----Called from control::parse_file
+-----Called from control::do_parse
+-----Called from PDEThread::run
+-----Called from PageStack::GUIcreatejob
+-----Called from PageStack::saveasfile
+-----Called from MainWindow::saveasfile
+-----Called from flexpde::OnRun
+-----Called from fpdemain
+
+
+================================================================
+===  FlexPDE Version 7.22/W64  16:05:58 Nov 24 2023  Copyright � 1996-2020 PDE Solutions Inc.
+===  C:\Users\student\Documents\254883\my file 6.1.pde 10:50:11 4/3/24
+================================================================
+    1| title 'OdksztaĹ‚cenie-naprezenie'
+    2| VARIABLES 
+    3| ux, uy
+    4| DEFINITIONS
+    5| v = 0.3
+    6| E =210
+    7| F0=0
+    8| G = E/((1+v)*(1-2*v))
+    9| C11 = G*(1-v)
+   10| C12 = G*v
+   11| C21 = G*v
+   12| C22 = G*(1-v)
+   13| C33 = G*(1-2*v)/2
+   14| EQUATIONS
+   15| ux: dx(C11*dx(ux)+C12*dy(uy))+dy(C33*(dy(ux)+dx(uy))) =0
+   16| uy: dx(C33*(dy(ux)+dx(uy))) + dy(C21(ux)+C22*dy(uy)) = 0
+ERROR in state 238: GOT: 12(<(>) WANTED: 15(<plus>)
+Parse_Error at Line 16 Cols 37-37
+ in file C:\Users\student\Documents\254883\my file 6.1.pde
+FlexPDE grammar does not allow '<(>' in this location.
+Allowable symbols are:
+<plus>
+<minus>
+
+-----Called from ReadPDE::rpterror
+-----Called from Parser::parse
+-----Called from control::parse_file
+-----Called from control::do_parse
+-----Called from PDEThread::run
+-----Called from PageStack::GUIcreatejob
+-----Called from PageStack::saveasfile
+-----Called from MainWindow::saveasfile
+-----Called from flexpde::OnRun
+-----Called from fpdemain
+
+Parse_Error Catches RTException stop_parse(100,000000000371CE00,0000000003762550)
+errmsg: FlexPDE grammar does not allow '<(>' in this location.
+Allowable symbols are:
+<plus>
+<minus>
+
+Trace:
+-----Called from ReadPDE::rpterror
+-----Called from Parser::parse
+-----Called from control::parse_file
+-----Called from control::do_parse
+-----Called from PDEThread::run
+-----Called from PageStack::GUIcreatejob
+-----Called from PageStack::saveasfile
+-----Called from MainWindow::saveasfile
+-----Called from flexpde::OnRun
+-----Called from fpdemain
+
+PDEThread Catches RTException stop_parse(100,000000000371CE00,0000000003762550)
+errmsg: FlexPDE grammar does not allow '<(>' in this location.
+Allowable symbols are:
+<plus>
+<minus>
+
+Trace:
+-----Called from ReadPDE::rpterror
+-----Called from Parser::parse
+-----Called from control::parse_file
+-----Called from control::do_parse
+-----Called from PDEThread::run
+-----Called from PageStack::GUIcreatejob
+-----Called from PageStack::saveasfile
+-----Called from MainWindow::saveasfile
+-----Called from flexpde::OnRun
+-----Called from fpdemain
+
+
+================================================================
+===  FlexPDE Version 7.22/W64  16:05:58 Nov 24 2023  Copyright � 1996-2020 PDE Solutions Inc.
+===  C:\Users\student\Documents\254883\my file 6.1.pde 10:50:28 4/3/24
+================================================================
+    1| title 'OdksztaĹ‚cenie-naprezenie'
+    2| VARIABLES 
+    3| ux, uy
+    4| DEFINITIONS
+    5| v = 0.3
+    6| E =210
+    7| F0=0
+    8| G = E/((1+v)*(1-2*v))
+    9| C11 = G*(1-v)
+   10| C12 = G*v
+   11| C21 = G*v
+   12| C22 = G*(1-v)
+   13| C33 = G*(1-2*v)/2
+   14| EQUATIONS
+   15| ux: dx(C11*dx(ux)+C12*dy(uy))+dy(C33*(dy(ux)+dx(uy))) =0
+   16| uy: dx(C33*(dy(ux)+dx(uy))) + dy(C21*(ux)+C22*dy(uy)) = 0
+   17| BOUNDARIES
+   18| region 1 !prostokat
+   19| E = 100E9
+   20| start (0,0) load (ux)=0 load(uy) = 0
+   21| line to(3,0) load (ux)=F0 load(uy) = 0
+   22| line to(3,1) load (ux)=0 load(uy) = 0
+   23| line to(0,1) load (ux)=0 load(uy) = 0
+   24| line to close
+   25| region 2 !kolo
+   26| E = 10E9
+   27| start(1.5, 0.25)
+   28| arc(center=1.5, 0.5) angle=360
+   29| PLOTS
+   30| grid(x+ux, y+uy)
+   31| contour (ux) as 'x-przemieszczenie'
+   32| END
+Uorder=3
+ UX order=3
+ UY order=3
+STUDENT VERSION SETS GROW2=0.35 GRIDARC=30
+IMPORTMESH(0) NDIM=2 NB=10 NAB=3 NODES=82 CELLS=134 SIDES=215 LEGS=0 imaging=0 time(0)=0
+MESH IMPORT ABORTED: Different GRID2D
+Transferred mesh does not match local domain!
+(Boundary descriptions must match exactly.)
+
+==========================
+ SUMMARIZE PARAMETERS
+==========================
+ Param         name     Type       Domain               Definition
+-------------------------------------------------------------------
+     1            V   Scalar      (GLOBAL)               :  0.30000
+                                             [1]=>  0.30000
+     2            E   Scalar      (GLOBAL)               : 210
+                                             [1]=> 210
+                                  (REGION   1)           :  1.0e+11
+                                  (REGION   2)           :  1.0e+10
+     3           F0   Scalar      (GLOBAL)               : 0
+                                             [1]=> 0
+     4            G   Scalar      (GLOBAL)               : E/((1+V)*(1-(2*V)))
+                                             [1]=>  403.846
+     5          C11   Scalar      (GLOBAL)               : G*(1-V)
+                                             [1]=>  282.692
+     6          C12   Scalar      (GLOBAL)               : G*V
+                                             [1]=>  121.154
+     7          C21   Scalar      (GLOBAL)               : G*V
+                                             [1]=>  121.154
+     8          C22   Scalar      (GLOBAL)               : G*(1-V)
+                                             [1]=>  282.692
+     9          C33   Scalar      (GLOBAL)               : (G*(1-(2*V)))/2
+                                             [1]=>  80.7692
+
+
+
+==========================
+SUMMARIZE EQUATIONS
+==========================
+In the following equation definitions
+Derivatives are represented by appending a dot and the differentiated coordinate.
+The operator <V> represents volume integration. <Vb> is weighted by basis function.
+<Vu> is weighted by the upwind modifer. <Vbu> is weighted by both.
+A dotted volume integral represents volume integration weighted by the indicated
+derivative of the basis function. 'Beta' represents a basis function.
+The operator <S>.c represents surface integration weighted by the indicated
+direction cosine.
+
+            DEFINES     REGION/     DEPENDS                      BASE          CSE
+ EQUATION     VAR    COMPARTMENT      VAR         FUNCTION     COMPLEXITY   COMPLEXITY     MEMORY  DEFINITION
+-----------------------------------------------------------------------------------------------------------
+
+PRIMARY EQUATIONS
+     1         UX                            Field Equation                                      : ((DX((C11*(DX(UX)))+(C12*(DY(UY)))))+(DY(C33*((DY(UX))+(DX(UY))))))-0
+                           1                         Source          1            2          160 : <Vb>(0)
+                                             Space Galerkin         30           16         1280 : -((<Vb>.X(( 1.3e+11*UX.X)+( 5.8e+10*UY.Y)))+(<Vb>.Y( 3.8e+10*(UX.Y+UY.X))))
+                                       UX    Space Jacobian         18           10          800 : -((<Vb>.X( 1.3e+11*Beta.X))+(<Vb>.Y( 3.8e+10*Beta.Y)))
+                                       UY    Space Jacobian         18           10          800 : -((<Vb>.X( 5.8e+10*Beta.Y))+(<Vb>.Y( 3.8e+10*Beta.X)))
+                                           Surface Galerkin         15           15         1200 : (<S>.X(( 1.3e+11*UX.X)+( 5.8e+10*UY.Y)))+(<S>.Y( 3.8e+10*(UX.Y+UY.X)))
+                                       UX  Surface Jacobian          9            9          720 : (<S>.X( 1.3e+11*Beta.X))+(<S>.Y( 3.8e+10*Beta.Y))
+                                       UY  Surface Jacobian          9            9          720 : (<S>.X( 5.8e+10*Beta.Y))+(<S>.Y( 3.8e+10*Beta.X))
+                           2                         Source          1            2          160 : <Vb>(0)
+                                             Space Galerkin         30           16         1280 : -((<Vb>.X(( 1.3e+10*UX.X)+( 5.77e+9*UY.Y)))+(<Vb>.Y( 3.85e+9*(UX.Y+UY.X))))
+                                       UX    Space Jacobian         18           10          800 : -((<Vb>.X( 1.3e+10*Beta.X))+(<Vb>.Y( 3.85e+9*Beta.Y)))
+                                       UY    Space Jacobian         18           10          800 : -((<Vb>.X( 5.77e+9*Beta.Y))+(<Vb>.Y( 3.85e+9*Beta.X)))
+                                           Surface Galerkin         15           15         1200 : (<S>.X(( 1.3e+10*UX.X)+( 5.77e+9*UY.Y)))+(<S>.Y( 3.85e+9*(UX.Y+UY.X)))
+                                       UX  Surface Jacobian          9            9          720 : (<S>.X( 1.3e+10*Beta.X))+(<S>.Y( 3.85e+9*Beta.Y))
+                                       UY  Surface Jacobian          9            9          720 : (<S>.X( 5.77e+9*Beta.Y))+(<S>.Y( 3.85e+9*Beta.X))
+     2         UY                            Field Equation                                      : ((DX(C33*((DY(UX))+(DX(UY)))))+(DY((C21*UX)+(C22*(DY(UY))))))-0
+                           1                         Source          1            2          160 : <Vb>(0)
+                                             Space Galerkin         30           16         1280 : -((<Vb>.X( 3.8e+10*(UX.Y+UY.X)))+(<Vb>.Y(( 5.8e+10*UX)+( 1.3e+11*UY.Y))))
+                                       UX    Space Jacobian         18           10          800 : -((<Vb>.X( 3.8e+10*Beta.Y))+(<Vb>.Y( 5.8e+10*Beta)))
+                                       UY    Space Jacobian         18           10          800 : -((<Vb>.X( 3.8e+10*Beta.X))+(<Vb>.Y( 1.3e+11*Beta.Y)))
+                                           Surface Galerkin         15           15         1200 : (<S>.X( 3.8e+10*(UX.Y+UY.X)))+(<S>.Y(( 5.8e+10*UX)+( 1.3e+11*UY.Y)))
+                                       UX  Surface Jacobian          9            9          720 : (<S>.X( 3.8e+10*Beta.Y))+(<S>.Y( 5.8e+10*Beta))
+                                       UY  Surface Jacobian          9            9          720 : (<S>.X( 3.8e+10*Beta.X))+(<S>.Y( 1.3e+11*Beta.Y))
+                           2                         Source          1            2          160 : <Vb>(0)
+                                             Space Galerkin         30           16         1280 : -((<Vb>.X( 3.85e+9*(UX.Y+UY.X)))+(<Vb>.Y(( 5.77e+9*UX)+( 1.3e+10*UY.Y))))
+                                       UX    Space Jacobian         18           10          800 : -((<Vb>.X( 3.85e+9*Beta.Y))+(<Vb>.Y( 5.77e+9*Beta)))
+                                       UY    Space Jacobian         18           10          800 : -((<Vb>.X( 3.85e+9*Beta.X))+(<Vb>.Y( 1.3e+10*Beta.Y)))
+                                           Surface Galerkin         15           15         1200 : (<S>.X( 3.85e+9*(UX.Y+UY.X)))+(<S>.Y(( 5.77e+9*UX)+( 1.3e+10*UY.Y)))
+                                       UX  Surface Jacobian          9            9          720 : (<S>.X( 3.85e+9*Beta.Y))+(<S>.Y( 5.77e+9*Beta))
+                                       UY  Surface Jacobian          9            9          720 : (<S>.X( 3.85e+9*Beta.X))+(<S>.Y( 1.3e+10*Beta.Y))
+
+EQUATION 1 PARAMETER DEPENDENCIES:
+            V            E            G          C11          C12          C33
+
+EQUATION 2 PARAMETER DEPENDENCIES:
+            V            E            G          C21          C22          C33
+
+========================================================
+     SUMMARIZE BOUNDARY CONDITIONS
+========================================================
+
+BOUNDARY CONDITION TAGS with associated BC INDEX
+BC TAG   1:BC   1 nat(UX) BC   2 nat(UY) 
+BC TAG   2:BC   3 nat(UX) BC   2 nat(UY) 
+
+    BC  KIND     DEFINES   COMPARTMENT     DEPENDS     FUNCTION     COMPLEXITY    MEMORY    DEFINITION
+-----------------------------------------------------------------------------------------------------
+     1   NAT         UX            1                  Surf Galerkin          1         80  : 0
+                                                 UX   Surf Jacobian          1         80  : 0
+                                                 UY   Surf Jacobian          1         80  : 0
+     2   NAT         UY            1                  Surf Galerkin          1         80  : 0
+                                                 UX   Surf Jacobian          1         80  : 0
+                                                 UY   Surf Jacobian          1         80  : 0
+     3   NAT         UX            1                  Surf Galerkin          1         80  : 0
+                                                 UX   Surf Jacobian          1         80  : 0
+                                                 UY   Surf Jacobian          1         80  : 0
+
+===============================
+  SUMMARIZE PLOTS
+===============================
+                      REGION/       BASE        CSE
+  PLOT    TYPE     COMPARTMENT  COMPLEXITY  COMPLEXITY    MEMORY    DEFINITION
+------------------------------------------------------------------------------
+     1       GRID2          0          3          3          240  : X+UX
+                            0          3          3          240  : Y+UY
+     2     CONTOUR          0          1          1           80  : UX
+
+==UNUSED== PARAMETER DEFINITIONS:
+
+Uorder=3
+ UX order=3
+ UY order=3
+LOG Threads=1 Order=3 Speed=1 Stability=0
+RMS Spatial Errors   0.000000  0.000000
+DO_NEXTSTAGE pde 0000000003772950  MAXSTAGE=0
+
+================================================================
+===  FlexPDE Version 7.22/W64  16:05:58 Nov 24 2023  Copyright � 1996-2020 PDE Solutions Inc.
+===  C:\Users\student\Documents\254883\my file 6.1.pde 10:50:42 4/3/24
+================================================================
+    1| title 'OdksztaĹ‚cenie-naprezenie'
+    2| VARIABLES 
+    3| ux, uy
+    4| DEFINITIONS
+    5| v = 0.3
+    6| E =210
+    7| F0=100
+    8| G = E/((1+v)*(1-2*v))
+    9| C11 = G*(1-v)
+   10| C12 = G*v
+   11| C21 = G*v
+   12| C22 = G*(1-v)
+   13| C33 = G*(1-2*v)/2
+   14| EQUATIONS
+   15| ux: dx(C11*dx(ux)+C12*dy(uy))+dy(C33*(dy(ux)+dx(uy))) =0
+   16| uy: dx(C33*(dy(ux)+dx(uy))) + dy(C21*(ux)+C22*dy(uy)) = 0
+   17| BOUNDARIES
+   18| region 1 !prostokat
+   19| E = 100E9
+   20| start (0,0) load (ux)=0 load(uy) = 0
+   21| line to(3,0) load (ux)=F0 load(uy) = 0
+   22| line to(3,1) load (ux)=0 load(uy) = 0
+   23| line to(0,1) load (ux)=0 load(uy) = 0
+   24| line to close
+   25| region 2 !kolo
+   26| E = 10E9
+   27| start(1.5, 0.25)
+   28| arc(center=1.5, 0.5) angle=360
+   29| PLOTS
+   30| grid(x+ux, y+uy)
+   31| contour (ux) as 'x-przemieszczenie'
+   32| END
+Uorder=3
+ UX order=3
+ UY order=3
+STUDENT VERSION SETS GROW2=0.35 GRIDARC=30
+IMPORTMESH(0) NDIM=2 NB=10 NAB=3 NODES=82 CELLS=134 SIDES=215 LEGS=0 imaging=0 time(0)=0
+MESH IMPORT ABORTED: Different GRID2D
+Transferred mesh does not match local domain!
+(Boundary descriptions must match exactly.)
+
+==========================
+ SUMMARIZE PARAMETERS
+==========================
+ Param         name     Type       Domain               Definition
+-------------------------------------------------------------------
+     1            V   Scalar      (GLOBAL)               :  0.30000
+                                             [1]=>  0.30000
+     2            E   Scalar      (GLOBAL)               : 210
+                                             [1]=> 210
+                                  (REGION   1)           :  1.0e+11
+                                  (REGION   2)           :  1.0e+10
+     3           F0   Scalar      (GLOBAL)               : 100
+                                             [1]=> 100
+     4            G   Scalar      (GLOBAL)               : E/((1+V)*(1-(2*V)))
+                                             [1]=>  403.846
+     5          C11   Scalar      (GLOBAL)               : G*(1-V)
+                                             [1]=>  282.692
+     6          C12   Scalar      (GLOBAL)               : G*V
+                                             [1]=>  121.154
+     7          C21   Scalar      (GLOBAL)               : G*V
+                                             [1]=>  121.154
+     8          C22   Scalar      (GLOBAL)               : G*(1-V)
+                                             [1]=>  282.692
+     9          C33   Scalar      (GLOBAL)               : (G*(1-(2*V)))/2
+                                             [1]=>  80.7692
+
+
+
+==========================
+SUMMARIZE EQUATIONS
+==========================
+In the following equation definitions
+Derivatives are represented by appending a dot and the differentiated coordinate.
+The operator <V> represents volume integration. <Vb> is weighted by basis function.
+<Vu> is weighted by the upwind modifer. <Vbu> is weighted by both.
+A dotted volume integral represents volume integration weighted by the indicated
+derivative of the basis function. 'Beta' represents a basis function.
+The operator <S>.c represents surface integration weighted by the indicated
+direction cosine.
+
+            DEFINES     REGION/     DEPENDS                      BASE          CSE
+ EQUATION     VAR    COMPARTMENT      VAR         FUNCTION     COMPLEXITY   COMPLEXITY     MEMORY  DEFINITION
+-----------------------------------------------------------------------------------------------------------
+
+PRIMARY EQUATIONS
+     1         UX                            Field Equation                                      : ((DX((C11*(DX(UX)))+(C12*(DY(UY)))))+(DY(C33*((DY(UX))+(DX(UY))))))-0
+                           1                         Source          1            2          160 : <Vb>(0)
+                                             Space Galerkin         30           16         1280 : -((<Vb>.X(( 1.3e+11*UX.X)+( 5.8e+10*UY.Y)))+(<Vb>.Y( 3.8e+10*(UX.Y+UY.X))))
+                                       UX    Space Jacobian         18           10          800 : -((<Vb>.X( 1.3e+11*Beta.X))+(<Vb>.Y( 3.8e+10*Beta.Y)))
+                                       UY    Space Jacobian         18           10          800 : -((<Vb>.X( 5.8e+10*Beta.Y))+(<Vb>.Y( 3.8e+10*Beta.X)))
+                                           Surface Galerkin         15           15         1200 : (<S>.X(( 1.3e+11*UX.X)+( 5.8e+10*UY.Y)))+(<S>.Y( 3.8e+10*(UX.Y+UY.X)))
+                                       UX  Surface Jacobian          9            9          720 : (<S>.X( 1.3e+11*Beta.X))+(<S>.Y( 3.8e+10*Beta.Y))
+                                       UY  Surface Jacobian          9            9          720 : (<S>.X( 5.8e+10*Beta.Y))+(<S>.Y( 3.8e+10*Beta.X))
+                           2                         Source          1            2          160 : <Vb>(0)
+                                             Space Galerkin         30           16         1280 : -((<Vb>.X(( 1.3e+10*UX.X)+( 5.77e+9*UY.Y)))+(<Vb>.Y( 3.85e+9*(UX.Y+UY.X))))
+                                       UX    Space Jacobian         18           10          800 : -((<Vb>.X( 1.3e+10*Beta.X))+(<Vb>.Y( 3.85e+9*Beta.Y)))
+                                       UY    Space Jacobian         18           10          800 : -((<Vb>.X( 5.77e+9*Beta.Y))+(<Vb>.Y( 3.85e+9*Beta.X)))
+                                           Surface Galerkin         15           15         1200 : (<S>.X(( 1.3e+10*UX.X)+( 5.77e+9*UY.Y)))+(<S>.Y( 3.85e+9*(UX.Y+UY.X)))
+                                       UX  Surface Jacobian          9            9          720 : (<S>.X( 1.3e+10*Beta.X))+(<S>.Y( 3.85e+9*Beta.Y))
+                                       UY  Surface Jacobian          9            9          720 : (<S>.X( 5.77e+9*Beta.Y))+(<S>.Y( 3.85e+9*Beta.X))
+     2         UY                            Field Equation                                      : ((DX(C33*((DY(UX))+(DX(UY)))))+(DY((C21*UX)+(C22*(DY(UY))))))-0
+                           1                         Source          1            2          160 : <Vb>(0)
+                                             Space Galerkin         30           16         1280 : -((<Vb>.X( 3.8e+10*(UX.Y+UY.X)))+(<Vb>.Y(( 5.8e+10*UX)+( 1.3e+11*UY.Y))))
+                                       UX    Space Jacobian         18           10          800 : -((<Vb>.X( 3.8e+10*Beta.Y))+(<Vb>.Y( 5.8e+10*Beta)))
+                                       UY    Space Jacobian         18           10          800 : -((<Vb>.X( 3.8e+10*Beta.X))+(<Vb>.Y( 1.3e+11*Beta.Y)))
+                                           Surface Galerkin         15           15         1200 : (<S>.X( 3.8e+10*(UX.Y+UY.X)))+(<S>.Y(( 5.8e+10*UX)+( 1.3e+11*UY.Y)))
+                                       UX  Surface Jacobian          9            9          720 : (<S>.X( 3.8e+10*Beta.Y))+(<S>.Y( 5.8e+10*Beta))
+                                       UY  Surface Jacobian          9            9          720 : (<S>.X( 3.8e+10*Beta.X))+(<S>.Y( 1.3e+11*Beta.Y))
+                           2                         Source          1            2          160 : <Vb>(0)
+                                             Space Galerkin         30           16         1280 : -((<Vb>.X( 3.85e+9*(UX.Y+UY.X)))+(<Vb>.Y(( 5.77e+9*UX)+( 1.3e+10*UY.Y))))
+                                       UX    Space Jacobian         18           10          800 : -((<Vb>.X( 3.85e+9*Beta.Y))+(<Vb>.Y( 5.77e+9*Beta)))
+                                       UY    Space Jacobian         18           10          800 : -((<Vb>.X( 3.85e+9*Beta.X))+(<Vb>.Y( 1.3e+10*Beta.Y)))
+                                           Surface Galerkin         15           15         1200 : (<S>.X( 3.85e+9*(UX.Y+UY.X)))+(<S>.Y(( 5.77e+9*UX)+( 1.3e+10*UY.Y)))
+                                       UX  Surface Jacobian          9            9          720 : (<S>.X( 3.85e+9*Beta.Y))+(<S>.Y( 5.77e+9*Beta))
+                                       UY  Surface Jacobian          9            9          720 : (<S>.X( 3.85e+9*Beta.X))+(<S>.Y( 1.3e+10*Beta.Y))
+
+EQUATION 1 PARAMETER DEPENDENCIES:
+            V            E            G          C11          C12          C33
+
+EQUATION 2 PARAMETER DEPENDENCIES:
+            V            E            G          C21          C22          C33
+
+========================================================
+     SUMMARIZE BOUNDARY CONDITIONS
+========================================================
+
+BOUNDARY CONDITION TAGS with associated BC INDEX
+BC TAG   1:BC   1 nat(UX) BC   2 nat(UY) 
+BC TAG   2:BC   3 nat(UX) BC   2 nat(UY) 
+
+    BC  KIND     DEFINES   COMPARTMENT     DEPENDS     FUNCTION     COMPLEXITY    MEMORY    DEFINITION
+-----------------------------------------------------------------------------------------------------
+     1   NAT         UX            1                  Surf Galerkin          1         80  : 0
+                                                 UX   Surf Jacobian          1         80  : 0
+                                                 UY   Surf Jacobian          1         80  : 0
+     2   NAT         UY            1                  Surf Galerkin          1         80  : 0
+                                                 UX   Surf Jacobian          1         80  : 0
+                                                 UY   Surf Jacobian          1         80  : 0
+     3   NAT         UX            1                  Surf Galerkin          2        160  : <S>(100)
+                                                 UX   Surf Jacobian          1         80  : 0
+                                                 UY   Surf Jacobian          1         80  : 0
+
+===============================
+  SUMMARIZE PLOTS
+===============================
+                      REGION/       BASE        CSE
+  PLOT    TYPE     COMPARTMENT  COMPLEXITY  COMPLEXITY    MEMORY    DEFINITION
+------------------------------------------------------------------------------
+     1       GRID2          0          3          3          240  : X+UX
+                            0          3          3          240  : Y+UY
+     2     CONTOUR          0          1          1           80  : UX
+
+==UNUSED== PARAMETER DEFINITIONS:
+
+Uorder=3
+ UX order=3
+ UY order=3
+LOG Threads=1 Order=3 Speed=1 Stability=0
+Lanczos/BInv FINAL ITERATION 2035 of 2035 RNORM=1.17295 XNORM=8.54095e+006 Flag=CG iteration Limit
+Lanczos/BInv FINAL ITERATION 1800 of 2035 RNORM=19.7889 XNORM=13486.2 Flag=Ok
+Lanczos/BInv FINAL ITERATION 100 of 2035 RNORM=1.78045e-006 XNORM=13.1631 Flag=Ok
+Lanczos/BInv FINAL ITERATION 240 of 2035 RNORM=1.19286e-005 XNORM=3057.74 Flag=Ok
+Lanczos/BInv FINAL ITERATION 2035 of 2035 RNORM=14.3085 XNORM=505921 Flag=CG iteration Limit
+RMS Spatial Errors   4.265e-5  2.227e-5
+DO_NEXTSTAGE pde 0000000003772950  MAXSTAGE=0
+
+================================================================
+===  FlexPDE Version 7.22/W64  16:05:58 Nov 24 2023  Copyright � 1996-2020 PDE Solutions Inc.
+===  C:\Users\student\Documents\254883\my file 6.1.pde 10:51:02 4/3/24
+================================================================
+    1| title 'OdksztaĹ‚cenie-naprezenie'
+    2| VARIABLES 
+    3| ux, uy
+    4| DEFINITIONS
+    5| v = 0.3
+    6| E =1
+    7| F0=100
+    8| G = E/((1+v)*(1-2*v))
+    9| C11 = G*(1-v)
+   10| C12 = G*v
+   11| C21 = G*v
+   12| C22 = G*(1-v)
+   13| C33 = G*(1-2*v)/2
+   14| EQUATIONS
+   15| ux: dx(C11*dx(ux)+C12*dy(uy))+dy(C33*(dy(ux)+dx(uy))) =0
+   16| uy: dx(C33*(dy(ux)+dx(uy))) + dy(C21*(ux)+C22*dy(uy)) = 0
+   17| BOUNDARIES
+   18| region 1 !prostokat
+   19| E = 100E9
+   20| start (0,0) load (ux)=0 load(uy) = 0
+   21| line to(3,0) load (ux)=F0 load(uy) = 0
+   22| line to(3,1) load (ux)=0 load(uy) = 0
+   23| line to(0,1) load (ux)=0 load(uy) = 0
+   24| line to close
+   25| region 2 !kolo
+   26| E = 10E9
+   27| start(1.5, 0.25)
+   28| arc(center=1.5, 0.5) angle=360
+   29| PLOTS
+   30| grid(x+ux, y+uy)
+   31| contour (ux) as 'x-przemieszczenie'
+   32| END
+Uorder=3
+ UX order=3
+ UY order=3
+STUDENT VERSION SETS GROW2=0.35 GRIDARC=30
+IMPORTMESH(0) NDIM=2 NB=10 NAB=3 NODES=82 CELLS=134 SIDES=215 LEGS=0 imaging=0 time(0)=0
+MESH IMPORT ABORTED: Different GRID2D
+Transferred mesh does not match local domain!
+(Boundary descriptions must match exactly.)
+
+==========================
+ SUMMARIZE PARAMETERS
+==========================
+ Param         name     Type       Domain               Definition
+-------------------------------------------------------------------
+     1            V   Scalar      (GLOBAL)               :  0.30000
+                                             [1]=>  0.30000
+     2            E   Scalar      (GLOBAL)               : 1
+                                             [1]=> 1
+                                  (REGION   1)           :  1.0e+11
+                                  (REGION   2)           :  1.0e+10
+     3           F0   Scalar      (GLOBAL)               : 100
+                                             [1]=> 100
+     4            G   Scalar      (GLOBAL)               : E/((1+V)*(1-(2*V)))
+                                             [1]=>  1.92308
+     5          C11   Scalar      (GLOBAL)               : G*(1-V)
+                                             [1]=>  1.34615
+     6          C12   Scalar      (GLOBAL)               : G*V
+                                             [1]=>  0.57692
+     7          C21   Scalar      (GLOBAL)               : G*V
+                                             [1]=>  0.57692
+     8          C22   Scalar      (GLOBAL)               : G*(1-V)
+                                             [1]=>  1.34615
+     9          C33   Scalar      (GLOBAL)               : (G*(1-(2*V)))/2
+                                             [1]=>  0.38462
+
+
+
+==========================
+SUMMARIZE EQUATIONS
+==========================
+In the following equation definitions
+Derivatives are represented by appending a dot and the differentiated coordinate.
+The operator <V> represents volume integration. <Vb> is weighted by basis function.
+<Vu> is weighted by the upwind modifer. <Vbu> is weighted by both.
+A dotted volume integral represents volume integration weighted by the indicated
+derivative of the basis function. 'Beta' represents a basis function.
+The operator <S>.c represents surface integration weighted by the indicated
+direction cosine.
+
+            DEFINES     REGION/     DEPENDS                      BASE          CSE
+ EQUATION     VAR    COMPARTMENT      VAR         FUNCTION     COMPLEXITY   COMPLEXITY     MEMORY  DEFINITION
+-----------------------------------------------------------------------------------------------------------
+
+PRIMARY EQUATIONS
+     1         UX                            Field Equation                                      : ((DX((C11*(DX(UX)))+(C12*(DY(UY)))))+(DY(C33*((DY(UX))+(DX(UY))))))-0
+                           1                         Source          1            2          160 : <Vb>(0)
+                                             Space Galerkin         30           16         1280 : -((<Vb>.X(( 1.3e+11*UX.X)+( 5.8e+10*UY.Y)))+(<Vb>.Y( 3.8e+10*(UX.Y+UY.X))))
+                                       UX    Space Jacobian         18           10          800 : -((<Vb>.X( 1.3e+11*Beta.X))+(<Vb>.Y( 3.8e+10*Beta.Y)))
+                                       UY    Space Jacobian         18           10          800 : -((<Vb>.X( 5.8e+10*Beta.Y))+(<Vb>.Y( 3.8e+10*Beta.X)))
+                                           Surface Galerkin         15           15         1200 : (<S>.X(( 1.3e+11*UX.X)+( 5.8e+10*UY.Y)))+(<S>.Y( 3.8e+10*(UX.Y+UY.X)))
+                                       UX  Surface Jacobian          9            9          720 : (<S>.X( 1.3e+11*Beta.X))+(<S>.Y( 3.8e+10*Beta.Y))
+                                       UY  Surface Jacobian          9            9          720 : (<S>.X( 5.8e+10*Beta.Y))+(<S>.Y( 3.8e+10*Beta.X))
+                           2                         Source          1            2          160 : <Vb>(0)
+                                             Space Galerkin         30           16         1280 : -((<Vb>.X(( 1.3e+10*UX.X)+( 5.77e+9*UY.Y)))+(<Vb>.Y( 3.85e+9*(UX.Y+UY.X))))
+                                       UX    Space Jacobian         18           10          800 : -((<Vb>.X( 1.3e+10*Beta.X))+(<Vb>.Y( 3.85e+9*Beta.Y)))
+                                       UY    Space Jacobian         18           10          800 : -((<Vb>.X( 5.77e+9*Beta.Y))+(<Vb>.Y( 3.85e+9*Beta.X)))
+                                           Surface Galerkin         15           15         1200 : (<S>.X(( 1.3e+10*UX.X)+( 5.77e+9*UY.Y)))+(<S>.Y( 3.85e+9*(UX.Y+UY.X)))
+                                       UX  Surface Jacobian          9            9          720 : (<S>.X( 1.3e+10*Beta.X))+(<S>.Y( 3.85e+9*Beta.Y))
+                                       UY  Surface Jacobian          9            9          720 : (<S>.X( 5.77e+9*Beta.Y))+(<S>.Y( 3.85e+9*Beta.X))
+     2         UY                            Field Equation                                      : ((DX(C33*((DY(UX))+(DX(UY)))))+(DY((C21*UX)+(C22*(DY(UY))))))-0
+                           1                         Source          1            2          160 : <Vb>(0)
+                                             Space Galerkin         30           16         1280 : -((<Vb>.X( 3.8e+10*(UX.Y+UY.X)))+(<Vb>.Y(( 5.8e+10*UX)+( 1.3e+11*UY.Y))))
+                                       UX    Space Jacobian         18           10          800 : -((<Vb>.X( 3.8e+10*Beta.Y))+(<Vb>.Y( 5.8e+10*Beta)))
+                                       UY    Space Jacobian         18           10          800 : -((<Vb>.X( 3.8e+10*Beta.X))+(<Vb>.Y( 1.3e+11*Beta.Y)))
+                                           Surface Galerkin         15           15         1200 : (<S>.X( 3.8e+10*(UX.Y+UY.X)))+(<S>.Y(( 5.8e+10*UX)+( 1.3e+11*UY.Y)))
+                                       UX  Surface Jacobian          9            9          720 : (<S>.X( 3.8e+10*Beta.Y))+(<S>.Y( 5.8e+10*Beta))
+                                       UY  Surface Jacobian          9            9          720 : (<S>.X( 3.8e+10*Beta.X))+(<S>.Y( 1.3e+11*Beta.Y))
+                           2                         Source          1            2          160 : <Vb>(0)
+                                             Space Galerkin         30           16         1280 : -((<Vb>.X( 3.85e+9*(UX.Y+UY.X)))+(<Vb>.Y(( 5.77e+9*UX)+( 1.3e+10*UY.Y))))
+                                       UX    Space Jacobian         18           10          800 : -((<Vb>.X( 3.85e+9*Beta.Y))+(<Vb>.Y( 5.77e+9*Beta)))
+                                       UY    Space Jacobian         18           10          800 : -((<Vb>.X( 3.85e+9*Beta.X))+(<Vb>.Y( 1.3e+10*Beta.Y)))
+                                           Surface Galerkin         15           15         1200 : (<S>.X( 3.85e+9*(UX.Y+UY.X)))+(<S>.Y(( 5.77e+9*UX)+( 1.3e+10*UY.Y)))
+                                       UX  Surface Jacobian          9            9          720 : (<S>.X( 3.85e+9*Beta.Y))+(<S>.Y( 5.77e+9*Beta))
+                                       UY  Surface Jacobian          9            9          720 : (<S>.X( 3.85e+9*Beta.X))+(<S>.Y( 1.3e+10*Beta.Y))
+
+EQUATION 1 PARAMETER DEPENDENCIES:
+            V            E            G          C11          C12          C33
+
+EQUATION 2 PARAMETER DEPENDENCIES:
+            V            E            G          C21          C22          C33
+
+========================================================
+     SUMMARIZE BOUNDARY CONDITIONS
+========================================================
+
+BOUNDARY CONDITION TAGS with associated BC INDEX
+BC TAG   1:BC   1 nat(UX) BC   2 nat(UY) 
+BC TAG   2:BC   3 nat(UX) BC   2 nat(UY) 
+
+    BC  KIND     DEFINES   COMPARTMENT     DEPENDS     FUNCTION     COMPLEXITY    MEMORY    DEFINITION
+-----------------------------------------------------------------------------------------------------
+     1   NAT         UX            1                  Surf Galerkin          1         80  : 0
+                                                 UX   Surf Jacobian          1         80  : 0
+                                                 UY   Surf Jacobian          1         80  : 0
+     2   NAT         UY            1                  Surf Galerkin          1         80  : 0
+                                                 UX   Surf Jacobian          1         80  : 0
+                                                 UY   Surf Jacobian          1         80  : 0
+     3   NAT         UX            1                  Surf Galerkin          2        160  : <S>(100)
+                                                 UX   Surf Jacobian          1         80  : 0
+                                                 UY   Surf Jacobian          1         80  : 0
+
+===============================
+  SUMMARIZE PLOTS
+===============================
+                      REGION/       BASE        CSE
+  PLOT    TYPE     COMPARTMENT  COMPLEXITY  COMPLEXITY    MEMORY    DEFINITION
+------------------------------------------------------------------------------
+     1       GRID2          0          3          3          240  : X+UX
+                            0          3          3          240  : Y+UY
+     2     CONTOUR          0          1          1           80  : UX
+
+==UNUSED== PARAMETER DEFINITIONS:
+
+Uorder=3
+ UX order=3
+ UY order=3
+LOG Threads=1 Order=3 Speed=1 Stability=0
+Lanczos/BInv FINAL ITERATION 2035 of 2035 RNORM=1.17295 XNORM=8.54095e+006 Flag=CG iteration Limit
+Lanczos/BInv FINAL ITERATION 1800 of 2035 RNORM=19.7889 XNORM=13486.2 Flag=Ok
+Lanczos/BInv FINAL ITERATION 100 of 2035 RNORM=1.78045e-006 XNORM=13.1631 Flag=Ok
+Lanczos/BInv FINAL ITERATION 240 of 2035 RNORM=1.19286e-005 XNORM=3057.74 Flag=Ok
+Lanczos/BInv FINAL ITERATION 2035 of 2035 RNORM=14.3085 XNORM=505921 Flag=CG iteration Limit
+RMS Spatial Errors   4.265e-5  2.227e-5
+DO_NEXTSTAGE pde 0000000003772950  MAXSTAGE=0
+
+================================================================
+===  FlexPDE Version 7.22/W64  16:05:58 Nov 24 2023  Copyright � 1996-2020 PDE Solutions Inc.
+===  C:\Users\student\Documents\254883\my file 6.1.pde 10:51:20 4/3/24
+================================================================
+    1| title 'OdksztaĹ‚cenie-naprezenie'
+    2| VARIABLES 
+    3| ux, uy
+    4| DEFINITIONS
+    5| v = 0.3
+    6| E =1
+    7| F0=10
+    8| G = E/((1+v)*(1-2*v))
+    9| C11 = G*(1-v)
+   10| C12 = G*v
+   11| C21 = G*v
+   12| C22 = G*(1-v)
+   13| C33 = G*(1-2*v)/2
+   14| EQUATIONS
+   15| ux: dx(C11*dx(ux)+C12*dy(uy))+dy(C33*(dy(ux)+dx(uy))) =0
+   16| uy: dx(C33*(dy(ux)+dx(uy))) + dy(C21*(ux)+C22*dy(uy)) = 0
+   17| BOUNDARIES
+   18| region 1 !prostokat
+   19| E = 100E9
+   20| start (0,0) load (ux)=0 load(uy) = 0
+   21| line to(3,0) load (ux)=F0 load(uy) = 0
+   22| line to(3,1) load (ux)=0 load(uy) = 0
+   23| line to(0,1) load (ux)=0 load(uy) = 0
+   24| line to close
+   25| region 2 !kolo
+   26| E = 10E9
+   27| start(1.5, 0.25)
+   28| arc(center=1.5, 0.5) angle=360
+   29| PLOTS
+   30| grid(x+ux, y+uy)
+   31| contour (ux) as 'x-przemieszczenie'
+   32| END

@@ -1,0 +1,443 @@
+
+================================================================
+===  FlexPDE Version 6.51/W64  16:23:07 Jul 24 2019  © 1996-2014 PDE Solutions Inc.
+===  C:\Users\student\Documents\254883\my file 3.0.pde 10:46:35 3/13/24
+================================================================
+    1| TITLE 'Laplacea'
+    2| 	COORDINATES Cartesian3
+    3| 	VARIABLES
+    4| 		V
+    5| 	DEFINITIONS
+    6| 		r=10e-3/2
+    7|         l=0.1
+    8|         DV=10.
+    9|         ro=1
+   10| 	EQUATIONS
+   11| 		V: Div(-ro*grad(V)) = 0
+   12|     EXTRUSION
+   13|     	surface 'bottom' z=0
+   14|         surface 'top' z=l
+   15| 	BOUNDARIES
+   16| 		surface "bottom" value(V)=0
+   17| 		surface "top" value(V)=DV
+   18|         region "domain"
+   19| 		START(r,0) 
+   20|         natural(V)=0 arc(center=0,0) angle=360
+   21|         to close
+   22| 	PLOTS        
+   23|     	contour(V) ON x=0
+   24|         elevation(V) from (0,0,0) to (0,0,l)
+   25| 	END
+FlexPDE Lite Version 6.51/W64 3D
+© 1996-2014 PDE Solutions Inc.
+FlexPDE Lite Version 6.51/W64 3D
+© 1996-2014 PDE Solutions Inc.
+FlexPDE Lite Version 6.51/W64 3D
+© 1996-2014 PDE Solutions Inc.
+FlexPDE Lite Version 6.51/W64 3D
+© 1996-2014 PDE Solutions Inc.
+MESH GENERATION LAYER 1 REGION 1
+
+3D MESH GENERATION TIME 323 MS
+
+SUMMARIZE 4 PARAMETERS (NO COMMON SUBEXPRESSION ELIMINATION)
+   Param         Compartment       Complexity     Memory
+--------------------------------------------------------------
+              R      0                    1         72
+              L      0                    1         72
+             DV      0                    1         72
+             RO      0                    1         72
+
+SUMMARIZE EQUATIONS
+
+                                                    BASE         CSE
+ EQUATION  COMPARTMENT              FUNCTION     COMPLEXITY  COMPLEXITY    MEMORY
+----------------------------------------------------------------------------------
+     1          1                     Source          1            2          144
+     1          1                   Galerkin          8            8          576
+     1          1       Var  1      Jacobian          8            8          576
+     1          1              Surf Galerkin          9            9          648
+     1          1       Var  1 Surf Jacobian          9            8          576
+
+EQUATION 1 PARAMETER DEPENDENCIES:
+ RO             
+
+SUMMARIZE BOUNDARY CONDITIONS
+
+    BC     COMPARTMENT              FUNCTION     COMPLEXITY    MEMORY
+----------------------------------------------------------------------
+     1          1              Surf Galerkin          1         72
+     1          1       Var  1 Surf Jacobian          1         72
+     2          1              Surf Galerkin          1         72
+     2          1       Var  1 Surf Jacobian          1         72
+     3          1              Surf Galerkin          1         72
+     3          1       Var  1 Surf Jacobian          1         72
+
+SUMMARIZE PLOT EQUATIONS
+
+                                     BASE        CSE
+   PLOT    ARGUMENT COMPARTMENT  COMPLEXITY  COMPLEXITY    MEMORY
+------------------------------------------------------------------
+     1          1          1          1          1           72
+     2          1          1          1          1           72
+
+==UNUSED== PARAMETER DEFINITIONS:
+
+
+
+SS_GRID 1
+Orthomin/ILU FINAL ITERATION 47 of 259, RNORM=4.14812e-011, XNORM=0.271715, 0 MS/IT 0.135953 uS/NODE
+Orthomin/ILU FINAL ITERATION 19 of 1039, RNORM=1.94565e-017, XNORM=8.7953e-011, 0 MS/IT 0 uS/NODE
+
+
+LINEAR STEP 2 NORM=1.14071e-014
+RMS Spatial Errors  1.47e-12
+DO_NEXTSTAGE pde 0000000002A3FA50  MAXSTAGE=0
+
+================================================================
+===  FlexPDE Version 6.51/W64  16:23:07 Jul 24 2019  © 1996-2014 PDE Solutions Inc.
+===  C:\Users\student\Documents\254883\my file 3.0.pde 10:54:07 3/13/24
+================================================================
+    1| TITLE 'Laplacea'
+    2| 	COORDINATES Cartesian3
+    3| 	VARIABLES
+    4| 		V
+    5| 	DEFINITIONS
+    6| 		r=10e-3/2
+    7|         l=0.1
+    8|         DV=10.
+    9|         ro=1
+   10| 	EQUATIONS
+   11| 		V: Div(-ro*grad(V)) = 0
+   12|     EXTRUSION
+   13|     	surface 'bottom' z=0
+   14|         surface 'top' z=l
+   15| 	BOUNDARIES
+   16| 		surface "bottom" value(V)=0
+   17| 		surface "top" value(V)=DV
+   18|         region "domain"
+   19| 		START(r,0) 
+   20|         natural(V)=0 arc(center=0,0) angle=360
+   21|         to close
+   22| 	PLOTS        
+   23|     	contour(V) ON x=0.5
+   24|         elevation(V) from (0,0,0) to (0,0,l)
+   25| 	END
+MESH GENERATION LAYER 1 REGION 1
+
+3D MESH GENERATION TIME 228 MS
+
+SUMMARIZE 4 PARAMETERS (NO COMMON SUBEXPRESSION ELIMINATION)
+   Param         Compartment       Complexity     Memory
+--------------------------------------------------------------
+              R      0                    1         72
+              L      0                    1         72
+             DV      0                    1         72
+             RO      0                    1         72
+
+SUMMARIZE EQUATIONS
+
+                                                    BASE         CSE
+ EQUATION  COMPARTMENT              FUNCTION     COMPLEXITY  COMPLEXITY    MEMORY
+----------------------------------------------------------------------------------
+     1          1                     Source          1            2          144
+     1          1                   Galerkin          8            8          576
+     1          1       Var  1      Jacobian          8            8          576
+     1          1              Surf Galerkin          9            9          648
+     1          1       Var  1 Surf Jacobian          9            8          576
+
+EQUATION 1 PARAMETER DEPENDENCIES:
+ RO             
+
+SUMMARIZE BOUNDARY CONDITIONS
+
+    BC     COMPARTMENT              FUNCTION     COMPLEXITY    MEMORY
+----------------------------------------------------------------------
+     1          1              Surf Galerkin          1         72
+     1          1       Var  1 Surf Jacobian          1         72
+     2          1              Surf Galerkin          1         72
+     2          1       Var  1 Surf Jacobian          1         72
+     3          1              Surf Galerkin          1         72
+     3          1       Var  1 Surf Jacobian          1         72
+
+SUMMARIZE PLOT EQUATIONS
+
+                                     BASE        CSE
+   PLOT    ARGUMENT COMPARTMENT  COMPLEXITY  COMPLEXITY    MEMORY
+------------------------------------------------------------------
+     1          1          1          1          1           72
+     2          1          1          1          1           72
+
+==UNUSED== PARAMETER DEFINITIONS:
+
+
+
+SS_GRID 1
+Orthomin/ILU FINAL ITERATION 47 of 259, RNORM=4.14812e-011, XNORM=0.271715, 0 MS/IT 0 uS/NODE
+Orthomin/ILU FINAL ITERATION 19 of 1039, RNORM=1.94565e-017, XNORM=8.7953e-011, 0 MS/IT 0.336304 uS/NODE
+
+
+LINEAR STEP 2 NORM=1.14071e-014
+RMS Spatial Errors  1.47e-12
+DO_NEXTSTAGE pde 000000000505A900  MAXSTAGE=0
+
+================================================================
+===  FlexPDE Version 6.51/W64  16:23:07 Jul 24 2019  © 1996-2014 PDE Solutions Inc.
+===  C:\Users\student\Documents\254883\my file 3.0.pde 10:54:46 3/13/24
+================================================================
+    1| TITLE 'Laplacea'
+    2| 	COORDINATES Cartesian3
+    3| 	VARIABLES
+    4| 		V
+    5| 	DEFINITIONS
+    6| 		r=10e-3/2
+    7|         l=0.1
+    8|         DV=10.
+    9|         ro=1
+   10| 	EQUATIONS
+   11| 		V: Div(-ro*grad(V)) = 0
+   12|     EXTRUSION
+   13|     	surface 'bottom' z=0
+   14|         surface 'top' z=l
+   15| 	BOUNDARIES
+   16| 		surface "bottom" value(V)=0
+   17| 		surface "top" value(V)=DV
+   18|         region "domain"
+   19| 		START(r,0) 
+   20|         natural(V)=0 arc(center=0,0) angle=360
+   21|         to close
+   22| 	PLOTS        
+   23|     	contour(V) ON x=5e-3/2
+   24|         elevation(V) from (0,0,0) to (0,0,l)
+   25| 	END
+MESH GENERATION LAYER 1 REGION 1
+
+3D MESH GENERATION TIME 231 MS
+
+SUMMARIZE 4 PARAMETERS (NO COMMON SUBEXPRESSION ELIMINATION)
+   Param         Compartment       Complexity     Memory
+--------------------------------------------------------------
+              R      0                    1         72
+              L      0                    1         72
+             DV      0                    1         72
+             RO      0                    1         72
+
+SUMMARIZE EQUATIONS
+
+                                                    BASE         CSE
+ EQUATION  COMPARTMENT              FUNCTION     COMPLEXITY  COMPLEXITY    MEMORY
+----------------------------------------------------------------------------------
+     1          1                     Source          1            2          144
+     1          1                   Galerkin          8            8          576
+     1          1       Var  1      Jacobian          8            8          576
+     1          1              Surf Galerkin          9            9          648
+     1          1       Var  1 Surf Jacobian          9            8          576
+
+EQUATION 1 PARAMETER DEPENDENCIES:
+ RO             
+
+SUMMARIZE BOUNDARY CONDITIONS
+
+    BC     COMPARTMENT              FUNCTION     COMPLEXITY    MEMORY
+----------------------------------------------------------------------
+     1          1              Surf Galerkin          1         72
+     1          1       Var  1 Surf Jacobian          1         72
+     2          1              Surf Galerkin          1         72
+     2          1       Var  1 Surf Jacobian          1         72
+     3          1              Surf Galerkin          1         72
+     3          1       Var  1 Surf Jacobian          1         72
+
+SUMMARIZE PLOT EQUATIONS
+
+                                     BASE        CSE
+   PLOT    ARGUMENT COMPARTMENT  COMPLEXITY  COMPLEXITY    MEMORY
+------------------------------------------------------------------
+     1          1          1          1          1           72
+     2          1          1          1          1           72
+
+==UNUSED== PARAMETER DEFINITIONS:
+
+
+
+SS_GRID 1
+Orthomin/ILU FINAL ITERATION 47 of 259, RNORM=4.14812e-011, XNORM=0.271715, 0 MS/IT 0.135953 uS/NODE
+Orthomin/ILU FINAL ITERATION 19 of 1039, RNORM=1.94565e-017, XNORM=8.7953e-011, 0 MS/IT 0 uS/NODE
+
+
+LINEAR STEP 2 NORM=1.14071e-014
+RMS Spatial Errors  1.47e-12
+DO_NEXTSTAGE pde 0000000004AD0C80  MAXSTAGE=0
+
+================================================================
+===  FlexPDE Version 6.51/W64  16:23:07 Jul 24 2019  © 1996-2014 PDE Solutions Inc.
+===  C:\Users\student\Documents\254883\my file 3.0.pde 10:54:53 3/13/24
+================================================================
+    1| TITLE 'Laplacea'
+    2| 	COORDINATES Cartesian3
+    3| 	VARIABLES
+    4| 		V
+    5| 	DEFINITIONS
+    6| 		r=10e-3/2
+    7|         l=0.1
+    8|         DV=10.
+    9|         ro=1
+   10| 	EQUATIONS
+   11| 		V: Div(-ro*grad(V)) = 0
+   12|     EXTRUSION
+   13|     	surface 'bottom' z=0
+   14|         surface 'top' z=l
+   15| 	BOUNDARIES
+   16| 		surface "bottom" value(V)=0
+   17| 		surface "top" value(V)=DV
+   18|         region "domain"
+   19| 		START(r,0) 
+   20|         natural(V)=0 arc(center=0,0) angle=360
+   21|         to close
+   22| 	PLOTS        
+   23|     	contour(V) ON x=2e-3/2
+   24|         elevation(V) from (0,0,0) to (0,0,l)
+   25| 	END
+MESH GENERATION LAYER 1 REGION 1
+
+3D MESH GENERATION TIME 224 MS
+
+SUMMARIZE 4 PARAMETERS (NO COMMON SUBEXPRESSION ELIMINATION)
+   Param         Compartment       Complexity     Memory
+--------------------------------------------------------------
+              R      0                    1         72
+              L      0                    1         72
+             DV      0                    1         72
+             RO      0                    1         72
+
+SUMMARIZE EQUATIONS
+
+                                                    BASE         CSE
+ EQUATION  COMPARTMENT              FUNCTION     COMPLEXITY  COMPLEXITY    MEMORY
+----------------------------------------------------------------------------------
+     1          1                     Source          1            2          144
+     1          1                   Galerkin          8            8          576
+     1          1       Var  1      Jacobian          8            8          576
+     1          1              Surf Galerkin          9            9          648
+     1          1       Var  1 Surf Jacobian          9            8          576
+
+EQUATION 1 PARAMETER DEPENDENCIES:
+ RO             
+
+SUMMARIZE BOUNDARY CONDITIONS
+
+    BC     COMPARTMENT              FUNCTION     COMPLEXITY    MEMORY
+----------------------------------------------------------------------
+     1          1              Surf Galerkin          1         72
+     1          1       Var  1 Surf Jacobian          1         72
+     2          1              Surf Galerkin          1         72
+     2          1       Var  1 Surf Jacobian          1         72
+     3          1              Surf Galerkin          1         72
+     3          1       Var  1 Surf Jacobian          1         72
+
+SUMMARIZE PLOT EQUATIONS
+
+                                     BASE        CSE
+   PLOT    ARGUMENT COMPARTMENT  COMPLEXITY  COMPLEXITY    MEMORY
+------------------------------------------------------------------
+     1          1          1          1          1           72
+     2          1          1          1          1           72
+
+==UNUSED== PARAMETER DEFINITIONS:
+
+
+
+SS_GRID 1
+Orthomin/ILU FINAL ITERATION 47 of 259, RNORM=4.14812e-011, XNORM=0.271715, 0 MS/IT 0 uS/NODE
+Orthomin/ILU FINAL ITERATION 19 of 1039, RNORM=1.94565e-017, XNORM=8.7953e-011, 0 MS/IT 0.336304 uS/NODE
+
+
+LINEAR STEP 2 NORM=1.14071e-014
+RMS Spatial Errors  1.47e-12
+DO_NEXTSTAGE pde 0000000004AD0C80  MAXSTAGE=0
+
+================================================================
+===  FlexPDE Version 6.51/W64  16:23:07 Jul 24 2019  © 1996-2014 PDE Solutions Inc.
+===  C:\Users\student\Documents\254883\my file 3.0.pde 10:55:44 3/13/24
+================================================================
+    1| TITLE 'Laplacea'
+    2| 	COORDINATES Cartesian3
+    3| 	VARIABLES
+    4| 		V
+    5| 	DEFINITIONS
+    6| 		r=10e-3/2
+    7|         l=0.1
+    8|         DV=10.
+    9|         ro=1
+   10| 	EQUATIONS
+   11| 		V: Div(-ro*grad(V)) = 0
+   12|     EXTRUSION
+   13|     	surface 'bottom' z=0
+   14|         surface 'top' z=l
+   15| 	BOUNDARIES
+   16| 		surface "bottom" value(V)=0
+   17| 		surface "top" value(V)=DV
+   18|         region "domain"
+   19| 		START(r,0) 
+   20|         natural(V)=0 arc(center=0,0) angle=360
+   21|         to close
+   22| 	PLOTS        
+   23|     	contour(V) ON x=0
+   24|         elevation(V) from (0,0,0) to (0,0,l)
+   25| 	END
+MESH GENERATION LAYER 1 REGION 1
+
+3D MESH GENERATION TIME 225 MS
+
+SUMMARIZE 4 PARAMETERS (NO COMMON SUBEXPRESSION ELIMINATION)
+   Param         Compartment       Complexity     Memory
+--------------------------------------------------------------
+              R      0                    1         72
+              L      0                    1         72
+             DV      0                    1         72
+             RO      0                    1         72
+
+SUMMARIZE EQUATIONS
+
+                                                    BASE         CSE
+ EQUATION  COMPARTMENT              FUNCTION     COMPLEXITY  COMPLEXITY    MEMORY
+----------------------------------------------------------------------------------
+     1          1                     Source          1            2          144
+     1          1                   Galerkin          8            8          576
+     1          1       Var  1      Jacobian          8            8          576
+     1          1              Surf Galerkin          9            9          648
+     1          1       Var  1 Surf Jacobian          9            8          576
+
+EQUATION 1 PARAMETER DEPENDENCIES:
+ RO             
+
+SUMMARIZE BOUNDARY CONDITIONS
+
+    BC     COMPARTMENT              FUNCTION     COMPLEXITY    MEMORY
+----------------------------------------------------------------------
+     1          1              Surf Galerkin          1         72
+     1          1       Var  1 Surf Jacobian          1         72
+     2          1              Surf Galerkin          1         72
+     2          1       Var  1 Surf Jacobian          1         72
+     3          1              Surf Galerkin          1         72
+     3          1       Var  1 Surf Jacobian          1         72
+
+SUMMARIZE PLOT EQUATIONS
+
+                                     BASE        CSE
+   PLOT    ARGUMENT COMPARTMENT  COMPLEXITY  COMPLEXITY    MEMORY
+------------------------------------------------------------------
+     1          1          1          1          1           72
+     2          1          1          1          1           72
+
+==UNUSED== PARAMETER DEFINITIONS:
+
+
+
+SS_GRID 1
+Orthomin/ILU FINAL ITERATION 47 of 259, RNORM=4.14812e-011, XNORM=0.271715, 0 MS/IT 0 uS/NODE
+Orthomin/ILU FINAL ITERATION 19 of 1039, RNORM=1.94565e-017, XNORM=8.7953e-011, 0 MS/IT 0.336304 uS/NODE
+
+
+LINEAR STEP 2 NORM=1.14071e-014
+RMS Spatial Errors  1.47e-12
+DO_NEXTSTAGE pde 0000000004AD0C80  MAXSTAGE=0

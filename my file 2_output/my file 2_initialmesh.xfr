@@ -1,0 +1,42 @@
+{
+FlexPDE Version 7.22/W64  16:05:58 Nov 24 2023
+File: my file 2.pde  11:13:53 3/6/24
+Title: Dyfuzja
+Output: 
+ Time 0
+}
+ FlexPDE v700 Transfer File
+ 2 DIMENSIONS
+ X
+ Y
+ 7 BASIS tri10
+ 10 CELLDOF
+ 4 XBASIS tri3
+ 1 MATERIALS
+ 10 NGRID
+ 4 FLAGS 1 0 358 307
+ 0 MESHDOF
+ TIME = 0
+ DELTAT = 0
+ 0 VARIABLES
+ 0 MESHCONTROLS 4 1
+ 6 JOINTS
+ 1 0 0 0 0 ()
+ 2 0 0 0 0 ()
+ 3 0 0 0 0 ()
+ 4 0 0 0 0 ()
+ 5 0 0 0 0 ()
+ 6 0 0 0 0 ()
+ 6 EDGES
+ 1 1 1 2 0 1 0 0 0 0  ()
+ 2 2 2 3 0 1 0 0 0 0  ()
+ 3 3 3 4 0 1 0 0 0 0  ()
+ 4 4 4 5 0 1 0 0 0 0  ()
+ 5 5 5 6 0 1 0 0 0 0  ()
+ 6 6 6 1 0 1 0 0 0 0  ()
+ 1 REGIONS
+ 1 1 1 1 1 "" ()
+ 0 NODES
+ 0 SIDES 1 0
+ 0 CELLS
+0 ENDFILE

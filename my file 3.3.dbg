@@ -1,0 +1,1562 @@
+
+================================================================
+===  FlexPDE Version 6.51/W64  16:23:07 Jul 24 2019  © 1996-2014 PDE Solutions Inc.
+===  C:\Users\student\Documents\254883\my file 3.3.pde 11:26:30 3/13/24
+================================================================
+    1| TITLE 'Rez ele'
+    2| 	COORDINATES Cartesian3
+    3| 	VARIABLES
+    4| 		V
+    5| 	DEFINITIONS
+    6| 		r=10e-3/2
+    7|         l=0.1
+    8|         DV=10
+    9|         ro=1
+   10| 		E=-grad(V)
+   11| 		j=ro*E
+   12| 	EQUATIONS
+   13| 		V: Div(-ro*grad(V)) = 0
+   14|     EXTRUSION
+   15|     	surface 'bottom' z=0
+   16|         surface 'top' z=l
+   17| 	BOUNDARIES
+   18| 		region "domain"
+   19| 		surface "bottom" value(V)=0
+   20| 		surface "top" value(V)=DV
+   21| 		START(r,0)
+   22|        	!natural(V)=0 arc(center=0,0) angle 360
+   23|         !to close
+   24|  		START(r,r ) value(V) = 10
+   25|         line to (r, -r)  natural(V) = 0
+   26|         line to(-r, -r)  value(V) = 0
+   27|         line to(-r, r)  natural(V) = 0
+   28|         line to close
+   29| 
+   30| 
+   31| 	PLOTS        
+   32|     	contour(normal(j)) ON z=0.5*l
+   33| 	SUMMARY
+   34| 		report (DV/surf_integral(normal(j), 'bottom')) as 'R-num. R [ohm]'
+   35| 		report (1/ro*l/(pi*r*r)) as 'R-analityczne'      
+   36| 	
+   37| 
+   38| 
+   39| 	END
+MESH GENERATION LAYER 1 REGION 1
+
+3D MESH GENERATION TIME 64 MS
+
+SUMMARIZE 6 PARAMETERS (NO COMMON SUBEXPRESSION ELIMINATION)
+   Param         Compartment       Complexity     Memory
+--------------------------------------------------------------
+              R      0                    1         72
+              L      0                    1         72
+             DV      0                    1         72
+             RO      0                    1         72
+              E      0                    7        504
+              J      0                    7        504
+
+SUMMARIZE EQUATIONS
+
+                                                    BASE         CSE
+ EQUATION  COMPARTMENT              FUNCTION     COMPLEXITY  COMPLEXITY    MEMORY
+----------------------------------------------------------------------------------
+     1          1                     Source          1            2          144
+     1          1                   Galerkin          8            8          576
+     1          1       Var  1      Jacobian          8            8          576
+     1          1              Surf Galerkin          9            9          648
+     1          1       Var  1 Surf Jacobian          9            8          576
+
+EQUATION 1 PARAMETER DEPENDENCIES:
+ RO             
+
+SUMMARIZE BOUNDARY CONDITIONS
+
+    BC     COMPARTMENT              FUNCTION     COMPLEXITY    MEMORY
+----------------------------------------------------------------------
+     1          1              Surf Galerkin          1         72
+     1          1       Var  1 Surf Jacobian          1         72
+     2          1              Surf Galerkin          1         72
+     2          1       Var  1 Surf Jacobian          1         72
+     3          1              Surf Galerkin          1         72
+     3          1       Var  1 Surf Jacobian          1         72
+     4          1              Surf Galerkin          1         72
+     4          1       Var  1 Surf Jacobian          1         72
+     5          1              Surf Galerkin          1         72
+     5          1       Var  1 Surf Jacobian          1         72
+
+--------------------------------
+SUMMARIZE FITS AND INTEGRALS
+---------------------------------
+                                  REGION/       BASE        CSE
+    FIT         KIND            COMPARTMENT  COMPLEXITY  COMPLEXITY    MEMORY
+------------------------------------------------------------------------------
+     1     Surface Integral          1              8          8          576
+
+SUMMARIZE PLOT EQUATIONS
+
+                                     BASE        CSE
+   PLOT    ARGUMENT COMPARTMENT  COMPLEXITY  COMPLEXITY    MEMORY
+------------------------------------------------------------------
+     1          1          1          8          8          576
+
+==UNUSED== PARAMETER DEFINITIONS:
+
+
+
+SS_GRID 1
+Orthomin/ILU FINAL ITERATION 15 of 253, RNORM=1.50271e-015, XNORM=0.554862, 0 MS/IT 0 uS/NODE
+Orthomin/ILU FINAL ITERATION 16 of 1012, RNORM=6.05263e-031, XNORM=2.04462e-015, 0 MS/IT 0 uS/NODE
+
+
+LINEAR STEP 2 NORM=0
+RMS Spatial Errors  0.021660
+
+
+SS_GRID 2
+Orthomin/ILU FINAL ITERATION 18 of 1012, RNORM=5.68709e-013, XNORM=0.0192097, 0 MS/IT 0 uS/NODE
+RMS Spatial Errors  7.541e-4
+
+
+SS_GRID 3
+Orthomin/ILU FINAL ITERATION 20 of 1012, RNORM=3.33663e-012, XNORM=0.0234915, 0 MS/IT 0 uS/NODE
+RMS Spatial Errors  0.024517
+
+
+SS_GRID 4
+Orthomin/ILU FINAL ITERATION 21 of 1012, RNORM=2.3171e-011, XNORM=0.0186238, 0 MS/IT 0.310424 uS/NODE
+RMS Spatial Errors  0.046259
+
+
+SS_GRID 5
+Orthomin/ILU FINAL ITERATION 21 of 1012, RNORM=9.89252e-011, XNORM=0.0372688, 0 MS/IT 0 uS/NODE
+RMS Spatial Errors  0.095661
+DO_NEXTSTAGE pde 000000000342CE20  MAXSTAGE=0
+
+================================================================
+===  FlexPDE Version 6.51/W64  16:23:07 Jul 24 2019  © 1996-2014 PDE Solutions Inc.
+===  C:\Users\student\Documents\254883\my file 3.3.pde 11:27:04 3/13/24
+================================================================
+    1| TITLE 'Rez ele'
+    2| 	COORDINATES Cartesian3
+    3| 	VARIABLES
+    4| 		V
+    5| 	DEFINITIONS
+    6| 		r=10e-3/2
+    7|         l=0.1
+    8|         DV=10
+    9|         ro=1
+   10| 		E=-grad(V)
+   11| 		j=ro*E
+   12| 	EQUATIONS
+   13| 		V: Div(-ro*grad(V)) = 0
+   14|     EXTRUSION
+   15|     	surface 'bottom' z=0
+   16|         surface 'top' z=l
+   17| 	BOUNDARIES
+   18| 		region "domain"
+   19| 		surface "bottom" value(V)=0
+   20| 		surface "top" value(V)=DV
+   21| 		START(r,0)
+   22|        	!natural(V)=0 arc(center=0,0) angle 360
+   23|         !to close
+   24|  		START(r,r ) natural(V) = 0
+   25|         line to (r, -r)  natural(V) = 0
+   26|         line to(-r, -r)  natural(V) = 0
+   27|         line to(-r, r)  natural(V) = 0
+   28|         line to close
+   29| 
+   30| 
+   31| 	PLOTS        
+   32|     	contour(normal(j)) ON z=0.5*l
+   33| 	SUMMARY
+   34| 		report (DV/surf_integral(normal(j), 'bottom')) as 'R-num. R [ohm]'
+   35| 		report (1/ro*l/(pi*r*r)) as 'R-analityczne'      
+   36| 	
+   37| 
+   38| 
+   39| 	END
+MESH GENERATION LAYER 1 REGION 1
+
+3D MESH GENERATION TIME 62 MS
+
+SUMMARIZE 6 PARAMETERS (NO COMMON SUBEXPRESSION ELIMINATION)
+   Param         Compartment       Complexity     Memory
+--------------------------------------------------------------
+              R      0                    1         72
+              L      0                    1         72
+             DV      0                    1         72
+             RO      0                    1         72
+              E      0                    7        504
+              J      0                    7        504
+
+SUMMARIZE EQUATIONS
+
+                                                    BASE         CSE
+ EQUATION  COMPARTMENT              FUNCTION     COMPLEXITY  COMPLEXITY    MEMORY
+----------------------------------------------------------------------------------
+     1          1                     Source          1            2          144
+     1          1                   Galerkin          8            8          576
+     1          1       Var  1      Jacobian          8            8          576
+     1          1              Surf Galerkin          9            9          648
+     1          1       Var  1 Surf Jacobian          9            8          576
+
+EQUATION 1 PARAMETER DEPENDENCIES:
+ RO             
+
+SUMMARIZE BOUNDARY CONDITIONS
+
+    BC     COMPARTMENT              FUNCTION     COMPLEXITY    MEMORY
+----------------------------------------------------------------------
+     1          1              Surf Galerkin          1         72
+     1          1       Var  1 Surf Jacobian          1         72
+     2          1              Surf Galerkin          1         72
+     2          1       Var  1 Surf Jacobian          1         72
+     3          1              Surf Galerkin          1         72
+     3          1       Var  1 Surf Jacobian          1         72
+
+--------------------------------
+SUMMARIZE FITS AND INTEGRALS
+---------------------------------
+                                  REGION/       BASE        CSE
+    FIT         KIND            COMPARTMENT  COMPLEXITY  COMPLEXITY    MEMORY
+------------------------------------------------------------------------------
+     1     Surface Integral          1              8          8          576
+
+SUMMARIZE PLOT EQUATIONS
+
+                                     BASE        CSE
+   PLOT    ARGUMENT COMPARTMENT  COMPLEXITY  COMPLEXITY    MEMORY
+------------------------------------------------------------------
+     1          1          1          8          8          576
+
+==UNUSED== PARAMETER DEFINITIONS:
+
+
+
+SS_GRID 1
+Orthomin/ILU FINAL ITERATION 28 of 253, RNORM=6.26825e-014, XNORM=0.423668, 0 MS/IT 0 uS/NODE
+Orthomin/ILU FINAL ITERATION 19 of 1012, RNORM=1.18408e-019, XNORM=8.99717e-014, 0 MS/IT 0 uS/NODE
+
+
+LINEAR STEP 2 NORM=2.16394e-017
+RMS Spatial Errors  3.69e-31
+DO_NEXTSTAGE pde 000000000342CE20  MAXSTAGE=0
+
+================================================================
+===  FlexPDE Version 6.51/W64  16:23:07 Jul 24 2019  © 1996-2014 PDE Solutions Inc.
+===  C:\Users\student\Documents\254883\my file 3.3.pde 11:29:07 3/13/24
+================================================================
+    1| TITLE 'Rez ele'
+    2| 	COORDINATES Cartesian3
+    3| 	VARIABLES
+    4| 		V
+    5| 	DEFINITIONS
+    6| 		r=10e-3/2
+    7|         l=0.1
+    8|         DV=10
+    9|         ro=1
+   10| 		E=-grad(V)
+   11| 		j=ro*E
+   12| 	EQUATIONS
+   13| 		V: Div(-ro*grad(V)) = 0
+   14|     EXTRUSION
+   15|     	surface 'bottom' z=0
+   16|         surface 'top' z=l
+   17| 	BOUNDARIES
+   18| 		region "domain"
+   19| 		surface "bottom" value(V)=0
+   20| 		surface "top" value(V)=DV
+   21| 		START(r,0)
+   22|        	!natural(V)=0 arc(center=0,0) angle 360
+   23|         !to close
+   24|  		START(r,r ) natural(V) = 0
+   25|         line to (r, -r)  natural(V) = 0
+   26|         line to(-r, -r)  natural(V) = 0
+   27|         line to(-r, r)  natural(V) = 0
+   28|         line to close
+   29| 
+   30| 
+   31| 	PLOTS        
+   32|     	contour(normal(j)) ON z=0.5*l
+   33| 	SUMMARY
+   34| 		report (DV/surf_integral(normal(j), 'bottom')) as 'R-num. R [ohm]'
+   35| 		report (1/ro*l/(pi*r*r)) as 'R-analityczne'      
+   36| 	
+   37| 
+   38| 
+   39| 	END
+MESH GENERATION LAYER 1 REGION 1
+
+3D MESH GENERATION TIME 60 MS
+
+SUMMARIZE 6 PARAMETERS (NO COMMON SUBEXPRESSION ELIMINATION)
+   Param         Compartment       Complexity     Memory
+--------------------------------------------------------------
+              R      0                    1         72
+              L      0                    1         72
+             DV      0                    1         72
+             RO      0                    1         72
+              E      0                    7        504
+              J      0                    7        504
+
+SUMMARIZE EQUATIONS
+
+                                                    BASE         CSE
+ EQUATION  COMPARTMENT              FUNCTION     COMPLEXITY  COMPLEXITY    MEMORY
+----------------------------------------------------------------------------------
+     1          1                     Source          1            2          144
+     1          1                   Galerkin          8            8          576
+     1          1       Var  1      Jacobian          8            8          576
+     1          1              Surf Galerkin          9            9          648
+     1          1       Var  1 Surf Jacobian          9            8          576
+
+EQUATION 1 PARAMETER DEPENDENCIES:
+ RO             
+
+SUMMARIZE BOUNDARY CONDITIONS
+
+    BC     COMPARTMENT              FUNCTION     COMPLEXITY    MEMORY
+----------------------------------------------------------------------
+     1          1              Surf Galerkin          1         72
+     1          1       Var  1 Surf Jacobian          1         72
+     2          1              Surf Galerkin          1         72
+     2          1       Var  1 Surf Jacobian          1         72
+     3          1              Surf Galerkin          1         72
+     3          1       Var  1 Surf Jacobian          1         72
+
+--------------------------------
+SUMMARIZE FITS AND INTEGRALS
+---------------------------------
+                                  REGION/       BASE        CSE
+    FIT         KIND            COMPARTMENT  COMPLEXITY  COMPLEXITY    MEMORY
+------------------------------------------------------------------------------
+     1     Surface Integral          1              8          8          576
+
+SUMMARIZE PLOT EQUATIONS
+
+                                     BASE        CSE
+   PLOT    ARGUMENT COMPARTMENT  COMPLEXITY  COMPLEXITY    MEMORY
+------------------------------------------------------------------
+     1          1          1          8          8          576
+
+==UNUSED== PARAMETER DEFINITIONS:
+
+
+
+SS_GRID 1
+Orthomin/ILU FINAL ITERATION 28 of 253, RNORM=6.26825e-014, XNORM=0.423668, 0 MS/IT 2.1645 uS/NODE
+Orthomin/ILU FINAL ITERATION 19 of 1012, RNORM=1.18408e-019, XNORM=8.99717e-014, 0 MS/IT 0 uS/NODE
+
+
+LINEAR STEP 2 NORM=2.16394e-017
+RMS Spatial Errors  3.69e-31
+DO_NEXTSTAGE pde 000000000342CE20  MAXSTAGE=0
+
+================================================================
+===  FlexPDE Version 6.51/W64  16:23:07 Jul 24 2019  © 1996-2014 PDE Solutions Inc.
+===  C:\Users\student\Documents\254883\my file 3.3.pde 11:31:05 3/13/24
+================================================================
+    1| TITLE 'Rez ele'
+    2| 	COORDINATES Cartesian3
+    3| 	VARIABLES
+    4| 		V
+    5| 	DEFINITIONS
+    6| 		r=10e-3/2
+    7|         l=0.1
+    8|         DV=10
+    9|         ro=1
+   10| 		E=-grad(V)
+   11| 		j=ro*E
+   12| 	EQUATIONS
+   13| 		V: Div(-ro*grad(V)) = 0
+   14|     EXTRUSION
+   15|     	surface 'bottom' z=0
+   16|         surface 'top' z=l
+   17| 	BOUNDARIES
+   18| 		region "domain"
+   19| 		surface "bottom" value(V)=0
+   20| 		surface "top" value(V)=DV
+   21| 		START(r,0)
+   22|        	!natural(V)=0 arc(center=0,0) angle 360
+   23|         !to close
+   24|  		START(r,r ) natural(V) = 0
+   25|         line to (r, -r)  natural(V) = 0
+   26|         line to(-r, -r)  natural(V) = 0
+   27|         line to(-r, r)  natural(V) = 0
+   28|         line to close
+   29| 
+   30| 
+   31| 	PLOTS        
+   32|     	contour(normal(j)) ON z=0.5*l
+   33| 	SUMMARY
+   34| 		report (DV/surf_integral(normal(j), 'bottom')) as 'R-num. R [ohm]'
+   35| 		report (1/ro*l/(r*r)) as 'R-analityczne'      
+   36| 	
+   37| 
+   38| 
+   39| 	END
+MESH GENERATION LAYER 1 REGION 1
+
+3D MESH GENERATION TIME 66 MS
+
+SUMMARIZE 6 PARAMETERS (NO COMMON SUBEXPRESSION ELIMINATION)
+   Param         Compartment       Complexity     Memory
+--------------------------------------------------------------
+              R      0                    1         72
+              L      0                    1         72
+             DV      0                    1         72
+             RO      0                    1         72
+              E      0                    7        504
+              J      0                    7        504
+
+SUMMARIZE EQUATIONS
+
+                                                    BASE         CSE
+ EQUATION  COMPARTMENT              FUNCTION     COMPLEXITY  COMPLEXITY    MEMORY
+----------------------------------------------------------------------------------
+     1          1                     Source          1            2          144
+     1          1                   Galerkin          8            8          576
+     1          1       Var  1      Jacobian          8            8          576
+     1          1              Surf Galerkin          9            9          648
+     1          1       Var  1 Surf Jacobian          9            8          576
+
+EQUATION 1 PARAMETER DEPENDENCIES:
+ RO             
+
+SUMMARIZE BOUNDARY CONDITIONS
+
+    BC     COMPARTMENT              FUNCTION     COMPLEXITY    MEMORY
+----------------------------------------------------------------------
+     1          1              Surf Galerkin          1         72
+     1          1       Var  1 Surf Jacobian          1         72
+     2          1              Surf Galerkin          1         72
+     2          1       Var  1 Surf Jacobian          1         72
+     3          1              Surf Galerkin          1         72
+     3          1       Var  1 Surf Jacobian          1         72
+
+--------------------------------
+SUMMARIZE FITS AND INTEGRALS
+---------------------------------
+                                  REGION/       BASE        CSE
+    FIT         KIND            COMPARTMENT  COMPLEXITY  COMPLEXITY    MEMORY
+------------------------------------------------------------------------------
+     1     Surface Integral          1              8          8          576
+
+SUMMARIZE PLOT EQUATIONS
+
+                                     BASE        CSE
+   PLOT    ARGUMENT COMPARTMENT  COMPLEXITY  COMPLEXITY    MEMORY
+------------------------------------------------------------------
+     1          1          1          8          8          576
+
+==UNUSED== PARAMETER DEFINITIONS:
+
+
+
+SS_GRID 1
+Orthomin/ILU FINAL ITERATION 28 of 253, RNORM=6.26825e-014, XNORM=0.423668, 0 MS/IT 0 uS/NODE
+Orthomin/ILU FINAL ITERATION 19 of 1012, RNORM=1.18408e-019, XNORM=8.99717e-014, 0 MS/IT 0 uS/NODE
+
+
+LINEAR STEP 2 NORM=2.16394e-017
+RMS Spatial Errors  3.69e-31
+DO_NEXTSTAGE pde 000000000342CE20  MAXSTAGE=0
+
+================================================================
+===  FlexPDE Version 6.51/W64  16:23:07 Jul 24 2019  © 1996-2014 PDE Solutions Inc.
+===  C:\Users\student\Documents\254883\my file 3.3.pde 11:31:21 3/13/24
+================================================================
+    1| TITLE 'Rez ele'
+    2| 	COORDINATES Cartesian3
+    3| 	VARIABLES
+    4| 		V
+    5| 	DEFINITIONS
+    6| 		r=10e-3/2
+    7|         l=0.1
+    8|         DV=10
+    9|         ro=1
+   10| 		E=-grad(V)
+   11| 		j=ro*E
+   12| 	EQUATIONS
+   13| 		V: Div(-ro*grad(V)) = 0
+   14|     EXTRUSION
+   15|     	surface 'bottom' z=0
+   16|         surface 'top' z=l
+   17| 	BOUNDARIES
+   18| 		region "domain"
+   19| 		surface "bottom" value(V)=0
+   20| 		surface "top" value(V)=DV
+   21| 		START(r,0)
+   22|        	!natural(V)=0 arc(center=0,0) angle 360
+   23|         !to close
+   24|  		START(r,r ) natural(V) = 0
+   25|         line to (r, -r)  natural(V) = 0
+   26|         line to(-r, -r)  natural(V) = 0
+   27|         line to(-r, r)  natural(V) = 0
+   28|         line to close
+   29| 
+   30| 
+   31| 	PLOTS        
+   32|     	contour(normal(j)) ON z=0.5*l
+   33| 	SUMMARY
+   34| 		report (DV/surf_integral(normal(j), 'bottom')) as 'R-num. R [ohm]'
+   35| 		report (1/ro*l/(4*r*r)) as 'R-analityczne'      
+   36| 	
+   37| 
+   38| 
+   39| 	END
+MESH GENERATION LAYER 1 REGION 1
+
+3D MESH GENERATION TIME 62 MS
+
+SUMMARIZE 6 PARAMETERS (NO COMMON SUBEXPRESSION ELIMINATION)
+   Param         Compartment       Complexity     Memory
+--------------------------------------------------------------
+              R      0                    1         72
+              L      0                    1         72
+             DV      0                    1         72
+             RO      0                    1         72
+              E      0                    7        504
+              J      0                    7        504
+
+SUMMARIZE EQUATIONS
+
+                                                    BASE         CSE
+ EQUATION  COMPARTMENT              FUNCTION     COMPLEXITY  COMPLEXITY    MEMORY
+----------------------------------------------------------------------------------
+     1          1                     Source          1            2          144
+     1          1                   Galerkin          8            8          576
+     1          1       Var  1      Jacobian          8            8          576
+     1          1              Surf Galerkin          9            9          648
+     1          1       Var  1 Surf Jacobian          9            8          576
+
+EQUATION 1 PARAMETER DEPENDENCIES:
+ RO             
+
+SUMMARIZE BOUNDARY CONDITIONS
+
+    BC     COMPARTMENT              FUNCTION     COMPLEXITY    MEMORY
+----------------------------------------------------------------------
+     1          1              Surf Galerkin          1         72
+     1          1       Var  1 Surf Jacobian          1         72
+     2          1              Surf Galerkin          1         72
+     2          1       Var  1 Surf Jacobian          1         72
+     3          1              Surf Galerkin          1         72
+     3          1       Var  1 Surf Jacobian          1         72
+
+--------------------------------
+SUMMARIZE FITS AND INTEGRALS
+---------------------------------
+                                  REGION/       BASE        CSE
+    FIT         KIND            COMPARTMENT  COMPLEXITY  COMPLEXITY    MEMORY
+------------------------------------------------------------------------------
+     1     Surface Integral          1              8          8          576
+
+SUMMARIZE PLOT EQUATIONS
+
+                                     BASE        CSE
+   PLOT    ARGUMENT COMPARTMENT  COMPLEXITY  COMPLEXITY    MEMORY
+------------------------------------------------------------------
+     1          1          1          8          8          576
+
+==UNUSED== PARAMETER DEFINITIONS:
+
+
+
+SS_GRID 1
+Orthomin/ILU FINAL ITERATION 28 of 253, RNORM=6.26825e-014, XNORM=0.423668, 0 MS/IT 0 uS/NODE
+Orthomin/ILU FINAL ITERATION 19 of 1012, RNORM=1.18408e-019, XNORM=8.99717e-014, 0 MS/IT 0 uS/NODE
+
+
+LINEAR STEP 2 NORM=2.16394e-017
+RMS Spatial Errors  3.69e-31
+DO_NEXTSTAGE pde 000000000342CE20  MAXSTAGE=0
+
+================================================================
+===  FlexPDE Version 6.51/W64  16:23:07 Jul 24 2019  © 1996-2014 PDE Solutions Inc.
+===  C:\Users\student\Documents\254883\my file 3.3.pde 11:34:34 3/13/24
+================================================================
+    1| TITLE 'Rez ele'
+    2| 	COORDINATES Cartesian3
+    3| 	VARIABLES
+    4| 		V
+    5| 	DEFINITIONS
+    6| 		r=10e-3/2
+    7|         l=0.1
+    8|         DV=10
+    9|         ro=1
+   10| 		E=-grad(V)
+   11| 		j=ro*E
+   12| 	EQUATIONS
+   13| 		V: Div(-ro*grad(V)) = 0
+   14|     EXTRUSION
+   15|     	surface 'bottom' z=0
+   16|         surface 'top' z=l
+   17| 	BOUNDARIES
+   18| 		region "domain"
+   19| 		surface "bottom" value(V)=0
+   20| 		surface "top" value(V)=DV
+   21| 		START(r,0)
+   22|        	!natural(V)=0 arc(center=0,0) angle 360
+   23|         !to close
+   24|  		START(2r,2r ) natural(V) = 0
+ERROR in state 546: GOT: 2(<identifier>) WANTED: 13(<)>)
+***** Line 24 Col 12:
+FlexPDE grammar does not allow '<identifier>' in this location.
+
+
+================================================================
+===  FlexPDE Version 6.51/W64  16:23:07 Jul 24 2019  © 1996-2014 PDE Solutions Inc.
+===  C:\Users\student\Documents\254883\my file 3.3.pde 11:34:43 3/13/24
+================================================================
+    1| TITLE 'Rez ele'
+    2| 	COORDINATES Cartesian3
+    3| 	VARIABLES
+    4| 		V
+    5| 	DEFINITIONS
+    6| 		r=10e-3/2
+    7|         l=0.1
+    8|         DV=10
+    9|         ro=1
+   10| 		E=-grad(V)
+   11| 		j=ro*E
+   12| 	EQUATIONS
+   13| 		V: Div(-ro*grad(V)) = 0
+   14|     EXTRUSION
+   15|     	surface 'bottom' z=0
+   16|         surface 'top' z=l
+   17| 	BOUNDARIES
+   18| 		region "domain"
+   19| 		surface "bottom" value(V)=0
+   20| 		surface "top" value(V)=DV
+   21| 		START(r,0)
+   22|        	!natural(V)=0 arc(center=0,0) angle 360
+   23|         !to close
+   24|  		START(2r, 2r ) natural(V) = 0
+ERROR in state 546: GOT: 2(<identifier>) WANTED: 13(<)>)
+***** Line 24 Col 12:
+FlexPDE grammar does not allow '<identifier>' in this location.
+
+
+================================================================
+===  FlexPDE Version 6.51/W64  16:23:07 Jul 24 2019  © 1996-2014 PDE Solutions Inc.
+===  C:\Users\student\Documents\254883\my file 3.3.pde 11:35:00 3/13/24
+================================================================
+    1| TITLE 'Rez ele'
+    2| 	COORDINATES Cartesian3
+    3| 	VARIABLES
+    4| 		V
+    5| 	DEFINITIONS
+    6| 		r=10e-3/2
+    7|         l=0.1
+    8|         DV=10
+    9|         ro=1
+   10| 		E=-grad(V)
+   11| 		j=ro*E
+   12| 	EQUATIONS
+   13| 		V: Div(-ro*grad(V)) = 0
+   14|     EXTRUSION
+   15|     	surface 'bottom' z=0
+   16|         surface 'top' z=l
+   17| 	BOUNDARIES
+   18| 		region "domain"
+   19| 		surface "bottom" value(V)=0
+   20| 		surface "top" value(V)=DV
+   21| 		START(r,0)
+   22|        	!natural(V)=0 arc(center=0,0) angle 360
+   23|         !to close
+   24|  		START(2*r, 2*r ) natural(V) = 0
+   25|         line to (2*r, -2*r)  natural(V) = 0
+   26|         line to(-2*r, -2*r)  natural(V) = 0
+   27|         line to(-2*r, 2*r)  natural(V) = 0
+   28|         line to close
+   29| 
+   30| 
+   31| 	PLOTS        
+   32|     	contour(normal(j)) ON z=0.5*l
+   33| 	SUMMARY
+   34| 		report (DV/surf_integral(normal(j), 'bottom')) as 'R-num. R [ohm]'
+   35| 		report (1/ro*l/(16*r*r)) as 'R-analityczne'      
+   36| 	
+   37| 
+   38| 
+   39| 	END
+MESH GENERATION LAYER 1 REGION 1
+
+3D MESH GENERATION TIME 67 MS
+
+SUMMARIZE 6 PARAMETERS (NO COMMON SUBEXPRESSION ELIMINATION)
+   Param         Compartment       Complexity     Memory
+--------------------------------------------------------------
+              R      0                    1         72
+              L      0                    1         72
+             DV      0                    1         72
+             RO      0                    1         72
+              E      0                    7        504
+              J      0                    7        504
+
+SUMMARIZE EQUATIONS
+
+                                                    BASE         CSE
+ EQUATION  COMPARTMENT              FUNCTION     COMPLEXITY  COMPLEXITY    MEMORY
+----------------------------------------------------------------------------------
+     1          1                     Source          1            2          144
+     1          1                   Galerkin          8            8          576
+     1          1       Var  1      Jacobian          8            8          576
+     1          1              Surf Galerkin          9            9          648
+     1          1       Var  1 Surf Jacobian          9            8          576
+
+EQUATION 1 PARAMETER DEPENDENCIES:
+ RO             
+
+SUMMARIZE BOUNDARY CONDITIONS
+
+    BC     COMPARTMENT              FUNCTION     COMPLEXITY    MEMORY
+----------------------------------------------------------------------
+     1          1              Surf Galerkin          1         72
+     1          1       Var  1 Surf Jacobian          1         72
+     2          1              Surf Galerkin          1         72
+     2          1       Var  1 Surf Jacobian          1         72
+     3          1              Surf Galerkin          1         72
+     3          1       Var  1 Surf Jacobian          1         72
+
+--------------------------------
+SUMMARIZE FITS AND INTEGRALS
+---------------------------------
+                                  REGION/       BASE        CSE
+    FIT         KIND            COMPARTMENT  COMPLEXITY  COMPLEXITY    MEMORY
+------------------------------------------------------------------------------
+     1     Surface Integral          1              8          8          576
+
+SUMMARIZE PLOT EQUATIONS
+
+                                     BASE        CSE
+   PLOT    ARGUMENT COMPARTMENT  COMPLEXITY  COMPLEXITY    MEMORY
+------------------------------------------------------------------
+     1          1          1          8          8          576
+
+==UNUSED== PARAMETER DEFINITIONS:
+
+
+
+SS_GRID 1
+Orthomin/ILU FINAL ITERATION 22 of 252, RNORM=1.81022e-013, XNORM=0.538268, 0 MS/IT 0 uS/NODE
+Orthomin/ILU FINAL ITERATION 17 of 1011, RNORM=6.84699e-022, XNORM=2.60783e-013, 0 MS/IT 0 uS/NODE
+
+
+LINEAR STEP 2 NORM=7.51552e-020
+RMS Spatial Errors  2.03e-31
+DO_NEXTSTAGE pde 000000000342CE20  MAXSTAGE=0
+
+================================================================
+===  FlexPDE Version 6.51/W64  16:23:07 Jul 24 2019  © 1996-2014 PDE Solutions Inc.
+===  C:\Users\student\Documents\254883\my file 3.3.pde 11:36:02 3/13/24
+================================================================
+    1| TITLE 'Rez ele'
+    2| 	COORDINATES Cartesian3
+    3| 	VARIABLES
+    4| 		V
+    5| 	DEFINITIONS
+    6| 		r=10e-3/2
+    7|         l=0.1
+    8|         DV=10
+    9|         ro=1
+   10| 		E=-grad(V)
+   11| 		j=ro*E
+   12| 	EQUATIONS
+   13| 		V: Div(-ro*grad(V)) = 0
+   14|     EXTRUSION
+   15|     	surface 'bottom' z=0
+   16|         surface 'top' z=l
+   17| 	BOUNDARIES
+   18| 		region "domain"
+   19| 		surface "bottom" value(V)=0
+   20| 		surface "top" value(V)=DV
+   21| 		START(r,0)
+   22|        	!natural(V)=0 arc(center=0,0) angle 360
+   23|         !to close
+   24|  		START(3*r, 3*r ) natural(V) = 0
+   25|         line to (3*r, -3*r)  natural(V) = 0
+   26|         line to(-3*r, -3*r)  natural(V) = 0
+   27|         line to(-3*r, 3*r)  natural(V) = 0
+   28|         line to close
+   29| 
+   30| 
+   31| 	PLOTS        
+   32|     	contour(normal(j)) ON z=0.5*l
+   33| 	SUMMARY
+   34| 		report (DV/surf_integral(normal(j), 'bottom')) as 'R-num. R [ohm]'
+   35| 		report (1/ro*l/(36*r*r)) as 'R-analityczne'      
+   36| 	
+   37| 
+   38| 
+   39| 	END
+SUBDIVIDE 1
+SUBDIVIDE 1
+MESH GENERATION LAYER 1 REGION 1
+
+3D MESH GENERATION TIME 81 MS
+
+SUMMARIZE 6 PARAMETERS (NO COMMON SUBEXPRESSION ELIMINATION)
+   Param         Compartment       Complexity     Memory
+--------------------------------------------------------------
+              R      0                    1         72
+              L      0                    1         72
+             DV      0                    1         72
+             RO      0                    1         72
+              E      0                    7        504
+              J      0                    7        504
+
+SUMMARIZE EQUATIONS
+
+                                                    BASE         CSE
+ EQUATION  COMPARTMENT              FUNCTION     COMPLEXITY  COMPLEXITY    MEMORY
+----------------------------------------------------------------------------------
+     1          1                     Source          1            2          144
+     1          1                   Galerkin          8            8          576
+     1          1       Var  1      Jacobian          8            8          576
+     1          1              Surf Galerkin          9            9          648
+     1          1       Var  1 Surf Jacobian          9            8          576
+
+EQUATION 1 PARAMETER DEPENDENCIES:
+ RO             
+
+SUMMARIZE BOUNDARY CONDITIONS
+
+    BC     COMPARTMENT              FUNCTION     COMPLEXITY    MEMORY
+----------------------------------------------------------------------
+     1          1              Surf Galerkin          1         72
+     1          1       Var  1 Surf Jacobian          1         72
+     2          1              Surf Galerkin          1         72
+     2          1       Var  1 Surf Jacobian          1         72
+     3          1              Surf Galerkin          1         72
+     3          1       Var  1 Surf Jacobian          1         72
+
+--------------------------------
+SUMMARIZE FITS AND INTEGRALS
+---------------------------------
+                                  REGION/       BASE        CSE
+    FIT         KIND            COMPARTMENT  COMPLEXITY  COMPLEXITY    MEMORY
+------------------------------------------------------------------------------
+     1     Surface Integral          1              8          8          576
+
+SUMMARIZE PLOT EQUATIONS
+
+                                     BASE        CSE
+   PLOT    ARGUMENT COMPARTMENT  COMPLEXITY  COMPLEXITY    MEMORY
+------------------------------------------------------------------
+     1          1          1          8          8          576
+
+==UNUSED== PARAMETER DEFINITIONS:
+
+
+
+SS_GRID 1
+Orthomin/ILU FINAL ITERATION 23 of 254, RNORM=4.99799e-011, XNORM=0.529157, 0 MS/IT 0 uS/NODE
+Orthomin/ILU FINAL ITERATION 18 of 1018, RNORM=7.50077e-019, XNORM=1.09328e-010, 0 MS/IT 0 uS/NODE
+
+
+LINEAR STEP 2 NORM=1.41672e-016
+RMS Spatial Errors  7.53e-18
+DO_NEXTSTAGE pde 000000000342CE20  MAXSTAGE=0
+
+================================================================
+===  FlexPDE Version 6.51/W64  16:23:07 Jul 24 2019  © 1996-2014 PDE Solutions Inc.
+===  C:\Users\student\Documents\254883\my file 3.3.pde 11:36:42 3/13/24
+================================================================
+    1| TITLE 'Rez ele'
+    2| 	COORDINATES Cartesian3
+    3| 	VARIABLES
+    4| 		V
+    5| 	DEFINITIONS
+    6| 		r=10e-3/2
+    7|         l=0.1
+    8|         DV=10
+    9|         ro=1
+   10| 		E=-grad(V)
+   11| 		j=ro*E
+   12| 	EQUATIONS
+   13| 		V: Div(-ro*grad(V)) = 0
+   14|     EXTRUSION
+   15|     	surface 'bottom' z=0
+   16|         surface 'top' z=l
+   17| 	BOUNDARIES
+   18| 		region "domain"
+   19| 		surface "bottom" value(V)=0
+   20| 		surface "top" value(V)=DV
+   21| 		START(r,0)
+   22|        	!natural(V)=0 arc(center=0,0) angle 360
+   23|         !to close
+   24|  		START(4*r, 4*r ) natural(V) = 0
+   25|         line to (4*r, -4*r)  natural(V) = 0
+   26|         line to(-4*r, -4*r)  natural(V) = 0
+   27|         line to(-4*r, 4*r)  natural(V) = 0
+   28|         line to close
+   29| 
+   30| 
+   31| 	PLOTS        
+   32|     	contour(normal(j)) ON z=0.5*l
+   33| 	SUMMARY
+   34| 		report (DV/surf_integral(normal(j), 'bottom')) as 'R-num. R [ohm]'
+   35| 		report (1/ro*l/(64*r*r)) as 'R-analityczne'      
+   36| 	
+   37| 
+   38| 
+   39| 	END
+MESH GENERATION LAYER 1 REGION 1
+
+3D MESH GENERATION TIME 79 MS
+
+SUMMARIZE 6 PARAMETERS (NO COMMON SUBEXPRESSION ELIMINATION)
+   Param         Compartment       Complexity     Memory
+--------------------------------------------------------------
+              R      0                    1         72
+              L      0                    1         72
+             DV      0                    1         72
+             RO      0                    1         72
+              E      0                    7        504
+              J      0                    7        504
+
+SUMMARIZE EQUATIONS
+
+                                                    BASE         CSE
+ EQUATION  COMPARTMENT              FUNCTION     COMPLEXITY  COMPLEXITY    MEMORY
+----------------------------------------------------------------------------------
+     1          1                     Source          1            2          144
+     1          1                   Galerkin          8            8          576
+     1          1       Var  1      Jacobian          8            8          576
+     1          1              Surf Galerkin          9            9          648
+     1          1       Var  1 Surf Jacobian          9            8          576
+
+EQUATION 1 PARAMETER DEPENDENCIES:
+ RO             
+
+SUMMARIZE BOUNDARY CONDITIONS
+
+    BC     COMPARTMENT              FUNCTION     COMPLEXITY    MEMORY
+----------------------------------------------------------------------
+     1          1              Surf Galerkin          1         72
+     1          1       Var  1 Surf Jacobian          1         72
+     2          1              Surf Galerkin          1         72
+     2          1       Var  1 Surf Jacobian          1         72
+     3          1              Surf Galerkin          1         72
+     3          1       Var  1 Surf Jacobian          1         72
+
+--------------------------------
+SUMMARIZE FITS AND INTEGRALS
+---------------------------------
+                                  REGION/       BASE        CSE
+    FIT         KIND            COMPARTMENT  COMPLEXITY  COMPLEXITY    MEMORY
+------------------------------------------------------------------------------
+     1     Surface Integral          1              8          8          576
+
+SUMMARIZE PLOT EQUATIONS
+
+                                     BASE        CSE
+   PLOT    ARGUMENT COMPARTMENT  COMPLEXITY  COMPLEXITY    MEMORY
+------------------------------------------------------------------
+     1          1          1          8          8          576
+
+==UNUSED== PARAMETER DEFINITIONS:
+
+
+
+SS_GRID 1
+Orthomin/ILU FINAL ITERATION 21 of 254, RNORM=2.90542e-011, XNORM=0.577373, 0 MS/IT 0 uS/NODE
+Orthomin/ILU FINAL ITERATION 18 of 1017, RNORM=9.39874e-020, XNORM=5.5389e-011, 0 MS/IT 0 uS/NODE
+
+
+LINEAR STEP 2 NORM=1.56585e-017
+RMS Spatial Errors  1.65e-18
+DO_NEXTSTAGE pde 000000000342CE20  MAXSTAGE=0
+
+================================================================
+===  FlexPDE Version 6.51/W64  16:23:07 Jul 24 2019  © 1996-2014 PDE Solutions Inc.
+===  C:\Users\student\Documents\254883\my file 3.3.pde 11:37:20 3/13/24
+================================================================
+    1| TITLE 'Rez ele'
+    2| 	COORDINATES Cartesian3
+    3| 	VARIABLES
+    4| 		V
+    5| 	DEFINITIONS
+    6| 		r=10e-3/2
+    7|         l=0.1
+    8|         DV=10
+    9|         ro=1
+   10| 		E=-grad(V)
+   11| 		j=ro*E
+   12| 	EQUATIONS
+   13| 		V: Div(-ro*grad(V)) = 0
+   14|     EXTRUSION
+   15|     	surface 'bottom' z=0
+   16|         surface 'top' z=l
+   17| 	BOUNDARIES
+   18| 		region "domain"
+   19| 		surface "bottom" value(V)=0
+   20| 		surface "top" value(V)=DV
+   21| 		START(r,0)
+   22|        	!natural(V)=0 arc(center=0,0) angle 360
+   23|         !to close
+   24|  		START(4*r, 4*r ) natural(V) = 0
+   25|         line to (4*r, -4*r)  natural(V) = 0
+   26|         line to(-4*r, -4*r)  natural(V) = 0
+   27|         line to(-4*r, 4*r)  natural(V) = 0
+   28|         line to close
+   29| 
+   30| 
+   31| 	PLOTS        
+   32|     	contour(normal(j)) ON z=0.5*l
+   33| 	SUMMARY
+   34| 		report (DV/surf_integral(normal(j), 'bottom')) as 'R-num. R [ohm]'
+   35| 		report (1/ro*l/(64*r*r)) as 'R-analityczne'      
+   36| 	
+   37| 
+   38| 
+   39| 	END
+MESH GENERATION LAYER 1 REGION 1
+
+3D MESH GENERATION TIME 62 MS
+
+SUMMARIZE 6 PARAMETERS (NO COMMON SUBEXPRESSION ELIMINATION)
+   Param         Compartment       Complexity     Memory
+--------------------------------------------------------------
+              R      0                    1         72
+              L      0                    1         72
+             DV      0                    1         72
+             RO      0                    1         72
+              E      0                    7        504
+              J      0                    7        504
+
+SUMMARIZE EQUATIONS
+
+                                                    BASE         CSE
+ EQUATION  COMPARTMENT              FUNCTION     COMPLEXITY  COMPLEXITY    MEMORY
+----------------------------------------------------------------------------------
+     1          1                     Source          1            2          144
+     1          1                   Galerkin          8            8          576
+     1          1       Var  1      Jacobian          8            8          576
+     1          1              Surf Galerkin          9            9          648
+     1          1       Var  1 Surf Jacobian          9            8          576
+
+EQUATION 1 PARAMETER DEPENDENCIES:
+ RO             
+
+SUMMARIZE BOUNDARY CONDITIONS
+
+    BC     COMPARTMENT              FUNCTION     COMPLEXITY    MEMORY
+----------------------------------------------------------------------
+     1          1              Surf Galerkin          1         72
+     1          1       Var  1 Surf Jacobian          1         72
+     2          1              Surf Galerkin          1         72
+     2          1       Var  1 Surf Jacobian          1         72
+     3          1              Surf Galerkin          1         72
+     3          1       Var  1 Surf Jacobian          1         72
+
+--------------------------------
+SUMMARIZE FITS AND INTEGRALS
+---------------------------------
+                                  REGION/       BASE        CSE
+    FIT         KIND            COMPARTMENT  COMPLEXITY  COMPLEXITY    MEMORY
+------------------------------------------------------------------------------
+     1     Surface Integral          1              8          8          576
+
+SUMMARIZE PLOT EQUATIONS
+
+                                     BASE        CSE
+   PLOT    ARGUMENT COMPARTMENT  COMPLEXITY  COMPLEXITY    MEMORY
+------------------------------------------------------------------
+     1          1          1          8          8          576
+
+==UNUSED== PARAMETER DEFINITIONS:
+
+
+
+SS_GRID 1
+Orthomin/ILU FINAL ITERATION 21 of 254, RNORM=2.90542e-011, XNORM=0.577373, 0 MS/IT 0 uS/NODE
+Orthomin/ILU FINAL ITERATION 18 of 1017, RNORM=9.39874e-020, XNORM=5.5389e-011, 0 MS/IT 0 uS/NODE
+
+
+LINEAR STEP 2 NORM=1.56585e-017
+RMS Spatial Errors  1.65e-18
+DO_NEXTSTAGE pde 000000000342CE20  MAXSTAGE=0
+
+================================================================
+===  FlexPDE Version 6.51/W64  16:23:07 Jul 24 2019  © 1996-2014 PDE Solutions Inc.
+===  C:\Users\student\Documents\254883\my file 3.3.pde 11:37:50 3/13/24
+================================================================
+    1| TITLE 'Rez ele'
+    2| 	COORDINATES Cartesian3
+    3| 	VARIABLES
+    4| 		V
+    5| 	DEFINITIONS
+    6| 		r=10e-3/2
+    7|         l=0.1
+    8|         DV=10
+    9|         ro=1
+   10| 		E=-grad(V)
+   11| 		j=ro*E
+   12| 	EQUATIONS
+   13| 		V: Div(-ro*grad(V)) = 0
+   14|     EXTRUSION
+   15|     	surface 'bottom' z=0
+   16|         surface 'top' z=l
+   17| 	BOUNDARIES
+   18| 		region "domain"
+   19| 		surface "bottom" value(V)=0
+   20| 		surface "top" value(V)=DV
+   21| 		START(r,0)
+   22|        	!natural(V)=0 arc(center=0,0) angle 360
+   23|         !to close
+   24|  		START(0.5*r, 0.5*r ) natural(V) = 0
+   25|         line to (0.5*r, -0.5*r)  natural(V) = 0
+   26|         line to(-0.5*r, -0.5*r)  natural(V) = 0
+   27|         line to(-0.5*r, 0.5*r)  natural(V) = 0
+   28|         line to close
+   29| 
+   30| 
+   31| 	PLOTS        
+   32|     	contour(normal(j)) ON z=0.5*l
+   33| 	SUMMARY
+   34| 		report (DV/surf_integral(normal(j), 'bottom')) as 'R-num. R [ohm]'
+   35| 		report (1/ro*l/(r*r)) as 'R-analityczne'      
+   36| 	
+   37| 
+   38| 
+   39| 	END
+MESH GENERATION LAYER 1 REGION 1
+
+3D MESH GENERATION TIME 72 MS
+
+SUMMARIZE 6 PARAMETERS (NO COMMON SUBEXPRESSION ELIMINATION)
+   Param         Compartment       Complexity     Memory
+--------------------------------------------------------------
+              R      0                    1         72
+              L      0                    1         72
+             DV      0                    1         72
+             RO      0                    1         72
+              E      0                    7        504
+              J      0                    7        504
+
+SUMMARIZE EQUATIONS
+
+                                                    BASE         CSE
+ EQUATION  COMPARTMENT              FUNCTION     COMPLEXITY  COMPLEXITY    MEMORY
+----------------------------------------------------------------------------------
+     1          1                     Source          1            2          144
+     1          1                   Galerkin          8            8          576
+     1          1       Var  1      Jacobian          8            8          576
+     1          1              Surf Galerkin          9            9          648
+     1          1       Var  1 Surf Jacobian          9            8          576
+
+EQUATION 1 PARAMETER DEPENDENCIES:
+ RO             
+
+SUMMARIZE BOUNDARY CONDITIONS
+
+    BC     COMPARTMENT              FUNCTION     COMPLEXITY    MEMORY
+----------------------------------------------------------------------
+     1          1              Surf Galerkin          1         72
+     1          1       Var  1 Surf Jacobian          1         72
+     2          1              Surf Galerkin          1         72
+     2          1       Var  1 Surf Jacobian          1         72
+     3          1              Surf Galerkin          1         72
+     3          1       Var  1 Surf Jacobian          1         72
+
+--------------------------------
+SUMMARIZE FITS AND INTEGRALS
+---------------------------------
+                                  REGION/       BASE        CSE
+    FIT         KIND            COMPARTMENT  COMPLEXITY  COMPLEXITY    MEMORY
+------------------------------------------------------------------------------
+     1     Surface Integral          1              8          8          576
+
+SUMMARIZE PLOT EQUATIONS
+
+                                     BASE        CSE
+   PLOT    ARGUMENT COMPARTMENT  COMPLEXITY  COMPLEXITY    MEMORY
+------------------------------------------------------------------
+     1          1          1          8          8          576
+
+==UNUSED== PARAMETER DEFINITIONS:
+
+
+
+SS_GRID 1
+Orthomin/ILU FINAL ITERATION 40 of 253, RNORM=2.19839e-013, XNORM=0.331473, 0 MS/IT 0 uS/NODE
+Orthomin/ILU FINAL ITERATION 30 of 1015, RNORM=3.67463e-019, XNORM=3.26444e-013, 0 MS/IT 0 uS/NODE
+
+
+LINEAR STEP 2 NORM=8.30115e-017
+RMS Spatial Errors  3.60e-31
+DO_NEXTSTAGE pde 000000000342CE20  MAXSTAGE=0
+
+================================================================
+===  FlexPDE Version 6.51/W64  16:23:07 Jul 24 2019  © 1996-2014 PDE Solutions Inc.
+===  C:\Users\student\Documents\254883\my file 3.3.pde 11:39:01 3/13/24
+================================================================
+    1| TITLE 'Rez ele'
+    2| 	COORDINATES Cartesian3
+    3| 	VARIABLES
+    4| 		V
+    5| 	DEFINITIONS
+    6| 		r=10e-3/2
+    7|         l=0.1
+    8|         DV=10
+    9|         ro=1
+   10| 		E=-grad(V)
+   11| 		j=ro*E
+   12| 	EQUATIONS
+   13| 		V: Div(-ro*grad(V)) = 0
+   14|     EXTRUSION
+   15|     	surface 'bottom' z=0
+   16|         surface 'top' z=l
+   17| 	BOUNDARIES
+   18| 		region "domain"
+   19| 		surface "bottom" value(V)=0
+   20| 		surface "top" value(V)=DV
+   21| 		START(r,0)
+   22|        	!natural(V)=0 arc(center=0,0) angle 360
+   23|         !to close
+   24|  		START(0.5*r, 0.5*r ) natural(V) = 0
+   25|         line to (0.5*r, -0.5*r)  natural(V) = 0
+   26|         line to(-0.5*r, -0.5*r)  natural(V) = 0
+   27|         line to(-0.5*r, 0.5*r)  natural(V) = 0
+   28|         line to close
+   29| 
+   30| 
+   31| 	PLOTS        
+   32|     	contour(normal(j)) ON z=l
+   33| 	SUMMARY
+   34| 		report (DV/surf_integral(normal(j), 'bottom')) as 'R-num. R [ohm]'
+   35| 		report (1/ro*l/(r*r)) as 'R-analityczne'      
+   36| 	
+   37| 
+   38| 
+   39| 	END
+MESH GENERATION LAYER 1 REGION 1
+
+3D MESH GENERATION TIME 71 MS
+
+SUMMARIZE 6 PARAMETERS (NO COMMON SUBEXPRESSION ELIMINATION)
+   Param         Compartment       Complexity     Memory
+--------------------------------------------------------------
+              R      0                    1         72
+              L      0                    1         72
+             DV      0                    1         72
+             RO      0                    1         72
+              E      0                    7        504
+              J      0                    7        504
+
+SUMMARIZE EQUATIONS
+
+                                                    BASE         CSE
+ EQUATION  COMPARTMENT              FUNCTION     COMPLEXITY  COMPLEXITY    MEMORY
+----------------------------------------------------------------------------------
+     1          1                     Source          1            2          144
+     1          1                   Galerkin          8            8          576
+     1          1       Var  1      Jacobian          8            8          576
+     1          1              Surf Galerkin          9            9          648
+     1          1       Var  1 Surf Jacobian          9            8          576
+
+EQUATION 1 PARAMETER DEPENDENCIES:
+ RO             
+
+SUMMARIZE BOUNDARY CONDITIONS
+
+    BC     COMPARTMENT              FUNCTION     COMPLEXITY    MEMORY
+----------------------------------------------------------------------
+     1          1              Surf Galerkin          1         72
+     1          1       Var  1 Surf Jacobian          1         72
+     2          1              Surf Galerkin          1         72
+     2          1       Var  1 Surf Jacobian          1         72
+     3          1              Surf Galerkin          1         72
+     3          1       Var  1 Surf Jacobian          1         72
+
+--------------------------------
+SUMMARIZE FITS AND INTEGRALS
+---------------------------------
+                                  REGION/       BASE        CSE
+    FIT         KIND            COMPARTMENT  COMPLEXITY  COMPLEXITY    MEMORY
+------------------------------------------------------------------------------
+     1     Surface Integral          1              8          8          576
+
+SUMMARIZE PLOT EQUATIONS
+
+                                     BASE        CSE
+   PLOT    ARGUMENT COMPARTMENT  COMPLEXITY  COMPLEXITY    MEMORY
+------------------------------------------------------------------
+     1          1          1          8          8          576
+
+==UNUSED== PARAMETER DEFINITIONS:
+
+
+
+SS_GRID 1
+Orthomin/ILU FINAL ITERATION 40 of 253, RNORM=2.19839e-013, XNORM=0.331473, 0 MS/IT 0 uS/NODE
+Orthomin/ILU FINAL ITERATION 30 of 1015, RNORM=3.67463e-019, XNORM=3.26444e-013, 0 MS/IT 0.137174 uS/NODE
+
+
+LINEAR STEP 2 NORM=8.30115e-017
+RMS Spatial Errors  3.60e-31
+DO_NEXTSTAGE pde 000000000342CE20  MAXSTAGE=0
+
+================================================================
+===  FlexPDE Version 6.51/W64  16:23:07 Jul 24 2019  © 1996-2014 PDE Solutions Inc.
+===  C:\Users\student\Documents\254883\my file 3.3.pde 11:39:08 3/13/24
+================================================================
+    1| TITLE 'Rez ele'
+    2| 	COORDINATES Cartesian3
+    3| 	VARIABLES
+    4| 		V
+    5| 	DEFINITIONS
+    6| 		r=10e-3/2
+    7|         l=0.1
+    8|         DV=10
+    9|         ro=1
+   10| 		E=-grad(V)
+   11| 		j=ro*E
+   12| 	EQUATIONS
+   13| 		V: Div(-ro*grad(V)) = 0
+   14|     EXTRUSION
+   15|     	surface 'bottom' z=0
+   16|         surface 'top' z=l
+   17| 	BOUNDARIES
+   18| 		region "domain"
+   19| 		surface "bottom" value(V)=0
+   20| 		surface "top" value(V)=DV
+   21| 		START(r,0)
+   22|        	!natural(V)=0 arc(center=0,0) angle 360
+   23|         !to close
+   24|  		START(0.5*r, 0.5*r ) natural(V) = 0
+   25|         line to (0.5*r, -0.5*r)  natural(V) = 0
+   26|         line to(-0.5*r, -0.5*r)  natural(V) = 0
+   27|         line to(-0.5*r, 0.5*r)  natural(V) = 0
+   28|         line to close
+   29| 
+   30| 
+   31| 	PLOTS        
+   32|     	contour(normal(j)) ON z=2l
+   33| 	SUMMARY
+***** Line 32 Col 32:
+Illegal Name
+
+================================================================
+===  FlexPDE Version 6.51/W64  16:23:07 Jul 24 2019  © 1996-2014 PDE Solutions Inc.
+===  C:\Users\student\Documents\254883\my file 3.3.pde 11:39:15 3/13/24
+================================================================
+    1| TITLE 'Rez ele'
+    2| 	COORDINATES Cartesian3
+    3| 	VARIABLES
+    4| 		V
+    5| 	DEFINITIONS
+    6| 		r=10e-3/2
+    7|         l=0.1
+    8|         DV=10
+    9|         ro=1
+   10| 		E=-grad(V)
+   11| 		j=ro*E
+   12| 	EQUATIONS
+   13| 		V: Div(-ro*grad(V)) = 0
+   14|     EXTRUSION
+   15|     	surface 'bottom' z=0
+   16|         surface 'top' z=l
+   17| 	BOUNDARIES
+   18| 		region "domain"
+   19| 		surface "bottom" value(V)=0
+   20| 		surface "top" value(V)=DV
+   21| 		START(r,0)
+   22|        	!natural(V)=0 arc(center=0,0) angle 360
+   23|         !to close
+   24|  		START(0.5*r, 0.5*r ) natural(V) = 0
+   25|         line to (0.5*r, -0.5*r)  natural(V) = 0
+   26|         line to(-0.5*r, -0.5*r)  natural(V) = 0
+   27|         line to(-0.5*r, 0.5*r)  natural(V) = 0
+   28|         line to close
+   29| 
+   30| 
+   31| 	PLOTS        
+   32|     	contour(normal(j)) ON z=2*l
+   33| 	SUMMARY
+   34| 		report (DV/surf_integral(normal(j), 'bottom')) as 'R-num. R [ohm]'
+   35| 		report (1/ro*l/(r*r)) as 'R-analityczne'      
+   36| 	
+   37| 
+   38| 
+   39| 	END
+MESH GENERATION LAYER 1 REGION 1
+
+3D MESH GENERATION TIME 70 MS
+
+SUMMARIZE 6 PARAMETERS (NO COMMON SUBEXPRESSION ELIMINATION)
+   Param         Compartment       Complexity     Memory
+--------------------------------------------------------------
+              R      0                    1         72
+              L      0                    1         72
+             DV      0                    1         72
+             RO      0                    1         72
+              E      0                    7        504
+              J      0                    7        504
+
+SUMMARIZE EQUATIONS
+
+                                                    BASE         CSE
+ EQUATION  COMPARTMENT              FUNCTION     COMPLEXITY  COMPLEXITY    MEMORY
+----------------------------------------------------------------------------------
+     1          1                     Source          1            2          144
+     1          1                   Galerkin          8            8          576
+     1          1       Var  1      Jacobian          8            8          576
+     1          1              Surf Galerkin          9            9          648
+     1          1       Var  1 Surf Jacobian          9            8          576
+
+EQUATION 1 PARAMETER DEPENDENCIES:
+ RO             
+
+SUMMARIZE BOUNDARY CONDITIONS
+
+    BC     COMPARTMENT              FUNCTION     COMPLEXITY    MEMORY
+----------------------------------------------------------------------
+     1          1              Surf Galerkin          1         72
+     1          1       Var  1 Surf Jacobian          1         72
+     2          1              Surf Galerkin          1         72
+     2          1       Var  1 Surf Jacobian          1         72
+     3          1              Surf Galerkin          1         72
+     3          1       Var  1 Surf Jacobian          1         72
+
+--------------------------------
+SUMMARIZE FITS AND INTEGRALS
+---------------------------------
+                                  REGION/       BASE        CSE
+    FIT         KIND            COMPARTMENT  COMPLEXITY  COMPLEXITY    MEMORY
+------------------------------------------------------------------------------
+     1     Surface Integral          1              8          8          576
+
+SUMMARIZE PLOT EQUATIONS
+
+                                     BASE        CSE
+   PLOT    ARGUMENT COMPARTMENT  COMPLEXITY  COMPLEXITY    MEMORY
+------------------------------------------------------------------
+     1          1          1          8          8          576
+
+==UNUSED== PARAMETER DEFINITIONS:
+
+
+
+SS_GRID 1
+Orthomin/ILU FINAL ITERATION 40 of 253, RNORM=2.19839e-013, XNORM=0.331473, 0 MS/IT 0 uS/NODE
+Orthomin/ILU FINAL ITERATION 30 of 1015, RNORM=3.67463e-019, XNORM=3.26444e-013, 0 MS/IT 0 uS/NODE
+
+
+LINEAR STEP 2 NORM=8.30115e-017
+RMS Spatial Errors  3.60e-31
+DO_NEXTSTAGE pde 000000000342CE20  MAXSTAGE=0
+
+================================================================
+===  FlexPDE Version 6.51/W64  16:23:07 Jul 24 2019  © 1996-2014 PDE Solutions Inc.
+===  C:\Users\student\Documents\254883\my file 3.3.pde 11:39:28 3/13/24
+================================================================
+    1| TITLE 'Rez ele'
+    2| 	COORDINATES Cartesian3
+    3| 	VARIABLES
+    4| 		V
+    5| 	DEFINITIONS
+    6| 		r=10e-3/2
+    7|         l=0.2
+    8|         DV=10
+    9|         ro=1
+   10| 		E=-grad(V)
+   11| 		j=ro*E
+   12| 	EQUATIONS
+   13| 		V: Div(-ro*grad(V)) = 0
+   14|     EXTRUSION
+   15|     	surface 'bottom' z=0
+   16|         surface 'top' z=l
+   17| 	BOUNDARIES
+   18| 		region "domain"
+   19| 		surface "bottom" value(V)=0
+   20| 		surface "top" value(V)=DV
+   21| 		START(r,0)
+   22|        	!natural(V)=0 arc(center=0,0) angle 360
+   23|         !to close
+   24|  		START(0.5*r, 0.5*r ) natural(V) = 0
+   25|         line to (0.5*r, -0.5*r)  natural(V) = 0
+   26|         line to(-0.5*r, -0.5*r)  natural(V) = 0
+   27|         line to(-0.5*r, 0.5*r)  natural(V) = 0
+   28|         line to close
+   29| 
+   30| 
+   31| 	PLOTS        
+   32|     	contour(normal(j)) ON z=0.5*l
+   33| 	SUMMARY
+   34| 		report (DV/surf_integral(normal(j), 'bottom')) as 'R-num. R [ohm]'
+   35| 		report (1/ro*l/(r*r)) as 'R-analityczne'      
+   36| 	
+   37| 
+   38| 
+   39| 	END
+MESH GENERATION LAYER 1 REGION 1
+
+3D MESH GENERATION TIME 82 MS
+
+SUMMARIZE 6 PARAMETERS (NO COMMON SUBEXPRESSION ELIMINATION)
+   Param         Compartment       Complexity     Memory
+--------------------------------------------------------------
+              R      0                    1         72
+              L      0                    1         72
+             DV      0                    1         72
+             RO      0                    1         72
+              E      0                    7        504
+              J      0                    7        504
+
+SUMMARIZE EQUATIONS
+
+                                                    BASE         CSE
+ EQUATION  COMPARTMENT              FUNCTION     COMPLEXITY  COMPLEXITY    MEMORY
+----------------------------------------------------------------------------------
+     1          1                     Source          1            2          144
+     1          1                   Galerkin          8            8          576
+     1          1       Var  1      Jacobian          8            8          576
+     1          1              Surf Galerkin          9            9          648
+     1          1       Var  1 Surf Jacobian          9            8          576
+
+EQUATION 1 PARAMETER DEPENDENCIES:
+ RO             
+
+SUMMARIZE BOUNDARY CONDITIONS
+
+    BC     COMPARTMENT              FUNCTION     COMPLEXITY    MEMORY
+----------------------------------------------------------------------
+     1          1              Surf Galerkin          1         72
+     1          1       Var  1 Surf Jacobian          1         72
+     2          1              Surf Galerkin          1         72
+     2          1       Var  1 Surf Jacobian          1         72
+     3          1              Surf Galerkin          1         72
+     3          1       Var  1 Surf Jacobian          1         72
+
+--------------------------------
+SUMMARIZE FITS AND INTEGRALS
+---------------------------------
+                                  REGION/       BASE        CSE
+    FIT         KIND            COMPARTMENT  COMPLEXITY  COMPLEXITY    MEMORY
+------------------------------------------------------------------------------
+     1     Surface Integral          1              8          8          576
+
+SUMMARIZE PLOT EQUATIONS
+
+                                     BASE        CSE
+   PLOT    ARGUMENT COMPARTMENT  COMPLEXITY  COMPLEXITY    MEMORY
+------------------------------------------------------------------
+     1          1          1          8          8          576
+
+==UNUSED== PARAMETER DEFINITIONS:
+
+
+
+SS_GRID 1
+Orthomin/ILU FINAL ITERATION 60 of 254, RNORM=1.77018e-013, XNORM=0.343601, 0 MS/IT 0 uS/NODE
+Orthomin/ILU FINAL ITERATION 42 of 1018, RNORM=1.54272e-018, XNORM=2.71236e-013, 0 MS/IT 0 uS/NODE
+
+
+LINEAR STEP 2 NORM=7.77191e-016
+RMS Spatial Errors  4.24e-31
+DO_NEXTSTAGE pde 000000000342CE20  MAXSTAGE=0

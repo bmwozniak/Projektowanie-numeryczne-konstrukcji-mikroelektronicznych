@@ -1,0 +1,35 @@
+TITLE 'Pojemnosc'
+	!COORDINATES Cartesian3
+	VARIABLES
+		V
+	DEFINITIONS
+		eps
+        d=1
+        V1=100
+        V2=0
+		w=dot(-eps*grad(V), -grad(V))/2
+	EQUATIONS
+		V: Div(-eps*grad(V))=0
+	BOUNDARIES
+		region 1 
+		eps = 1
+        START(0, 0 ) natural(V) = 0
+        line to (d, 0)  natural(V) = V2
+        line to(d, 1)  natural(V) = 0
+        line to(0, 1)  natural(V) = V1
+        line to close
+        
+        region 2
+        eps = 2
+        start(d/2,0.25)
+ 		arc(center=d/2,0.5) angle=-360
+
+
+	PLOTS        
+    	contour(V)
+        contour(w)
+	SUMMARY
+		report integral(w) as 'Energia'
+		report 2*integral(w)/((V1-V2)^2) as 'Pojemnosc'
+
+	END

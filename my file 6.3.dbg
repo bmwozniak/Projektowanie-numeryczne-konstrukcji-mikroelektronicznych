@@ -1,0 +1,1854 @@
+
+================================================================
+===  FlexPDE Version 6.51/W64  16:23:07 Jul 24 2019  © 1996-2014 PDE Solutions Inc.
+===  C:\Users\student\Documents\254883\my file 6.3.pde 11:11:22 4/3/24
+================================================================
+    1| title 'Odkszta≈Çcenie-naprezenie'
+    2| VARIABLES 
+    3| ux, uy
+    4| DEFINITIONS
+    5| v = 0.3
+    6| E
+    7| F0=1E9
+    8| G = E/((1+v)*(1-2*v))
+    9| C11 = G*(1-v)
+   10| C12 = G*v
+   11| C21 = G*v
+   12| C22 = G*(1-v)
+   13| C33 = G*(1-2*v)/2
+   14| EQUATIONS
+   15| ux: dx(C11*dx(ux)+C12*dy(uy))+dy(C33*(dy(ux)+dx(uy))) = 0
+   16| uy: dx(C33*(dy(ux)+dx(uy))) + dy(C21*dx(ux)+C22*dy(uy)) = 0
+   17| BOUNDARIES
+   18| region 1 !prostokat
+   19| E = 100E9
+   20| start (0,0) load (ux)=0 load(uy) = 0
+   21| line to(3,0) load(ux)=0 load(uy) = -F0
+   22| line to(3,1) load (ux)=0 load(uy) = 0
+   23| line to(0,1) value(ux)=0 value(uy) = 0
+   24| line to close
+   25| !region 2 !kolo
+   26| !E = 10E9
+   27| !start(1.5, 0.25)
+   28| !arc(center=1.5, 0.5) angle=360
+   29| PLOTS
+   30| grid(x+1*ux, y+1*uy)
+   31| contour (ux) as 'x-przemieszczenie'
+   32| END
+
+SUMMARIZE 9 PARAMETERS (NO COMMON SUBEXPRESSION ELIMINATION)
+   Param         Compartment       Complexity     Memory
+--------------------------------------------------------------
+              V      0                    1         72
+              E      1                    1         72
+             F0      0                    1         72
+              G      1                    1         72
+            C11      1                    1         72
+            C12      1                    1         72
+            C21      1                    1         72
+            C22      1                    1         72
+            C33      1                    1         72
+
+SUMMARIZE EQUATIONS
+
+                                                    BASE         CSE
+ EQUATION  COMPARTMENT              FUNCTION     COMPLEXITY  COMPLEXITY    MEMORY
+----------------------------------------------------------------------------------
+     1          1                     Source          1            2          144
+     1          1                   Galerkin         16           16         1152
+     1          1       Var  1      Jacobian         10           10          720
+     1          1       Var  2      Jacobian         10           10          720
+     1          1              Surf Galerkin         15           15         1080
+     1          1       Var  1 Surf Jacobian          9           10          720
+     1          1       Var  2 Surf Jacobian          9           10          720
+     2          1                     Source          1            2          144
+     2          1                   Galerkin         16           16         1152
+     2          1       Var  1      Jacobian         10           10          720
+     2          1       Var  2      Jacobian         10           10          720
+     2          1              Surf Galerkin         15           15         1080
+     2          1       Var  1 Surf Jacobian          9           10          720
+     2          1       Var  2 Surf Jacobian          9           10          720
+
+EQUATION 1 PARAMETER DEPENDENCIES:
+ V               E               G               C11             C12            
+ C33            
+
+EQUATION 2 PARAMETER DEPENDENCIES:
+ V               E               G               C21             C22            
+ C33            
+
+SUMMARIZE BOUNDARY CONDITIONS
+
+    BC     COMPARTMENT              FUNCTION     COMPLEXITY    MEMORY
+----------------------------------------------------------------------
+     1          1              Surf Galerkin          1         72
+     1          1       Var  1 Surf Jacobian          1         72
+     1          1       Var  2 Surf Jacobian          1         72
+     2          1              Surf Galerkin          1         72
+     2          1       Var  1 Surf Jacobian          1         72
+     2          1       Var  2 Surf Jacobian          1         72
+     3          1              Surf Galerkin          2        144
+     3          1       Var  1 Surf Jacobian          1         72
+     3          1       Var  2 Surf Jacobian          1         72
+     4          1              Surf Galerkin          1         72
+     4          1       Var  1 Surf Jacobian          1         72
+     4          1       Var  2 Surf Jacobian          1         72
+     5          1              Surf Galerkin          1         72
+     5          1       Var  1 Surf Jacobian          1         72
+     5          1       Var  2 Surf Jacobian          1         72
+
+SUMMARIZE PLOT EQUATIONS
+
+                                     BASE        CSE
+   PLOT    ARGUMENT COMPARTMENT  COMPLEXITY  COMPLEXITY    MEMORY
+------------------------------------------------------------------
+     1          1          1          3          3          216
+     1          2          1          3          3          216
+     2          1          1          1          1           72
+
+==UNUSED== PARAMETER DEFINITIONS:
+
+
+
+SS_GRID 1
+Orthomin/ILU FINAL ITERATION 49 of 254, RNORM=0.000285377, XNORM=106004, 0 MS/IT 0.0534245 uS/NODE
+Orthomin/ILU FINAL ITERATION 22 of 1019, RNORM=5.24507e-010, XNORM=0.00107198, 0 MS/IT 0 uS/NODE
+
+
+LINEAR STEP 2 NORM=7.22455e-015
+RMS Spatial Errors  6.290e-6 1.650e-6
+DO_NEXTSTAGE pde 0000000005278BE0  MAXSTAGE=0
+
+================================================================
+===  FlexPDE Version 6.51/W64  16:23:07 Jul 24 2019  © 1996-2014 PDE Solutions Inc.
+===  C:\Users\student\Documents\254883\my file 6.3.pde 11:11:52 4/3/24
+================================================================
+    1| title 'Odkszta≈Çcenie-naprezenie'
+    2| VARIABLES 
+    3| ux, uy
+    4| DEFINITIONS
+    5| v = 0.3
+    6| E
+    7| F0=1E9
+    8| G = E/((1+v)*(1-2*v))
+    9| C11 = G*(1-v)
+   10| C12 = G*v
+   11| C21 = G*v
+   12| C22 = G*(1-v)
+   13| C33 = G*(1-2*v)/2
+   14| EQUATIONS
+   15| ux: dx(C11*dx(ux)+C12*dy(uy))+dy(C33*(dy(ux)+dx(uy))) = 0
+   16| uy: dx(C33*(dy(ux)+dx(uy))) + dy(C21*dx(ux)+C22*dy(uy)) = 0
+   17| BOUNDARIES
+   18| region 1 !prostokat
+   19| E = 100E9
+   20| start (0,0) load (ux)=0 load(uy) = 0
+   21| line to(3,0) load(ux)=0 load(uy) = 0
+   22| line to(3,1) load (ux)=0 load(uy) = -F0
+   23| line to(0,1) value(ux)=0 value(uy) = 0
+   24| line to close
+   25| !region 2 !kolo
+   26| !E = 10E9
+   27| !start(1.5, 0.25)
+   28| !arc(center=1.5, 0.5) angle=360
+   29| PLOTS
+   30| grid(x+1*ux, y+1*uy)
+   31| contour (ux) as 'x-przemieszczenie'
+   32| END
+
+SUMMARIZE 9 PARAMETERS (NO COMMON SUBEXPRESSION ELIMINATION)
+   Param         Compartment       Complexity     Memory
+--------------------------------------------------------------
+              V      0                    1         72
+              E      1                    1         72
+             F0      0                    1         72
+              G      1                    1         72
+            C11      1                    1         72
+            C12      1                    1         72
+            C21      1                    1         72
+            C22      1                    1         72
+            C33      1                    1         72
+
+SUMMARIZE EQUATIONS
+
+                                                    BASE         CSE
+ EQUATION  COMPARTMENT              FUNCTION     COMPLEXITY  COMPLEXITY    MEMORY
+----------------------------------------------------------------------------------
+     1          1                     Source          1            2          144
+     1          1                   Galerkin         16           16         1152
+     1          1       Var  1      Jacobian         10           10          720
+     1          1       Var  2      Jacobian         10           10          720
+     1          1              Surf Galerkin         15           15         1080
+     1          1       Var  1 Surf Jacobian          9           10          720
+     1          1       Var  2 Surf Jacobian          9           10          720
+     2          1                     Source          1            2          144
+     2          1                   Galerkin         16           16         1152
+     2          1       Var  1      Jacobian         10           10          720
+     2          1       Var  2      Jacobian         10           10          720
+     2          1              Surf Galerkin         15           15         1080
+     2          1       Var  1 Surf Jacobian          9           10          720
+     2          1       Var  2 Surf Jacobian          9           10          720
+
+EQUATION 1 PARAMETER DEPENDENCIES:
+ V               E               G               C11             C12            
+ C33            
+
+EQUATION 2 PARAMETER DEPENDENCIES:
+ V               E               G               C21             C22            
+ C33            
+
+SUMMARIZE BOUNDARY CONDITIONS
+
+    BC     COMPARTMENT              FUNCTION     COMPLEXITY    MEMORY
+----------------------------------------------------------------------
+     1          1              Surf Galerkin          1         72
+     1          1       Var  1 Surf Jacobian          1         72
+     1          1       Var  2 Surf Jacobian          1         72
+     2          1              Surf Galerkin          1         72
+     2          1       Var  1 Surf Jacobian          1         72
+     2          1       Var  2 Surf Jacobian          1         72
+     3          1              Surf Galerkin          2        144
+     3          1       Var  1 Surf Jacobian          1         72
+     3          1       Var  2 Surf Jacobian          1         72
+     4          1              Surf Galerkin          1         72
+     4          1       Var  1 Surf Jacobian          1         72
+     4          1       Var  2 Surf Jacobian          1         72
+     5          1              Surf Galerkin          1         72
+     5          1       Var  1 Surf Jacobian          1         72
+     5          1       Var  2 Surf Jacobian          1         72
+
+SUMMARIZE PLOT EQUATIONS
+
+                                     BASE        CSE
+   PLOT    ARGUMENT COMPARTMENT  COMPLEXITY  COMPLEXITY    MEMORY
+------------------------------------------------------------------
+     1          1          1          3          3          216
+     1          2          1          3          3          216
+     2          1          1          1          1           72
+
+==UNUSED== PARAMETER DEFINITIONS:
+
+
+
+SS_GRID 1
+Orthomin/ILU FINAL ITERATION 50 of 254, RNORM=0.000198887, XNORM=131829, 0 MS/IT 0 uS/NODE
+Orthomin/ILU FINAL ITERATION 21 of 1019, RNORM=1.09151e-010, XNORM=0.000572656, 0 MS/IT 0 uS/NODE
+
+
+LINEAR STEP 2 NORM=1.35642e-015
+RMS Spatial Errors  2.249e-5 2.398e-6
+DO_NEXTSTAGE pde 0000000005278BE0  MAXSTAGE=0
+
+================================================================
+===  FlexPDE Version 6.51/W64  16:23:07 Jul 24 2019  © 1996-2014 PDE Solutions Inc.
+===  C:\Users\student\Documents\254883\my file 6.3.pde 11:15:35 4/3/24
+================================================================
+    1| title 'Odkszta≈Çcenie-naprezenie'
+    2| VARIABLES 
+    3| ux, uy
+    4| DEFINITIONS
+    5| v = 0.3
+    6| E
+    7| F0=1E9
+    8| G = E/((1+v)*(1-2*v))
+    9| C11 = G*(1-v)
+   10| C12 = G*v
+   11| C21 = G*v
+   12| C22 = G*(1-v)
+   13| C33 = G*(1-2*v)/2
+   14| EQUATIONS
+   15| ux: dx(C11*dx(ux)+C12*dy(uy))+dy(C33*(dy(ux)+dx(uy))) = 0
+   16| uy: dx(C33*(dy(ux)+dx(uy))) + dy(C21*dx(ux)+C22*dy(uy)) = 0
+   17| BOUNDARIES
+   18| region 1 !prostokat
+   19| E = 100E9
+   20| start (0,0) load (ux)=0 load(uy) = 0
+   21| line to(3,0) load(ux)=0 load(uy) = 0
+   22| line to(3,1) load (ux)=0 load(uy) = -F0
+   23| line to(0,1) value(ux)=0 value(uy) = 0
+   24| line to close
+   25| !region 2 !kolo
+   26| !E = 10E9
+   27| !start(1.5, 0.25)
+   28| !arc(center=1.5, 0.5) angle=360
+   29| PLOTS
+   30| grid(x+1*ux, y+1*uy)
+   31| contour (ux) as 'x-przemieszczenie'
+   32| contour(uy) as 'y-przemieszczenie'
+   33| !contour()
+   34| END
+
+SUMMARIZE 9 PARAMETERS (NO COMMON SUBEXPRESSION ELIMINATION)
+   Param         Compartment       Complexity     Memory
+--------------------------------------------------------------
+              V      0                    1         72
+              E      1                    1         72
+             F0      0                    1         72
+              G      1                    1         72
+            C11      1                    1         72
+            C12      1                    1         72
+            C21      1                    1         72
+            C22      1                    1         72
+            C33      1                    1         72
+
+SUMMARIZE EQUATIONS
+
+                                                    BASE         CSE
+ EQUATION  COMPARTMENT              FUNCTION     COMPLEXITY  COMPLEXITY    MEMORY
+----------------------------------------------------------------------------------
+     1          1                     Source          1            2          144
+     1          1                   Galerkin         16           16         1152
+     1          1       Var  1      Jacobian         10           10          720
+     1          1       Var  2      Jacobian         10           10          720
+     1          1              Surf Galerkin         15           15         1080
+     1          1       Var  1 Surf Jacobian          9           10          720
+     1          1       Var  2 Surf Jacobian          9           10          720
+     2          1                     Source          1            2          144
+     2          1                   Galerkin         16           16         1152
+     2          1       Var  1      Jacobian         10           10          720
+     2          1       Var  2      Jacobian         10           10          720
+     2          1              Surf Galerkin         15           15         1080
+     2          1       Var  1 Surf Jacobian          9           10          720
+     2          1       Var  2 Surf Jacobian          9           10          720
+
+EQUATION 1 PARAMETER DEPENDENCIES:
+ V               E               G               C11             C12            
+ C33            
+
+EQUATION 2 PARAMETER DEPENDENCIES:
+ V               E               G               C21             C22            
+ C33            
+
+SUMMARIZE BOUNDARY CONDITIONS
+
+    BC     COMPARTMENT              FUNCTION     COMPLEXITY    MEMORY
+----------------------------------------------------------------------
+     1          1              Surf Galerkin          1         72
+     1          1       Var  1 Surf Jacobian          1         72
+     1          1       Var  2 Surf Jacobian          1         72
+     2          1              Surf Galerkin          1         72
+     2          1       Var  1 Surf Jacobian          1         72
+     2          1       Var  2 Surf Jacobian          1         72
+     3          1              Surf Galerkin          2        144
+     3          1       Var  1 Surf Jacobian          1         72
+     3          1       Var  2 Surf Jacobian          1         72
+     4          1              Surf Galerkin          1         72
+     4          1       Var  1 Surf Jacobian          1         72
+     4          1       Var  2 Surf Jacobian          1         72
+     5          1              Surf Galerkin          1         72
+     5          1       Var  1 Surf Jacobian          1         72
+     5          1       Var  2 Surf Jacobian          1         72
+
+SUMMARIZE PLOT EQUATIONS
+
+                                     BASE        CSE
+   PLOT    ARGUMENT COMPARTMENT  COMPLEXITY  COMPLEXITY    MEMORY
+------------------------------------------------------------------
+     1          1          1          3          3          216
+     1          2          1          3          3          216
+     2          1          1          1          1           72
+     3          1          1          1          1           72
+
+==UNUSED== PARAMETER DEFINITIONS:
+
+
+
+SS_GRID 1
+Orthomin/ILU FINAL ITERATION 50 of 254, RNORM=0.000198887, XNORM=131829, 0 MS/IT 0.471204 uS/NODE
+Orthomin/ILU FINAL ITERATION 21 of 1019, RNORM=1.09151e-010, XNORM=0.000572656, 0 MS/IT 0 uS/NODE
+
+
+LINEAR STEP 2 NORM=1.35642e-015
+RMS Spatial Errors  2.249e-5 2.398e-6
+DO_NEXTSTAGE pde 0000000005278BE0  MAXSTAGE=0
+
+================================================================
+===  FlexPDE Version 6.51/W64  16:23:07 Jul 24 2019  © 1996-2014 PDE Solutions Inc.
+===  C:\Users\student\Documents\254883\my file 6.3.pde 11:16:17 4/3/24
+================================================================
+    1| title 'Odkszta≈Çcenie-naprezenie'
+    2| VARIABLES 
+    3| ux, uy
+    4| DEFINITIONS
+    5| v = 0.3
+    6| E
+    7| F0=1E9
+    8| G = E/((1+v)*(1-2*v))
+    9| C11 = G*(1-v)
+   10| C12 = G*v
+   11| C21 = G*v
+   12| C22 = G*(1-v)
+   13| C33 = G*(1-2*v)/2
+   14| EQUATIONS
+   15| ux: dx(C11*dx(ux)+C12*dy(uy))+dy(C33*(dy(ux)+dx(uy))) = 0
+   16| uy: dx(C33*(dy(ux)+dx(uy))) + dy(C21*dx(ux)+C22*dy(uy)) = 0
+   17| BOUNDARIES
+   18| region 1 !prostokat
+   19| E = 100E9
+   20| start (0,0) load (ux)=0 load(uy) = -F0
+   21| line to(3,0) value(ux)=0 value(uy) = 0
+   22| line to(3,1) load (ux)=0 load(uy) = 0
+   23| line to(0,1) value(ux)=0 value(uy) = 0
+   24| line to close
+   25| !region 2 !kolo
+   26| !E = 10E9
+   27| !start(1.5, 0.25)
+   28| !arc(center=1.5, 0.5) angle=360
+   29| PLOTS
+   30| grid(x+1*ux, y+1*uy)
+   31| contour (ux) as 'x-przemieszczenie'
+   32| contour(uy) as 'y-przemieszczenie'
+   33| !contour()
+   34| END
+
+SUMMARIZE 9 PARAMETERS (NO COMMON SUBEXPRESSION ELIMINATION)
+   Param         Compartment       Complexity     Memory
+--------------------------------------------------------------
+              V      0                    1         72
+              E      1                    1         72
+             F0      0                    1         72
+              G      1                    1         72
+            C11      1                    1         72
+            C12      1                    1         72
+            C21      1                    1         72
+            C22      1                    1         72
+            C33      1                    1         72
+
+SUMMARIZE EQUATIONS
+
+                                                    BASE         CSE
+ EQUATION  COMPARTMENT              FUNCTION     COMPLEXITY  COMPLEXITY    MEMORY
+----------------------------------------------------------------------------------
+     1          1                     Source          1            2          144
+     1          1                   Galerkin         16           16         1152
+     1          1       Var  1      Jacobian         10           10          720
+     1          1       Var  2      Jacobian         10           10          720
+     1          1              Surf Galerkin         15           15         1080
+     1          1       Var  1 Surf Jacobian          9           10          720
+     1          1       Var  2 Surf Jacobian          9           10          720
+     2          1                     Source          1            2          144
+     2          1                   Galerkin         16           16         1152
+     2          1       Var  1      Jacobian         10           10          720
+     2          1       Var  2      Jacobian         10           10          720
+     2          1              Surf Galerkin         15           15         1080
+     2          1       Var  1 Surf Jacobian          9           10          720
+     2          1       Var  2 Surf Jacobian          9           10          720
+
+EQUATION 1 PARAMETER DEPENDENCIES:
+ V               E               G               C11             C12            
+ C33            
+
+EQUATION 2 PARAMETER DEPENDENCIES:
+ V               E               G               C21             C22            
+ C33            
+
+SUMMARIZE BOUNDARY CONDITIONS
+
+    BC     COMPARTMENT              FUNCTION     COMPLEXITY    MEMORY
+----------------------------------------------------------------------
+     1          1              Surf Galerkin          1         72
+     1          1       Var  1 Surf Jacobian          1         72
+     1          1       Var  2 Surf Jacobian          1         72
+     2          1              Surf Galerkin          2        144
+     2          1       Var  1 Surf Jacobian          1         72
+     2          1       Var  2 Surf Jacobian          1         72
+     3          1              Surf Galerkin          1         72
+     3          1       Var  1 Surf Jacobian          1         72
+     3          1       Var  2 Surf Jacobian          1         72
+     4          1              Surf Galerkin          1         72
+     4          1       Var  1 Surf Jacobian          1         72
+     4          1       Var  2 Surf Jacobian          1         72
+     5          1              Surf Galerkin          1         72
+     5          1       Var  1 Surf Jacobian          1         72
+     5          1       Var  2 Surf Jacobian          1         72
+
+SUMMARIZE PLOT EQUATIONS
+
+                                     BASE        CSE
+   PLOT    ARGUMENT COMPARTMENT  COMPLEXITY  COMPLEXITY    MEMORY
+------------------------------------------------------------------
+     1          1          1          3          3          216
+     1          2          1          3          3          216
+     2          1          1          1          1           72
+     3          1          1          1          1           72
+
+==UNUSED== PARAMETER DEFINITIONS:
+
+
+
+SS_GRID 1
+Orthomin/ILU FINAL ITERATION 27 of 254, RNORM=0.00793472, XNORM=7539.01, 0 MS/IT 0 uS/NODE
+Orthomin/ILU FINAL ITERATION 33 of 1019, RNORM=5.68756e-008, XNORM=0.0347539, 0 MS/IT 0 uS/NODE
+
+
+LINEAR STEP 2 NORM=7.99116e-013
+RMS Spatial Errors  0.002027 9.092e-5
+
+
+SS_GRID 2
+Orthomin/ILU FINAL ITERATION 40 of 1019, RNORM=0.000258607, XNORM=57.7663, 0 MS/IT 0 uS/NODE
+RMS Spatial Errors  4.160e-4 3.117e-5
+
+
+SS_GRID 3
+Orthomin/ILU FINAL ITERATION 44 of 1019, RNORM=9.07889e-005, XNORM=28.1798, 0 MS/IT 0 uS/NODE
+RMS Spatial Errors  8.582e-5 1.457e-5
+DO_NEXTSTAGE pde 0000000005278BE0  MAXSTAGE=0
+
+================================================================
+===  FlexPDE Version 6.51/W64  16:23:07 Jul 24 2019  © 1996-2014 PDE Solutions Inc.
+===  C:\Users\student\Documents\254883\my file 6.3.pde 11:16:24 4/3/24
+================================================================
+    1| title 'Odkszta≈Çcenie-naprezenie'
+    2| VARIABLES 
+    3| ux, uy
+    4| DEFINITIONS
+    5| v = 0.3
+    6| E
+    7| F0=1E9
+    8| G = E/((1+v)*(1-2*v))
+    9| C11 = G*(1-v)
+   10| C12 = G*v
+   11| C21 = G*v
+   12| C22 = G*(1-v)
+   13| C33 = G*(1-2*v)/2
+   14| EQUATIONS
+   15| ux: dx(C11*dx(ux)+C12*dy(uy))+dy(C33*(dy(ux)+dx(uy))) = 0
+   16| uy: dx(C33*(dy(ux)+dx(uy))) + dy(C21*dx(ux)+C22*dy(uy)) = 0
+   17| BOUNDARIES
+   18| region 1 !prostokat
+   19| E = 100E9
+   20| start (0,0) load (ux)=0 load(uy) = -F0
+   21| line to(5,0) value(ux)=0 value(uy) = 0
+   22| line to(5,1) load (ux)=0 load(uy) = 0
+   23| line to(0,1) value(ux)=0 value(uy) = 0
+   24| line to close
+   25| !region 2 !kolo
+   26| !E = 10E9
+   27| !start(1.5, 0.25)
+   28| !arc(center=1.5, 0.5) angle=360
+   29| PLOTS
+   30| grid(x+1*ux, y+1*uy)
+   31| contour (ux) as 'x-przemieszczenie'
+   32| contour(uy) as 'y-przemieszczenie'
+   33| !contour()
+   34| END
+
+SUMMARIZE 9 PARAMETERS (NO COMMON SUBEXPRESSION ELIMINATION)
+   Param         Compartment       Complexity     Memory
+--------------------------------------------------------------
+              V      0                    1         72
+              E      1                    1         72
+             F0      0                    1         72
+              G      1                    1         72
+            C11      1                    1         72
+            C12      1                    1         72
+            C21      1                    1         72
+            C22      1                    1         72
+            C33      1                    1         72
+
+SUMMARIZE EQUATIONS
+
+                                                    BASE         CSE
+ EQUATION  COMPARTMENT              FUNCTION     COMPLEXITY  COMPLEXITY    MEMORY
+----------------------------------------------------------------------------------
+     1          1                     Source          1            2          144
+     1          1                   Galerkin         16           16         1152
+     1          1       Var  1      Jacobian         10           10          720
+     1          1       Var  2      Jacobian         10           10          720
+     1          1              Surf Galerkin         15           15         1080
+     1          1       Var  1 Surf Jacobian          9           10          720
+     1          1       Var  2 Surf Jacobian          9           10          720
+     2          1                     Source          1            2          144
+     2          1                   Galerkin         16           16         1152
+     2          1       Var  1      Jacobian         10           10          720
+     2          1       Var  2      Jacobian         10           10          720
+     2          1              Surf Galerkin         15           15         1080
+     2          1       Var  1 Surf Jacobian          9           10          720
+     2          1       Var  2 Surf Jacobian          9           10          720
+
+EQUATION 1 PARAMETER DEPENDENCIES:
+ V               E               G               C11             C12            
+ C33            
+
+EQUATION 2 PARAMETER DEPENDENCIES:
+ V               E               G               C21             C22            
+ C33            
+
+SUMMARIZE BOUNDARY CONDITIONS
+
+    BC     COMPARTMENT              FUNCTION     COMPLEXITY    MEMORY
+----------------------------------------------------------------------
+     1          1              Surf Galerkin          1         72
+     1          1       Var  1 Surf Jacobian          1         72
+     1          1       Var  2 Surf Jacobian          1         72
+     2          1              Surf Galerkin          2        144
+     2          1       Var  1 Surf Jacobian          1         72
+     2          1       Var  2 Surf Jacobian          1         72
+     3          1              Surf Galerkin          1         72
+     3          1       Var  1 Surf Jacobian          1         72
+     3          1       Var  2 Surf Jacobian          1         72
+     4          1              Surf Galerkin          1         72
+     4          1       Var  1 Surf Jacobian          1         72
+     4          1       Var  2 Surf Jacobian          1         72
+     5          1              Surf Galerkin          1         72
+     5          1       Var  1 Surf Jacobian          1         72
+     5          1       Var  2 Surf Jacobian          1         72
+
+SUMMARIZE PLOT EQUATIONS
+
+                                     BASE        CSE
+   PLOT    ARGUMENT COMPARTMENT  COMPLEXITY  COMPLEXITY    MEMORY
+------------------------------------------------------------------
+     1          1          1          3          3          216
+     1          2          1          3          3          216
+     2          1          1          1          1           72
+     3          1          1          1          1           72
+
+==UNUSED== PARAMETER DEFINITIONS:
+
+
+
+SS_GRID 1
+Orthomin/ILU FINAL ITERATION 27 of 253, RNORM=0.0967539, XNORM=31908.1, 0 MS/IT 1.58278 uS/NODE
+Orthomin/ILU FINAL ITERATION 32 of 1015, RNORM=3.38146e-006, XNORM=0.266078, 0 MS/IT 0 uS/NODE
+
+
+LINEAR STEP 2 NORM=6.32578e-011
+RMS Spatial Errors  7.922e-4 1.803e-4
+
+
+SS_GRID 2
+Orthomin/ILU FINAL ITERATION 45 of 1015, RNORM=2.80865e-005, XNORM=821.043, 0 MS/IT 0 uS/NODE
+RMS Spatial Errors  1.622e-4 1.969e-5
+
+
+SS_GRID 3
+Orthomin/ILU FINAL ITERATION 46 of 1015, RNORM=6.76309e-006, XNORM=82.3393, 0 MS/IT 0 uS/NODE
+RMS Spatial Errors  1.516e-4 2.171e-5
+
+
+SS_GRID 4
+Orthomin/ILU FINAL ITERATION 44 of 1015, RNORM=7.75561e-005, XNORM=69.8115, 0 MS/IT 0 uS/NODE
+RMS Spatial Errors  7.362e-5 2.394e-5
+DO_NEXTSTAGE pde 0000000005278BE0  MAXSTAGE=0
+
+================================================================
+===  FlexPDE Version 6.51/W64  16:23:07 Jul 24 2019  © 1996-2014 PDE Solutions Inc.
+===  C:\Users\student\Documents\254883\my file 6.3.pde 11:16:34 4/3/24
+================================================================
+    1| title 'Odkszta≈Çcenie-naprezenie'
+    2| VARIABLES 
+    3| ux, uy
+    4| DEFINITIONS
+    5| v = 0.3
+    6| E
+    7| F0=1E9
+    8| G = E/((1+v)*(1-2*v))
+    9| C11 = G*(1-v)
+   10| C12 = G*v
+   11| C21 = G*v
+   12| C22 = G*(1-v)
+   13| C33 = G*(1-2*v)/2
+   14| EQUATIONS
+   15| ux: dx(C11*dx(ux)+C12*dy(uy))+dy(C33*(dy(ux)+dx(uy))) = 0
+   16| uy: dx(C33*(dy(ux)+dx(uy))) + dy(C21*dx(ux)+C22*dy(uy)) = 0
+   17| BOUNDARIES
+   18| region 1 !prostokat
+   19| E = 100E9
+   20| start (0,0) load (ux)=0 load(uy) = -F0
+   21| line to(10,0) value(ux)=0 value(uy) = 0
+   22| line to(10,1) load (ux)=0 load(uy) = 0
+   23| line to(0,1) value(ux)=0 value(uy) = 0
+   24| line to close
+   25| !region 2 !kolo
+   26| !E = 10E9
+   27| !start(1.5, 0.25)
+   28| !arc(center=1.5, 0.5) angle=360
+   29| PLOTS
+   30| grid(x+1*ux, y+1*uy)
+   31| contour (ux) as 'x-przemieszczenie'
+   32| contour(uy) as 'y-przemieszczenie'
+   33| !contour()
+   34| END
+
+SUMMARIZE 9 PARAMETERS (NO COMMON SUBEXPRESSION ELIMINATION)
+   Param         Compartment       Complexity     Memory
+--------------------------------------------------------------
+              V      0                    1         72
+              E      1                    1         72
+             F0      0                    1         72
+              G      1                    1         72
+            C11      1                    1         72
+            C12      1                    1         72
+            C21      1                    1         72
+            C22      1                    1         72
+            C33      1                    1         72
+
+SUMMARIZE EQUATIONS
+
+                                                    BASE         CSE
+ EQUATION  COMPARTMENT              FUNCTION     COMPLEXITY  COMPLEXITY    MEMORY
+----------------------------------------------------------------------------------
+     1          1                     Source          1            2          144
+     1          1                   Galerkin         16           16         1152
+     1          1       Var  1      Jacobian         10           10          720
+     1          1       Var  2      Jacobian         10           10          720
+     1          1              Surf Galerkin         15           15         1080
+     1          1       Var  1 Surf Jacobian          9           10          720
+     1          1       Var  2 Surf Jacobian          9           10          720
+     2          1                     Source          1            2          144
+     2          1                   Galerkin         16           16         1152
+     2          1       Var  1      Jacobian         10           10          720
+     2          1       Var  2      Jacobian         10           10          720
+     2          1              Surf Galerkin         15           15         1080
+     2          1       Var  1 Surf Jacobian          9           10          720
+     2          1       Var  2 Surf Jacobian          9           10          720
+
+EQUATION 1 PARAMETER DEPENDENCIES:
+ V               E               G               C11             C12            
+ C33            
+
+EQUATION 2 PARAMETER DEPENDENCIES:
+ V               E               G               C21             C22            
+ C33            
+
+SUMMARIZE BOUNDARY CONDITIONS
+
+    BC     COMPARTMENT              FUNCTION     COMPLEXITY    MEMORY
+----------------------------------------------------------------------
+     1          1              Surf Galerkin          1         72
+     1          1       Var  1 Surf Jacobian          1         72
+     1          1       Var  2 Surf Jacobian          1         72
+     2          1              Surf Galerkin          2        144
+     2          1       Var  1 Surf Jacobian          1         72
+     2          1       Var  2 Surf Jacobian          1         72
+     3          1              Surf Galerkin          1         72
+     3          1       Var  1 Surf Jacobian          1         72
+     3          1       Var  2 Surf Jacobian          1         72
+     4          1              Surf Galerkin          1         72
+     4          1       Var  1 Surf Jacobian          1         72
+     4          1       Var  2 Surf Jacobian          1         72
+     5          1              Surf Galerkin          1         72
+     5          1       Var  1 Surf Jacobian          1         72
+     5          1       Var  2 Surf Jacobian          1         72
+
+SUMMARIZE PLOT EQUATIONS
+
+                                     BASE        CSE
+   PLOT    ARGUMENT COMPARTMENT  COMPLEXITY  COMPLEXITY    MEMORY
+------------------------------------------------------------------
+     1          1          1          3          3          216
+     1          2          1          3          3          216
+     2          1          1          1          1           72
+     3          1          1          1          1           72
+
+==UNUSED== PARAMETER DEFINITIONS:
+
+
+
+SS_GRID 1
+Orthomin/ILU FINAL ITERATION 28 of 252, RNORM=0.768796, XNORM=323695, 0 MS/IT 0 uS/NODE
+Orthomin/ILU FINAL ITERATION 32 of 1011, RNORM=5.93557e-005, XNORM=8.65991, 0 MS/IT 0 uS/NODE
+
+
+LINEAR STEP 2 NORM=5.24265e-010
+RMS Spatial Errors  3.668e-4 8.113e-5
+
+
+SS_GRID 2
+Orthomin/ILU FINAL ITERATION 51 of 1011, RNORM=3.08947e-008, XNORM=12606.4, 0 MS/IT 0 uS/NODE
+RMS Spatial Errors  0.001416 6.611e-5
+
+
+SS_GRID 3
+Orthomin/ILU FINAL ITERATION 65 of 1011, RNORM=5.2068e-006, XNORM=4439.79, 0 MS/IT 0 uS/NODE
+RMS Spatial Errors  1.093e-4 1.017e-5
+DO_NEXTSTAGE pde 0000000005278BE0  MAXSTAGE=0
+
+================================================================
+===  FlexPDE Version 6.51/W64  16:23:07 Jul 24 2019  © 1996-2014 PDE Solutions Inc.
+===  C:\Users\student\Documents\254883\my file 6.3.pde 11:16:51 4/3/24
+================================================================
+    1| title 'Odkszta≈Çcenie-naprezenie'
+    2| VARIABLES 
+    3| ux, uy
+    4| DEFINITIONS
+    5| v = 0.3
+    6| E
+    7| F0=0.7*E9
+    8| G = E/((1+v)*(1-2*v))
+***** Line 7 Col 10:
+Undefined Name: E9
+
+
+================================================================
+===  FlexPDE Version 6.51/W64  16:23:07 Jul 24 2019  © 1996-2014 PDE Solutions Inc.
+===  C:\Users\student\Documents\254883\my file 6.3.pde 11:16:57 4/3/24
+================================================================
+    1| title 'Odkszta≈Çcenie-naprezenie'
+    2| VARIABLES 
+    3| ux, uy
+    4| DEFINITIONS
+    5| v = 0.3
+    6| E
+    7| F0=0.7E9
+    8| G = E/((1+v)*(1-2*v))
+    9| C11 = G*(1-v)
+   10| C12 = G*v
+   11| C21 = G*v
+   12| C22 = G*(1-v)
+   13| C33 = G*(1-2*v)/2
+   14| EQUATIONS
+   15| ux: dx(C11*dx(ux)+C12*dy(uy))+dy(C33*(dy(ux)+dx(uy))) = 0
+   16| uy: dx(C33*(dy(ux)+dx(uy))) + dy(C21*dx(ux)+C22*dy(uy)) = 0
+   17| BOUNDARIES
+   18| region 1 !prostokat
+   19| E = 100E9
+   20| start (0,0) load (ux)=0 load(uy) = -F0
+   21| line to(10,0) value(ux)=0 value(uy) = 0
+   22| line to(10,1) load (ux)=0 load(uy) = 0
+   23| line to(0,1) value(ux)=0 value(uy) = 0
+   24| line to close
+   25| !region 2 !kolo
+   26| !E = 10E9
+   27| !start(1.5, 0.25)
+   28| !arc(center=1.5, 0.5) angle=360
+   29| PLOTS
+   30| grid(x+1*ux, y+1*uy)
+   31| contour (ux) as 'x-przemieszczenie'
+   32| contour(uy) as 'y-przemieszczenie'
+   33| !contour()
+   34| END
+
+SUMMARIZE 9 PARAMETERS (NO COMMON SUBEXPRESSION ELIMINATION)
+   Param         Compartment       Complexity     Memory
+--------------------------------------------------------------
+              V      0                    1         72
+              E      1                    1         72
+             F0      0                    1         72
+              G      1                    1         72
+            C11      1                    1         72
+            C12      1                    1         72
+            C21      1                    1         72
+            C22      1                    1         72
+            C33      1                    1         72
+
+SUMMARIZE EQUATIONS
+
+                                                    BASE         CSE
+ EQUATION  COMPARTMENT              FUNCTION     COMPLEXITY  COMPLEXITY    MEMORY
+----------------------------------------------------------------------------------
+     1          1                     Source          1            2          144
+     1          1                   Galerkin         16           16         1152
+     1          1       Var  1      Jacobian         10           10          720
+     1          1       Var  2      Jacobian         10           10          720
+     1          1              Surf Galerkin         15           15         1080
+     1          1       Var  1 Surf Jacobian          9           10          720
+     1          1       Var  2 Surf Jacobian          9           10          720
+     2          1                     Source          1            2          144
+     2          1                   Galerkin         16           16         1152
+     2          1       Var  1      Jacobian         10           10          720
+     2          1       Var  2      Jacobian         10           10          720
+     2          1              Surf Galerkin         15           15         1080
+     2          1       Var  1 Surf Jacobian          9           10          720
+     2          1       Var  2 Surf Jacobian          9           10          720
+
+EQUATION 1 PARAMETER DEPENDENCIES:
+ V               E               G               C11             C12            
+ C33            
+
+EQUATION 2 PARAMETER DEPENDENCIES:
+ V               E               G               C21             C22            
+ C33            
+
+SUMMARIZE BOUNDARY CONDITIONS
+
+    BC     COMPARTMENT              FUNCTION     COMPLEXITY    MEMORY
+----------------------------------------------------------------------
+     1          1              Surf Galerkin          1         72
+     1          1       Var  1 Surf Jacobian          1         72
+     1          1       Var  2 Surf Jacobian          1         72
+     2          1              Surf Galerkin          2        144
+     2          1       Var  1 Surf Jacobian          1         72
+     2          1       Var  2 Surf Jacobian          1         72
+     3          1              Surf Galerkin          1         72
+     3          1       Var  1 Surf Jacobian          1         72
+     3          1       Var  2 Surf Jacobian          1         72
+     4          1              Surf Galerkin          1         72
+     4          1       Var  1 Surf Jacobian          1         72
+     4          1       Var  2 Surf Jacobian          1         72
+     5          1              Surf Galerkin          1         72
+     5          1       Var  1 Surf Jacobian          1         72
+     5          1       Var  2 Surf Jacobian          1         72
+
+SUMMARIZE PLOT EQUATIONS
+
+                                     BASE        CSE
+   PLOT    ARGUMENT COMPARTMENT  COMPLEXITY  COMPLEXITY    MEMORY
+------------------------------------------------------------------
+     1          1          1          3          3          216
+     1          2          1          3          3          216
+     2          1          1          1          1           72
+     3          1          1          1          1           72
+
+==UNUSED== PARAMETER DEFINITIONS:
+
+
+
+SS_GRID 1
+Orthomin/ILU FINAL ITERATION 28 of 252, RNORM=0.538157, XNORM=226586, 0 MS/IT 0 uS/NODE
+Orthomin/ILU FINAL ITERATION 32 of 1011, RNORM=4.15489e-005, XNORM=6.06193, 0 MS/IT 0 uS/NODE
+
+
+LINEAR STEP 2 NORM=3.66985e-010
+RMS Spatial Errors  3.668e-4 8.113e-5
+
+
+SS_GRID 2
+Orthomin/ILU FINAL ITERATION 51 of 1011, RNORM=2.16263e-008, XNORM=8824.47, 0 MS/IT 0 uS/NODE
+RMS Spatial Errors  0.001416 6.611e-5
+
+
+SS_GRID 3
+Orthomin/ILU FINAL ITERATION 65 of 1011, RNORM=3.64476e-006, XNORM=3107.85, 0 MS/IT 0 uS/NODE
+RMS Spatial Errors  1.093e-4 1.017e-5
+DO_NEXTSTAGE pde 0000000005278BE0  MAXSTAGE=0
+
+================================================================
+===  FlexPDE Version 6.51/W64  16:23:07 Jul 24 2019  © 1996-2014 PDE Solutions Inc.
+===  C:\Users\student\Documents\254883\my file 6.3.pde 11:20:20 4/3/24
+================================================================
+    1| title 'Odkszta≈Çcenie-naprezenie'
+    2| VARIABLES 
+    3| ux, uy
+    4| DEFINITIONS
+    5| v = 0.3
+    6| E
+    7| F0=0.7E9
+    8| G = E/((1+v)*(1-2*v))
+    9| C11 = G*(1-v)
+   10| C12 = G*v
+   11| C21 = G*v
+   12| C22 = G*(1-v)
+   13| C33 = G*(1-2*v)/2
+   14| EQUATIONS
+   15| ux: dx(C11*dx(ux)+C12*dy(uy))+dy(C33*(dy(ux)+dx(uy))) = 0
+   16| uy: dx(C33*(dy(ux)+dx(uy))) + dy(C21*dx(ux)+C22*dy(uy)) = 0
+   17| BOUNDARIES
+   18| region 1 !prostokat
+   19| E = 100E9
+   20| start (0,0) load (ux)=0 load(uy) = -F0
+   21| line to(10,0) value(ux)=0 value(uy) = 0
+   22| line to(10,1) load (ux)=0 load(uy) = 0
+   23| line to(0,1) value(ux)=0 value(uy) = 0
+   24| line to close
+   25| !region 2 !kolo
+   26| !E = 10E9
+   27| !start(1.5, 0.25)
+   28| !arc(center=1.5, 0.5) angle=360
+   29| PLOTS
+   30| grid(x+1*ux, y+1*uy)
+   31| contour (ux) as 'x-przemieszczenie'
+   32| contour(uy) as 'y-przemieszczenie'
+   33| contour(C11)
+   34| END
+
+SUMMARIZE 9 PARAMETERS (NO COMMON SUBEXPRESSION ELIMINATION)
+   Param         Compartment       Complexity     Memory
+--------------------------------------------------------------
+              V      0                    1         72
+              E      1                    1         72
+             F0      0                    1         72
+              G      1                    1         72
+            C11      1                    1         72
+            C12      1                    1         72
+            C21      1                    1         72
+            C22      1                    1         72
+            C33      1                    1         72
+
+SUMMARIZE EQUATIONS
+
+                                                    BASE         CSE
+ EQUATION  COMPARTMENT              FUNCTION     COMPLEXITY  COMPLEXITY    MEMORY
+----------------------------------------------------------------------------------
+     1          1                     Source          1            2          144
+     1          1                   Galerkin         16           16         1152
+     1          1       Var  1      Jacobian         10           10          720
+     1          1       Var  2      Jacobian         10           10          720
+     1          1              Surf Galerkin         15           15         1080
+     1          1       Var  1 Surf Jacobian          9           10          720
+     1          1       Var  2 Surf Jacobian          9           10          720
+     2          1                     Source          1            2          144
+     2          1                   Galerkin         16           16         1152
+     2          1       Var  1      Jacobian         10           10          720
+     2          1       Var  2      Jacobian         10           10          720
+     2          1              Surf Galerkin         15           15         1080
+     2          1       Var  1 Surf Jacobian          9           10          720
+     2          1       Var  2 Surf Jacobian          9           10          720
+
+EQUATION 1 PARAMETER DEPENDENCIES:
+ V               E               G               C11             C12            
+ C33            
+
+EQUATION 2 PARAMETER DEPENDENCIES:
+ V               E               G               C21             C22            
+ C33            
+
+SUMMARIZE BOUNDARY CONDITIONS
+
+    BC     COMPARTMENT              FUNCTION     COMPLEXITY    MEMORY
+----------------------------------------------------------------------
+     1          1              Surf Galerkin          1         72
+     1          1       Var  1 Surf Jacobian          1         72
+     1          1       Var  2 Surf Jacobian          1         72
+     2          1              Surf Galerkin          2        144
+     2          1       Var  1 Surf Jacobian          1         72
+     2          1       Var  2 Surf Jacobian          1         72
+     3          1              Surf Galerkin          1         72
+     3          1       Var  1 Surf Jacobian          1         72
+     3          1       Var  2 Surf Jacobian          1         72
+     4          1              Surf Galerkin          1         72
+     4          1       Var  1 Surf Jacobian          1         72
+     4          1       Var  2 Surf Jacobian          1         72
+     5          1              Surf Galerkin          1         72
+     5          1       Var  1 Surf Jacobian          1         72
+     5          1       Var  2 Surf Jacobian          1         72
+
+SUMMARIZE PLOT EQUATIONS
+
+                                     BASE        CSE
+   PLOT    ARGUMENT COMPARTMENT  COMPLEXITY  COMPLEXITY    MEMORY
+------------------------------------------------------------------
+     1          1          1          3          3          216
+     1          2          1          3          3          216
+     2          1          1          1          1           72
+     3          1          1          1          1           72
+     4          1          1          1          1           72
+
+==UNUSED== PARAMETER DEFINITIONS:
+
+
+
+SS_GRID 1
+Orthomin/ILU FINAL ITERATION 28 of 252, RNORM=0.538157, XNORM=226586, 0 MS/IT 0 uS/NODE
+Orthomin/ILU FINAL ITERATION 32 of 1011, RNORM=4.15489e-005, XNORM=6.06193, 0 MS/IT 0 uS/NODE
+
+
+LINEAR STEP 2 NORM=3.66985e-010
+RMS Spatial Errors  3.668e-4 8.113e-5
+
+
+SS_GRID 2
+Orthomin/ILU FINAL ITERATION 51 of 1011, RNORM=2.16263e-008, XNORM=8824.47, 0 MS/IT 0 uS/NODE
+RMS Spatial Errors  0.001416 6.611e-5
+
+
+SS_GRID 3
+Orthomin/ILU FINAL ITERATION 65 of 1011, RNORM=3.64476e-006, XNORM=3107.85, 0 MS/IT 0 uS/NODE
+RMS Spatial Errors  1.093e-4 1.017e-5
+DO_NEXTSTAGE pde 0000000005278BE0  MAXSTAGE=0
+
+================================================================
+===  FlexPDE Version 6.51/W64  16:23:07 Jul 24 2019  © 1996-2014 PDE Solutions Inc.
+===  C:\Users\student\Documents\254883\my file 6.3.pde 11:20:26 4/3/24
+================================================================
+    1| title 'Odkszta≈Çcenie-naprezenie'
+    2| VARIABLES 
+    3| ux, uy
+    4| DEFINITIONS
+    5| v = 0.3
+    6| E
+    7| F0=0.7E9
+    8| G = E/((1+v)*(1-2*v))
+    9| C11 = G*(1-v)
+   10| C12 = G*v
+   11| C21 = G*v
+   12| C22 = G*(1-v)
+   13| C33 = G*(1-2*v)/2
+   14| EQUATIONS
+   15| ux: dx(C11*dx(ux)+C12*dy(uy))+dy(C33*(dy(ux)+dx(uy))) = 0
+   16| uy: dx(C33*(dy(ux)+dx(uy))) + dy(C21*dx(ux)+C22*dy(uy)) = 0
+   17| BOUNDARIES
+   18| region 1 !prostokat
+   19| E = 100E9
+   20| start (0,0) load (ux)=0 load(uy) = -F0
+   21| line to(10,0) value(ux)=0 value(uy) = 0
+   22| line to(10,1) load (ux)=0 load(uy) = 0
+   23| line to(0,1) value(ux)=0 value(uy) = 0
+   24| line to close
+   25| !region 2 !kolo
+   26| !E = 10E9
+   27| !start(1.5, 0.25)
+   28| !arc(center=1.5, 0.5) angle=360
+   29| PLOTS
+   30| grid(x+1*ux, y+1*uy)
+   31| contour (ux) as 'x-przemieszczenie'
+   32| contour(uy) as 'y-przemieszczenie'
+   33| contour(C11)
+   34| END
+
+SUMMARIZE 9 PARAMETERS (NO COMMON SUBEXPRESSION ELIMINATION)
+   Param         Compartment       Complexity     Memory
+--------------------------------------------------------------
+              V      0                    1         72
+              E      1                    1         72
+             F0      0                    1         72
+              G      1                    1         72
+            C11      1                    1         72
+            C12      1                    1         72
+            C21      1                    1         72
+            C22      1                    1         72
+            C33      1                    1         72
+
+SUMMARIZE EQUATIONS
+
+                                                    BASE         CSE
+ EQUATION  COMPARTMENT              FUNCTION     COMPLEXITY  COMPLEXITY    MEMORY
+----------------------------------------------------------------------------------
+     1          1                     Source          1            2          144
+     1          1                   Galerkin         16           16         1152
+     1          1       Var  1      Jacobian         10           10          720
+     1          1       Var  2      Jacobian         10           10          720
+     1          1              Surf Galerkin         15           15         1080
+     1          1       Var  1 Surf Jacobian          9           10          720
+     1          1       Var  2 Surf Jacobian          9           10          720
+     2          1                     Source          1            2          144
+     2          1                   Galerkin         16           16         1152
+     2          1       Var  1      Jacobian         10           10          720
+     2          1       Var  2      Jacobian         10           10          720
+     2          1              Surf Galerkin         15           15         1080
+     2          1       Var  1 Surf Jacobian          9           10          720
+     2          1       Var  2 Surf Jacobian          9           10          720
+
+EQUATION 1 PARAMETER DEPENDENCIES:
+ V               E               G               C11             C12            
+ C33            
+
+EQUATION 2 PARAMETER DEPENDENCIES:
+ V               E               G               C21             C22            
+ C33            
+
+SUMMARIZE BOUNDARY CONDITIONS
+
+    BC     COMPARTMENT              FUNCTION     COMPLEXITY    MEMORY
+----------------------------------------------------------------------
+     1          1              Surf Galerkin          1         72
+     1          1       Var  1 Surf Jacobian          1         72
+     1          1       Var  2 Surf Jacobian          1         72
+     2          1              Surf Galerkin          2        144
+     2          1       Var  1 Surf Jacobian          1         72
+     2          1       Var  2 Surf Jacobian          1         72
+     3          1              Surf Galerkin          1         72
+     3          1       Var  1 Surf Jacobian          1         72
+     3          1       Var  2 Surf Jacobian          1         72
+     4          1              Surf Galerkin          1         72
+     4          1       Var  1 Surf Jacobian          1         72
+     4          1       Var  2 Surf Jacobian          1         72
+     5          1              Surf Galerkin          1         72
+     5          1       Var  1 Surf Jacobian          1         72
+     5          1       Var  2 Surf Jacobian          1         72
+
+SUMMARIZE PLOT EQUATIONS
+
+                                     BASE        CSE
+   PLOT    ARGUMENT COMPARTMENT  COMPLEXITY  COMPLEXITY    MEMORY
+------------------------------------------------------------------
+     1          1          1          3          3          216
+     1          2          1          3          3          216
+     2          1          1          1          1           72
+     3          1          1          1          1           72
+     4          1          1          1          1           72
+
+==UNUSED== PARAMETER DEFINITIONS:
+
+
+
+SS_GRID 1
+Orthomin/ILU FINAL ITERATION 28 of 252, RNORM=0.538157, XNORM=226586, 0 MS/IT 0 uS/NODE
+Orthomin/ILU FINAL ITERATION 32 of 1011, RNORM=4.15489e-005, XNORM=6.06193, 0 MS/IT 0 uS/NODE
+
+
+LINEAR STEP 2 NORM=3.66985e-010
+RMS Spatial Errors  3.668e-4 8.113e-5
+
+
+SS_GRID 2
+Orthomin/ILU FINAL ITERATION 51 of 1011, RNORM=2.16263e-008, XNORM=8824.47, 0 MS/IT 0 uS/NODE
+RMS Spatial Errors  0.001416 6.611e-5
+
+
+SS_GRID 3
+Orthomin/ILU FINAL ITERATION 65 of 1011, RNORM=3.64476e-006, XNORM=3107.85, 0 MS/IT 0 uS/NODE
+RMS Spatial Errors  1.093e-4 1.017e-5
+DO_NEXTSTAGE pde 0000000005278BE0  MAXSTAGE=0
+
+================================================================
+===  FlexPDE Version 6.51/W64  16:23:07 Jul 24 2019  © 1996-2014 PDE Solutions Inc.
+===  C:\Users\student\Documents\254883\my file 6.3.pde 11:20:38 4/3/24
+================================================================
+    1| title 'Odkszta≈Çcenie-naprezenie'
+    2| VARIABLES 
+    3| ux, uy
+    4| DEFINITIONS
+    5| v = 0.3
+    6| E
+    7| F0=0.7E9
+    8| G = E/((1+v)*(1-2*v))
+    9| C11 = G*(1-v)
+   10| C12 = G*v
+   11| C21 = G*v
+   12| C22 = G*(1-v)
+   13| C33 = G*(1-2*v)/2
+   14| EQUATIONS
+   15| ux: dx(C11*dx(ux)+C12*dy(uy))+dy(C33*(dy(ux)+dx(uy))) = 0
+   16| uy: dx(C33*(dy(ux)+dx(uy))) + dy(C21*dx(ux)+C22*dy(uy)) = 0
+   17| BOUNDARIES
+   18| region 1 !prostokat
+   19| E = 100E9
+   20| start (0,0) load (ux)=0 load(uy) = -F0
+   21| line to(10,0) value(ux)=0 value(uy) = 0
+   22| line to(10,1) load (ux)=0 load(uy) = 0
+   23| line to(0,1) value(ux)=0 value(uy) = 0
+   24| line to close
+   25| !region 2 !kolo
+   26| !E = 10E9
+   27| !start(1.5, 0.25)
+   28| !arc(center=1.5, 0.5) angle=360
+   29| PLOTS
+   30| grid(x+1*ux, y+1*uy)
+   31| contour (ux) as 'x-przemieszczenie'
+   32| contour(uy) as 'y-przemieszczenie'
+   33| contour(C33)
+   34| END
+
+SUMMARIZE 9 PARAMETERS (NO COMMON SUBEXPRESSION ELIMINATION)
+   Param         Compartment       Complexity     Memory
+--------------------------------------------------------------
+              V      0                    1         72
+              E      1                    1         72
+             F0      0                    1         72
+              G      1                    1         72
+            C11      1                    1         72
+            C12      1                    1         72
+            C21      1                    1         72
+            C22      1                    1         72
+            C33      1                    1         72
+
+SUMMARIZE EQUATIONS
+
+                                                    BASE         CSE
+ EQUATION  COMPARTMENT              FUNCTION     COMPLEXITY  COMPLEXITY    MEMORY
+----------------------------------------------------------------------------------
+     1          1                     Source          1            2          144
+     1          1                   Galerkin         16           16         1152
+     1          1       Var  1      Jacobian         10           10          720
+     1          1       Var  2      Jacobian         10           10          720
+     1          1              Surf Galerkin         15           15         1080
+     1          1       Var  1 Surf Jacobian          9           10          720
+     1          1       Var  2 Surf Jacobian          9           10          720
+     2          1                     Source          1            2          144
+     2          1                   Galerkin         16           16         1152
+     2          1       Var  1      Jacobian         10           10          720
+     2          1       Var  2      Jacobian         10           10          720
+     2          1              Surf Galerkin         15           15         1080
+     2          1       Var  1 Surf Jacobian          9           10          720
+     2          1       Var  2 Surf Jacobian          9           10          720
+
+EQUATION 1 PARAMETER DEPENDENCIES:
+ V               E               G               C11             C12            
+ C33            
+
+EQUATION 2 PARAMETER DEPENDENCIES:
+ V               E               G               C21             C22            
+ C33            
+
+SUMMARIZE BOUNDARY CONDITIONS
+
+    BC     COMPARTMENT              FUNCTION     COMPLEXITY    MEMORY
+----------------------------------------------------------------------
+     1          1              Surf Galerkin          1         72
+     1          1       Var  1 Surf Jacobian          1         72
+     1          1       Var  2 Surf Jacobian          1         72
+     2          1              Surf Galerkin          2        144
+     2          1       Var  1 Surf Jacobian          1         72
+     2          1       Var  2 Surf Jacobian          1         72
+     3          1              Surf Galerkin          1         72
+     3          1       Var  1 Surf Jacobian          1         72
+     3          1       Var  2 Surf Jacobian          1         72
+     4          1              Surf Galerkin          1         72
+     4          1       Var  1 Surf Jacobian          1         72
+     4          1       Var  2 Surf Jacobian          1         72
+     5          1              Surf Galerkin          1         72
+     5          1       Var  1 Surf Jacobian          1         72
+     5          1       Var  2 Surf Jacobian          1         72
+
+SUMMARIZE PLOT EQUATIONS
+
+                                     BASE        CSE
+   PLOT    ARGUMENT COMPARTMENT  COMPLEXITY  COMPLEXITY    MEMORY
+------------------------------------------------------------------
+     1          1          1          3          3          216
+     1          2          1          3          3          216
+     2          1          1          1          1           72
+     3          1          1          1          1           72
+     4          1          1          1          1           72
+
+==UNUSED== PARAMETER DEFINITIONS:
+
+
+
+SS_GRID 1
+Orthomin/ILU FINAL ITERATION 28 of 252, RNORM=0.538157, XNORM=226586, 0 MS/IT 0 uS/NODE
+Orthomin/ILU FINAL ITERATION 32 of 1011, RNORM=4.15489e-005, XNORM=6.06193, 0 MS/IT 0 uS/NODE
+
+
+LINEAR STEP 2 NORM=3.66985e-010
+RMS Spatial Errors  3.668e-4 8.113e-5
+
+
+SS_GRID 2
+Orthomin/ILU FINAL ITERATION 51 of 1011, RNORM=2.16263e-008, XNORM=8824.47, 0 MS/IT 0 uS/NODE
+RMS Spatial Errors  0.001416 6.611e-5
+
+
+SS_GRID 3
+Orthomin/ILU FINAL ITERATION 65 of 1011, RNORM=3.64476e-006, XNORM=3107.85, 0 MS/IT 0 uS/NODE
+RMS Spatial Errors  1.093e-4 1.017e-5
+DO_NEXTSTAGE pde 0000000005278BE0  MAXSTAGE=0
+
+================================================================
+===  FlexPDE Version 6.51/W64  16:23:07 Jul 24 2019  © 1996-2014 PDE Solutions Inc.
+===  C:\Users\student\Documents\254883\my file 6.3.pde 11:22:08 4/3/24
+================================================================
+    1| title 'Odkszta≈Çcenie-naprezenie'
+    2| VARIABLES 
+    3| ux, uy
+    4| DEFINITIONS
+    5| v = 0.3
+    6| E
+    7| F0=0.7E9
+    8| G = E/((1+v)*(1-2*v))
+    9| C11 = G*(1-v)
+   10| C12 = G*v
+   11| C21 = G*v
+   12| C22 = G*(1-v)
+   13| C33 = G*(1-2*v)/2
+   14| EQUATIONS
+   15| ux: dx(C11*dx(ux)+C12*dy(uy))+dy(C33*(dy(ux)+dx(uy))) = 0
+   16| uy: dx(C33*(dy(ux)+dx(uy))) + dy(C21*dx(ux)+C22*dy(uy)) = 0
+   17| BOUNDARIES
+   18| region 1 !prostokat
+   19| E = 100E9
+   20| start (0,0) load (ux)=0 load(uy) = -F0
+   21| line to(10,0) value(ux)=0 value(uy) = 0
+   22| line to(10,1) load (ux)=0 load(uy) = 0
+   23| line to(0,1) value(ux)=0 value(uy) = 0
+   24| line to close
+   25| !region 2 !kolo
+   26| !E = 10E9
+   27| !start(1.5, 0.25)
+   28| !arc(center=1.5, 0.5) angle=360
+   29| PLOTS
+   30| grid(x+1*ux, y+1*uy)
+   31| contour (ux) as 'x-przemieszczenie'
+   32| contour(uy) as 'y-przemieszczenie'
+   33| contour(dx(C33))
+   34| END
+
+SUMMARIZE 9 PARAMETERS (NO COMMON SUBEXPRESSION ELIMINATION)
+   Param         Compartment       Complexity     Memory
+--------------------------------------------------------------
+              V      0                    1         72
+              E      1                    1         72
+             F0      0                    1         72
+              G      1                    1         72
+            C11      1                    1         72
+            C12      1                    1         72
+            C21      1                    1         72
+            C22      1                    1         72
+            C33      1                    1         72
+
+SUMMARIZE EQUATIONS
+
+                                                    BASE         CSE
+ EQUATION  COMPARTMENT              FUNCTION     COMPLEXITY  COMPLEXITY    MEMORY
+----------------------------------------------------------------------------------
+     1          1                     Source          1            2          144
+     1          1                   Galerkin         16           16         1152
+     1          1       Var  1      Jacobian         10           10          720
+     1          1       Var  2      Jacobian         10           10          720
+     1          1              Surf Galerkin         15           15         1080
+     1          1       Var  1 Surf Jacobian          9           10          720
+     1          1       Var  2 Surf Jacobian          9           10          720
+     2          1                     Source          1            2          144
+     2          1                   Galerkin         16           16         1152
+     2          1       Var  1      Jacobian         10           10          720
+     2          1       Var  2      Jacobian         10           10          720
+     2          1              Surf Galerkin         15           15         1080
+     2          1       Var  1 Surf Jacobian          9           10          720
+     2          1       Var  2 Surf Jacobian          9           10          720
+
+EQUATION 1 PARAMETER DEPENDENCIES:
+ V               E               G               C11             C12            
+ C33            
+
+EQUATION 2 PARAMETER DEPENDENCIES:
+ V               E               G               C21             C22            
+ C33            
+
+SUMMARIZE BOUNDARY CONDITIONS
+
+    BC     COMPARTMENT              FUNCTION     COMPLEXITY    MEMORY
+----------------------------------------------------------------------
+     1          1              Surf Galerkin          1         72
+     1          1       Var  1 Surf Jacobian          1         72
+     1          1       Var  2 Surf Jacobian          1         72
+     2          1              Surf Galerkin          2        144
+     2          1       Var  1 Surf Jacobian          1         72
+     2          1       Var  2 Surf Jacobian          1         72
+     3          1              Surf Galerkin          1         72
+     3          1       Var  1 Surf Jacobian          1         72
+     3          1       Var  2 Surf Jacobian          1         72
+     4          1              Surf Galerkin          1         72
+     4          1       Var  1 Surf Jacobian          1         72
+     4          1       Var  2 Surf Jacobian          1         72
+     5          1              Surf Galerkin          1         72
+     5          1       Var  1 Surf Jacobian          1         72
+     5          1       Var  2 Surf Jacobian          1         72
+
+SUMMARIZE PLOT EQUATIONS
+
+                                     BASE        CSE
+   PLOT    ARGUMENT COMPARTMENT  COMPLEXITY  COMPLEXITY    MEMORY
+------------------------------------------------------------------
+     1          1          1          3          3          216
+     1          2          1          3          3          216
+     2          1          1          1          1           72
+     3          1          1          1          1           72
+     4          1          1          1          1           72
+
+==UNUSED== PARAMETER DEFINITIONS:
+
+
+
+SS_GRID 1
+Orthomin/ILU FINAL ITERATION 28 of 252, RNORM=0.538157, XNORM=226586, 0 MS/IT 0 uS/NODE
+Orthomin/ILU FINAL ITERATION 32 of 1011, RNORM=4.15489e-005, XNORM=6.06193, 0 MS/IT 0 uS/NODE
+
+
+LINEAR STEP 2 NORM=3.66985e-010
+RMS Spatial Errors  3.668e-4 8.113e-5
+
+
+SS_GRID 2
+Orthomin/ILU FINAL ITERATION 51 of 1011, RNORM=2.16263e-008, XNORM=8824.47, 0 MS/IT 0 uS/NODE
+RMS Spatial Errors  0.001416 6.611e-5
+
+
+SS_GRID 3
+Orthomin/ILU FINAL ITERATION 65 of 1011, RNORM=3.64476e-006, XNORM=3107.85, 0 MS/IT 0 uS/NODE
+RMS Spatial Errors  1.093e-4 1.017e-5
+DO_NEXTSTAGE pde 0000000005278BE0  MAXSTAGE=0
+
+================================================================
+===  FlexPDE Version 6.51/W64  16:23:07 Jul 24 2019  © 1996-2014 PDE Solutions Inc.
+===  C:\Users\student\Documents\254883\my file 6.3.pde 11:26:31 4/3/24
+================================================================
+    1| title 'Odkszta≈Çcenie-naprezenie'
+    2| VARIABLES 
+    3| ux, uy
+    4| DEFINITIONS
+    5| v = 0.3
+    6| E
+    7| F0=0.7E9
+    8| G = E/((1+v)*(1-2*v))
+    9| C11 = G*(1-v)
+   10| C12 = G*v
+   11| C21 = G*v
+   12| C22 = G*(1-v)
+   13| C33 = G*(1-2*v)/2
+   14| EQUATIONS
+   15| ux: dx(C11*dx(ux)+C12*dy(uy))+dy(C33*(dy(ux)+dx(uy))) = 0
+   16| uy: dx(C33*(dy(ux)+dx(uy))) + dy(C21*dx(ux)+C22*dy(uy)) = 0
+   17| BOUNDARIES
+   18| region 1 !prostokat
+   19| E = 100E9
+   20| start (0,0) load (ux)=0 load(uy) = -F0
+   21| line to(10,0) value(ux)=0 value(uy) = 0
+   22| line to(10,1) load (ux)=0 load(uy) = 0
+   23| line to(0,1) value(ux)=0 value(uy) = 0
+   24| line to close
+   25| !region 2 !kolo
+   26| !E = 10E9
+   27| !start(1.5, 0.25)
+   28| !arc(center=1.5, 0.5) angle=360
+   29| PLOTS
+   30| grid(x+1*ux, y+1*uy)
+   31| contour (ux) as 'x-przemieszczenie'
+   32| contour(uy) as 'y-przemieszczenie'
+   33| contour(E)
+   34| END
+
+SUMMARIZE 9 PARAMETERS (NO COMMON SUBEXPRESSION ELIMINATION)
+   Param         Compartment       Complexity     Memory
+--------------------------------------------------------------
+              V      0                    1         72
+              E      1                    1         72
+             F0      0                    1         72
+              G      1                    1         72
+            C11      1                    1         72
+            C12      1                    1         72
+            C21      1                    1         72
+            C22      1                    1         72
+            C33      1                    1         72
+
+SUMMARIZE EQUATIONS
+
+                                                    BASE         CSE
+ EQUATION  COMPARTMENT              FUNCTION     COMPLEXITY  COMPLEXITY    MEMORY
+----------------------------------------------------------------------------------
+     1          1                     Source          1            2          144
+     1          1                   Galerkin         16           16         1152
+     1          1       Var  1      Jacobian         10           10          720
+     1          1       Var  2      Jacobian         10           10          720
+     1          1              Surf Galerkin         15           15         1080
+     1          1       Var  1 Surf Jacobian          9           10          720
+     1          1       Var  2 Surf Jacobian          9           10          720
+     2          1                     Source          1            2          144
+     2          1                   Galerkin         16           16         1152
+     2          1       Var  1      Jacobian         10           10          720
+     2          1       Var  2      Jacobian         10           10          720
+     2          1              Surf Galerkin         15           15         1080
+     2          1       Var  1 Surf Jacobian          9           10          720
+     2          1       Var  2 Surf Jacobian          9           10          720
+
+EQUATION 1 PARAMETER DEPENDENCIES:
+ V               E               G               C11             C12            
+ C33            
+
+EQUATION 2 PARAMETER DEPENDENCIES:
+ V               E               G               C21             C22            
+ C33            
+
+SUMMARIZE BOUNDARY CONDITIONS
+
+    BC     COMPARTMENT              FUNCTION     COMPLEXITY    MEMORY
+----------------------------------------------------------------------
+     1          1              Surf Galerkin          1         72
+     1          1       Var  1 Surf Jacobian          1         72
+     1          1       Var  2 Surf Jacobian          1         72
+     2          1              Surf Galerkin          2        144
+     2          1       Var  1 Surf Jacobian          1         72
+     2          1       Var  2 Surf Jacobian          1         72
+     3          1              Surf Galerkin          1         72
+     3          1       Var  1 Surf Jacobian          1         72
+     3          1       Var  2 Surf Jacobian          1         72
+     4          1              Surf Galerkin          1         72
+     4          1       Var  1 Surf Jacobian          1         72
+     4          1       Var  2 Surf Jacobian          1         72
+     5          1              Surf Galerkin          1         72
+     5          1       Var  1 Surf Jacobian          1         72
+     5          1       Var  2 Surf Jacobian          1         72
+
+SUMMARIZE PLOT EQUATIONS
+
+                                     BASE        CSE
+   PLOT    ARGUMENT COMPARTMENT  COMPLEXITY  COMPLEXITY    MEMORY
+------------------------------------------------------------------
+     1          1          1          3          3          216
+     1          2          1          3          3          216
+     2          1          1          1          1           72
+     3          1          1          1          1           72
+     4          1          1          1          1           72
+
+==UNUSED== PARAMETER DEFINITIONS:
+
+
+
+SS_GRID 1
+Orthomin/ILU FINAL ITERATION 28 of 252, RNORM=0.538157, XNORM=226586, 0 MS/IT 0 uS/NODE
+Orthomin/ILU FINAL ITERATION 32 of 1011, RNORM=4.15489e-005, XNORM=6.06193, 0 MS/IT 0 uS/NODE
+
+
+LINEAR STEP 2 NORM=3.66985e-010
+RMS Spatial Errors  3.668e-4 8.113e-5
+
+
+SS_GRID 2
+Orthomin/ILU FINAL ITERATION 51 of 1011, RNORM=2.16263e-008, XNORM=8824.47, 0 MS/IT 0 uS/NODE
+RMS Spatial Errors  0.001416 6.611e-5
+
+
+SS_GRID 3
+Orthomin/ILU FINAL ITERATION 65 of 1011, RNORM=3.64476e-006, XNORM=3107.85, 0 MS/IT 0 uS/NODE
+RMS Spatial Errors  1.093e-4 1.017e-5
+DO_NEXTSTAGE pde 0000000005278BE0  MAXSTAGE=0
+
+================================================================
+===  FlexPDE Version 6.51/W64  16:23:07 Jul 24 2019  © 1996-2014 PDE Solutions Inc.
+===  C:\Users\student\Documents\254883\my file 6.3.pde 11:26:56 4/3/24
+================================================================
+    1| title 'Odkszta≈Çcenie-naprezenie'
+    2| VARIABLES 
+    3| ux, uy
+    4| DEFINITIONS
+    5| v = 0.3
+    6| E
+    7| F0=0.7E9
+    8| G = E/((1+v)*(1-2*v))
+    9| C11 = G*(1-v)
+   10| C12 = G*v
+   11| C21 = G*v
+   12| C22 = G*(1-v)
+   13| C33 = G*(1-2*v)/2
+   14| EQUATIONS
+   15| ux: dx(C11*dx(ux)+C12*dy(uy))+dy(C33*(dy(ux)+dx(uy))) = 0
+   16| uy: dx(C33*(dy(ux)+dx(uy))) + dy(C21*dx(ux)+C22*dy(uy)) = 0
+   17| BOUNDARIES
+   18| region 1 !prostokat
+   19| E = 100E9
+   20| start (0,0) load (ux)=0 load(uy) = -F0
+   21| line to(10,0) value(ux)=0 value(uy) = 0
+   22| line to(10,1) load (ux)=0 load(uy) = 0
+   23| line to(0,1) value(ux)=0 value(uy) = 0
+   24| line to close
+   25| !region 2 !kolo
+   26| !E = 10E9
+   27| !start(1.5, 0.25)
+   28| !arc(center=1.5, 0.5) angle=360
+   29| PLOTS
+   30| grid(x+1*ux, y+1*uy)
+   31| contour (ux) as 'x-napr'
+   32| contour(uy) as 'y-napr'
+   33| contour(E)
+   34| END
+
+SUMMARIZE 9 PARAMETERS (NO COMMON SUBEXPRESSION ELIMINATION)
+   Param         Compartment       Complexity     Memory
+--------------------------------------------------------------
+              V      0                    1         72
+              E      1                    1         72
+             F0      0                    1         72
+              G      1                    1         72
+            C11      1                    1         72
+            C12      1                    1         72
+            C21      1                    1         72
+            C22      1                    1         72
+            C33      1                    1         72
+
+SUMMARIZE EQUATIONS
+
+                                                    BASE         CSE
+ EQUATION  COMPARTMENT              FUNCTION     COMPLEXITY  COMPLEXITY    MEMORY
+----------------------------------------------------------------------------------
+     1          1                     Source          1            2          144
+     1          1                   Galerkin         16           16         1152
+     1          1       Var  1      Jacobian         10           10          720
+     1          1       Var  2      Jacobian         10           10          720
+     1          1              Surf Galerkin         15           15         1080
+     1          1       Var  1 Surf Jacobian          9           10          720
+     1          1       Var  2 Surf Jacobian          9           10          720
+     2          1                     Source          1            2          144
+     2          1                   Galerkin         16           16         1152
+     2          1       Var  1      Jacobian         10           10          720
+     2          1       Var  2      Jacobian         10           10          720
+     2          1              Surf Galerkin         15           15         1080
+     2          1       Var  1 Surf Jacobian          9           10          720
+     2          1       Var  2 Surf Jacobian          9           10          720
+
+EQUATION 1 PARAMETER DEPENDENCIES:
+ V               E               G               C11             C12            
+ C33            
+
+EQUATION 2 PARAMETER DEPENDENCIES:
+ V               E               G               C21             C22            
+ C33            
+
+SUMMARIZE BOUNDARY CONDITIONS
+
+    BC     COMPARTMENT              FUNCTION     COMPLEXITY    MEMORY
+----------------------------------------------------------------------
+     1          1              Surf Galerkin          1         72
+     1          1       Var  1 Surf Jacobian          1         72
+     1          1       Var  2 Surf Jacobian          1         72
+     2          1              Surf Galerkin          2        144
+     2          1       Var  1 Surf Jacobian          1         72
+     2          1       Var  2 Surf Jacobian          1         72
+     3          1              Surf Galerkin          1         72
+     3          1       Var  1 Surf Jacobian          1         72
+     3          1       Var  2 Surf Jacobian          1         72
+     4          1              Surf Galerkin          1         72
+     4          1       Var  1 Surf Jacobian          1         72
+     4          1       Var  2 Surf Jacobian          1         72
+     5          1              Surf Galerkin          1         72
+     5          1       Var  1 Surf Jacobian          1         72
+     5          1       Var  2 Surf Jacobian          1         72
+
+SUMMARIZE PLOT EQUATIONS
+
+                                     BASE        CSE
+   PLOT    ARGUMENT COMPARTMENT  COMPLEXITY  COMPLEXITY    MEMORY
+------------------------------------------------------------------
+     1          1          1          3          3          216
+     1          2          1          3          3          216
+     2          1          1          1          1           72
+     3          1          1          1          1           72
+     4          1          1          1          1           72
+
+==UNUSED== PARAMETER DEFINITIONS:
+
+
+
+SS_GRID 1
+Orthomin/ILU FINAL ITERATION 28 of 252, RNORM=0.538157, XNORM=226586, 0 MS/IT 0 uS/NODE
+Orthomin/ILU FINAL ITERATION 32 of 1011, RNORM=4.15489e-005, XNORM=6.06193, 0 MS/IT 0 uS/NODE
+
+
+LINEAR STEP 2 NORM=3.66985e-010
+RMS Spatial Errors  3.668e-4 8.113e-5
+
+
+SS_GRID 2
+Orthomin/ILU FINAL ITERATION 51 of 1011, RNORM=2.16263e-008, XNORM=8824.47, 0 MS/IT 0 uS/NODE
+RMS Spatial Errors  0.001416 6.611e-5
+
+
+SS_GRID 3
+Orthomin/ILU FINAL ITERATION 65 of 1011, RNORM=3.64476e-006, XNORM=3107.85, 0 MS/IT 0 uS/NODE
+RMS Spatial Errors  1.093e-4 1.017e-5
+DO_NEXTSTAGE pde 0000000005278BE0  MAXSTAGE=0
+
+================================================================
+===  FlexPDE Version 6.51/W64  16:23:07 Jul 24 2019  © 1996-2014 PDE Solutions Inc.
+===  C:\Users\student\Documents\254883\my file 6.3.pde 11:27:26 4/3/24
+================================================================
+    1| title 'Odkszta≈Çcenie-naprezenie'
+    2| VARIABLES 
+    3| ux, uy
+    4| DEFINITIONS
+    5| v = 0.3
+    6| E
+    7| F0=0.7E9
+    8| G = E/((1+v)*(1-2*v))
+    9| C11 = G*(1-v)
+   10| C12 = G*v
+   11| C21 = G*v
+   12| C22 = G*(1-v)
+   13| C33 = G*(1-2*v)/2
+   14| EQUATIONS
+   15| ux: dx(C11*dx(ux)+C12*dy(uy))+dy(C33*(dy(ux)+dx(uy))) = 0
+   16| uy: dx(C33*(dy(ux)+dx(uy))) + dy(C21*dx(ux)+C22*dy(uy)) = 0
+   17| BOUNDARIES
+   18| region 1 !prostokat
+   19| E = 100E9
+   20| start (0,0) load (ux)=0 load(uy) = -F0
+   21| line to(10,0) value(ux)=0 value(uy) = 0
+   22| line to(10,1) load (ux)=0 load(uy) = 0
+   23| line to(0,1) value(ux)=0 value(uy) = 0
+   24| line to close
+   25| !region 2 !kolo
+   26| !E = 10E9
+   27| !start(1.5, 0.25)
+   28| !arc(center=1.5, 0.5) angle=360
+   29| PLOTS
+   30| grid(x+1*ux, y+1*uy)
+   31| contour (ux) as 'x-napr'
+   32| contour(uy) as 'y-napr'
+   33| contour(ux/uy)
+   34| END
+
+SUMMARIZE 9 PARAMETERS (NO COMMON SUBEXPRESSION ELIMINATION)
+   Param         Compartment       Complexity     Memory
+--------------------------------------------------------------
+              V      0                    1         72
+              E      1                    1         72
+             F0      0                    1         72
+              G      1                    1         72
+            C11      1                    1         72
+            C12      1                    1         72
+            C21      1                    1         72
+            C22      1                    1         72
+            C33      1                    1         72
+
+SUMMARIZE EQUATIONS
+
+                                                    BASE         CSE
+ EQUATION  COMPARTMENT              FUNCTION     COMPLEXITY  COMPLEXITY    MEMORY
+----------------------------------------------------------------------------------
+     1          1                     Source          1            2          144
+     1          1                   Galerkin         16           16         1152
+     1          1       Var  1      Jacobian         10           10          720
+     1          1       Var  2      Jacobian         10           10          720
+     1          1              Surf Galerkin         15           15         1080
+     1          1       Var  1 Surf Jacobian          9           10          720
+     1          1       Var  2 Surf Jacobian          9           10          720
+     2          1                     Source          1            2          144
+     2          1                   Galerkin         16           16         1152
+     2          1       Var  1      Jacobian         10           10          720
+     2          1       Var  2      Jacobian         10           10          720
+     2          1              Surf Galerkin         15           15         1080
+     2          1       Var  1 Surf Jacobian          9           10          720
+     2          1       Var  2 Surf Jacobian          9           10          720
+
+EQUATION 1 PARAMETER DEPENDENCIES:
+ V               E               G               C11             C12            
+ C33            
+
+EQUATION 2 PARAMETER DEPENDENCIES:
+ V               E               G               C21             C22            
+ C33            
+
+SUMMARIZE BOUNDARY CONDITIONS
+
+    BC     COMPARTMENT              FUNCTION     COMPLEXITY    MEMORY
+----------------------------------------------------------------------
+     1          1              Surf Galerkin          1         72
+     1          1       Var  1 Surf Jacobian          1         72
+     1          1       Var  2 Surf Jacobian          1         72
+     2          1              Surf Galerkin          2        144
+     2          1       Var  1 Surf Jacobian          1         72
+     2          1       Var  2 Surf Jacobian          1         72
+     3          1              Surf Galerkin          1         72
+     3          1       Var  1 Surf Jacobian          1         72
+     3          1       Var  2 Surf Jacobian          1         72
+     4          1              Surf Galerkin          1         72
+     4          1       Var  1 Surf Jacobian          1         72
+     4          1       Var  2 Surf Jacobian          1         72
+     5          1              Surf Galerkin          1         72
+     5          1       Var  1 Surf Jacobian          1         72
+     5          1       Var  2 Surf Jacobian          1         72
+
+SUMMARIZE PLOT EQUATIONS
+
+                                     BASE        CSE
+   PLOT    ARGUMENT COMPARTMENT  COMPLEXITY  COMPLEXITY    MEMORY
+------------------------------------------------------------------
+     1          1          1          3          3          216
+     1          2          1          3          3          216
+     2          1          1          1          1           72
+     3          1          1          1          1           72
+     4          1          1          3          3          216
+
+==UNUSED== PARAMETER DEFINITIONS:
+
+
+
+SS_GRID 1
+Orthomin/ILU FINAL ITERATION 28 of 252, RNORM=0.538157, XNORM=226586, 0 MS/IT 0 uS/NODE
+Orthomin/ILU FINAL ITERATION 32 of 1011, RNORM=4.15489e-005, XNORM=6.06193, 0 MS/IT 0 uS/NODE
+
+
+LINEAR STEP 2 NORM=3.66985e-010
+RMS Spatial Errors  3.668e-4 8.113e-5
+
+
+SS_GRID 2
+Orthomin/ILU FINAL ITERATION 51 of 1011, RNORM=2.16263e-008, XNORM=8824.47, 0 MS/IT 0 uS/NODE
+RMS Spatial Errors  0.001416 6.611e-5
+
+
+SS_GRID 3
+Orthomin/ILU FINAL ITERATION 65 of 1011, RNORM=3.64476e-006, XNORM=3107.85, 0 MS/IT 0 uS/NODE
+RMS Spatial Errors  1.093e-4 1.017e-5
+DO_NEXTSTAGE pde 0000000005278BE0  MAXSTAGE=0
